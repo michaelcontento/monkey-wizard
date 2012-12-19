@@ -64,7 +64,9 @@ Class AndroidPayment Implements Command
         Local target:File = app.TargetFile("src_AndroidBillingLibrary/src/net/robotmedia/billing/BillingRequest.java")
         Local match:String = "if (response == ResponseCode.RESULT_OK) {"
 
-        If Not target.GetLine(220).Contains(match) Or Not target.GetLine(222).Contains("}")
+        If Not target.Exists() Or
+           Not target.GetLine(220).Contains(match) Or
+           Not target.GetLine(222).Contains("}")
             app.LogWarning("Unable to patch the AndroidBillingLibrary")
             app.LogWarning("Please remove this if statement:")
             app.LogWarning("    " + match)
