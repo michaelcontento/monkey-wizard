@@ -4,6 +4,7 @@ Private
 
 Import wizard.app
 Import wizard.file
+Import wizard.dir
 Import wizard.command
 
 Public
@@ -12,6 +13,8 @@ Class AndroidPayment Implements Command
     Method Run:Void(app:App)
         PatchBuildXml(app)
         PatchAndroidManifestPermissions(app)
+        CopyAndroidBillingLibrary(app)
+        PatchAndroidBillingLibray(app)
     End
 
     Private
@@ -45,6 +48,30 @@ Class AndroidPayment Implements Command
             Else
                 target.InsertBefore(match, patchStr)
             End
+        End
+    End
+
+    Method CopyAndroidBillingLibrary:Void(app:App)
+        Local src:Dir = app.SourceDir("AndroidBillingLibrary/AndroidBillingLibrary/src")
+        Local dst:Dir = app.TargetDir("src_AndroidBillingLibrary/src")
+
+        If Not dst.Parent().Exists() Then dst.Parent().Create()
+        src.CopyTo(dst)
+    End
+
+    Method PatchAndroidBillingLibray:Void(app:App)
+        Local target:File = app.TargetFile("src_AndroidBillingLibrary/src/net/robotmedia/billing/BillingRequest.java")
+        Local match:String = "if (response == ResponseCode.RESULT_OK) {"
+
+        If Not target.GetLine(220).Contains(match) Or Not target.GetLine(222).Contains("}")
+            app.LogWarning("Unable to patch the AndroidBillingLibrary")
+            app.LogWarning("Please remove this if statement:")
+            app.LogWarning("    " + match)
+            app.LogWarning("Around line 220 (including the closing }) in:")
+            app.LogWarning("    " + target.GetPath())
+        Else
+            target.RemoveLine(222)
+            target.RemoveLine(220)
         End
     End
 End
