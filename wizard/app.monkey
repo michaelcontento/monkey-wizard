@@ -51,6 +51,19 @@ Class App
         End
     End
 
+    Method LogInfo:Void(text:String)
+        Print "INFO: " + text
+    End
+
+    Method LogWarning:Void(text:String)
+        Print "WARN: " + text
+    End
+
+    Method LogError:Void(text:String)
+        Print "ERRO: " + text
+        ExitApp(2)
+    End
+
     Private
 
     Method SaveOpenFiles:Void()
