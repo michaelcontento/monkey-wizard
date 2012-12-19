@@ -3,6 +3,7 @@ Strict
 Private
 
 Import os
+Import wizard.oshelper
 
 Public
 
@@ -10,13 +11,13 @@ Class File
     Private
 
     Field name:String
-    Field data:String
+    Field data:String = ""
 
     Public
 
     Method New(name:String)
         Self.name = name
-        data = LoadString(name)
+        If FileExists(name) Then data = LoadString(name)
     End
 
     Method Save:Void()

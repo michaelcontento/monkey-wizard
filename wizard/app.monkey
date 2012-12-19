@@ -9,6 +9,7 @@ Import reflection
 Import wizard.command
 Import wizard.commands
 Import wizard.file
+Import wizard.oshelper
 
 Public
 
@@ -23,6 +24,7 @@ Class App
     Method New()
         LoadPatchCommands()
         CheckNumberOfArguments()
+        CheckTargetDirExists()
 
         If GetCommand()
             ExecuteCommand(GetCommand())
@@ -34,7 +36,7 @@ Class App
 
     Method TargetFile:File(filename:String)
         If Not openFiles.Contains(filename)
-            openFiles.Set(filename, New File(filename))
+            openFiles.Set(filename, New File(GetTargetDir() + filename))
         End
 
         Return openFiles.Get(filename)
@@ -118,6 +120,12 @@ Class App
         End
     End
 
+    Method CheckTargetDirExists:Void()
+        If Not DirExists(GetTargetDir())
+            LogError("Given targetdir " + GetTargetDir() + " does not exists")
+        End
+    End
+
     Method GetCommand:String()
         Return FixCase(GetCommandRaw())
     End
@@ -127,6 +135,6 @@ Class App
     End
 
     Method GetTargetDir:String()
-        Return AppArgs()[2]
+        Return AppArgs()[2] + "/"
     End
 End
