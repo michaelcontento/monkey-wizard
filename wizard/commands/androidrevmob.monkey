@@ -70,9 +70,9 @@ Class AndroidRevmob Implements Command
         Local topValue:String = "" +
             "<FrameLayout~n" +
             "~tandroid:id=~q@+id/mainframe~q~n" +
-            "~tandroid:layout_width=~qfill_parent~q" +
+            "~tandroid:layout_width=~qfill_parent~q~n" +
             "~txmlns:android=~qhttp://schemas.android.com/apk/res/android~q~n" +
-            "~tandroid:layout_height=~qfill_parent~q >~n"
+            "~tandroid:layout_height=~qfill_parent~q >"
 
         Local bottomSearch:String = "</LinearLayout>"
         Local bottomValue:String = "" +
@@ -92,7 +92,10 @@ Class AndroidRevmob Implements Command
             target.InsertAfter(topSearch, topValue)
             target.InsertAfter(bottomSearch, bottomValue)
         Else
-            app.LogWarning("FUCK")
+            app.LogWarning("Unable to add revmob layout elements")
+            app.LogWarning("A layout with @id/banner is required!")
+            app.LogWarning("I've tried to add this:~n" +
+                topValue + "~n" + "%MONKEY_VIEW%~n" + bottomValue)
         End
     End
 End
