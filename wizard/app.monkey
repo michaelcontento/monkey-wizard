@@ -22,14 +22,13 @@ Class App
 
     Method New()
         LoadPatchCommands()
-        Local rawCommand:String = GetCommand()
-        Local fixedCommand:String = FixCase(rawCommand)
+        CheckNumberOfArguments()
 
-        If fixedCommand
-            ExecuteCommand(fixedCommand)
+        If GetCommand()
+            ExecuteCommand(GetCommand())
             SaveOpenFiles()
         Else
-            PrintInvalidCommandError(rawCommand)
+            PrintInvalidCommandError(GetCommandRaw())
         End
     End
 
@@ -42,7 +41,7 @@ Class App
     End
 
     Method PrintHelp:Void()
-        Print "Usage: wizard COMMAND [COMMAND SPECIFIC OPTIONS]"
+        Print "Usage: wizard COMMAND TARGETDIR [COMMAND SPECIFIC OPTIONS]"
         Print ""
 
         Print "Commands:"
@@ -85,11 +84,7 @@ Class App
     Method PrintInvalidCommandError:Void(command:String)
         PrintHelp()
         Print ""
-
-        Print "Error:"
-        Print "  " + command + " is not a valid command."
-
-        ExitApp(2)
+        LogError(command + " is not a avalid command")
     End
 
     Method ExecuteCommand:Void(command:String)
@@ -114,12 +109,24 @@ Class App
         Return lastPart
     End
 
-    Method GetCommand:String()
-        If AppArgs().Length() = 1
+    Method CheckNumberOfArguments:Void()
+        If AppArgs().Length() <= 2
             PrintHelp()
+            Print ""
+            LogError("Invalid number of arguments")
             ExitApp(2)
         End
+    End
 
+    Method GetCommand:String()
+        Return FixCase(GetCommandRaw())
+    End
+
+    Method GetCommandRaw:String()
         Return AppArgs()[1]
+    End
+
+    Method GetTargetDir:String()
+        Return AppArgs()[2]
     End
 End
