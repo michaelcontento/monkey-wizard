@@ -15,6 +15,7 @@ Class AndroidPayment Implements Command
         PatchAndroidManifestPermissions(app)
         CopyAndroidBillingLibrary(app)
         PatchAndroidBillingLibray(app)
+        app.LogInfo("Monkey interface can be found here: http://goo.gl/QoYEC")
     End
 
     Private
