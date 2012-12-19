@@ -43,12 +43,28 @@ Class File
         Return data.Contains(match)
     End
 
+    Method ContainsBetween:Bool(match:String, strStart:String, strEnd:String)
+        Local posStart:Int = data.Find(strStart)
+        Local posEnd:Int = data.Find(strEnd, posStart)
+
+        If posStart = -1 Or posEnd = -1 Then Return False
+
+        ' Adjust posEnd to include the end pattern
+        posEnd += strEnd.Length() + 1
+
+        Return data[posStart..posEnd].Contains(match)
+    End
+
     Method Exists:Bool()
         Return FileExists(path)
     End
 
     Method GetPath:String()
         Return path
+    End
+
+    Method CopyTo:Void(dst:File)
+        CopyFile(path, dst.GetPath())
     End
 
     Method Replace:Void(match:String, text:String)
@@ -59,16 +75,40 @@ Class File
         data = data.Replace(match, text)
     End
 
-    Method CopyTo:Void(dst:File)
-        CopyFile(path, dst.GetPath())
-    End
-
     Method InsertAfter:Void(match:String, text:String)
         Replace(match, match + "~n" + text)
     End
 
     Method InsertBefore:Void(match:String, text:String)
         Replace(match, text + "~n" + match)
+    End
+
+    Method ReplaceBetween:Void(match:String, text:String, strStart:String, strEnd:String)
+        If Not ContainsBetween(match, strStart, strEnd)
+            Error("Unable to find '" + match + "' within " + path + "~n" +
+                "and the given range that:~n" +
+                "starts with: " + strStart + "~n" +
+                "  ends with: " + strEnd)
+        End
+
+        Local posStart:Int = data.Find(strStart)
+        Local posEnd:Int = data.Find(strEnd, posStart)
+
+        ' Adjust posEnd to include the end pattern
+        posEnd += strEnd.Length() + 1
+
+        Local replaceData:String = data[posStart..posEnd]
+        replaceData = replaceData.Replace(match, text)
+
+        data = data[..posStart] + replaceData + data[posEnd..]
+    End
+
+    Method InsertAfterBetween:Void(match:String, text:String, strStart:String, strEnd:String)
+        ReplaceBetween(match, match + "~n" + text, strStart, strEnd)
+    End
+
+    Method InsertBeforeBetween:Void(match:String, text:String, strStart:String, strEnd:String)
+        ReplaceBetween(match, text + "~n" + match, strStart, strEnd)
     End
 
     Private
