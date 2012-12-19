@@ -2,11 +2,11 @@ Strict
 
 Private
 
+Import wizard.android
 Import wizard.app
 Import wizard.command
 Import wizard.dir
 Import wizard.file
-Import wizard.helperandroid
 
 Public
 
