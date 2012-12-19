@@ -20,12 +20,13 @@ Class App
 
     Method New()
         LoadPatchCommands()
-        Local command:String = GetCommand()
+        Local rawCommand:String = GetCommand()
+        Local fixedCommand:String = FixCase(rawCommand)
 
-        If commands.Contains(command)
-            ExecuteCommand(command)
+        If fixedCommand
+            ExecuteCommand(fixedCommand)
         Else
-            PrintInvalidCommandError(command)
+            PrintInvalidCommandError(rawCommand)
         End
     End
 
@@ -40,6 +41,16 @@ Class App
     End
 
     Private
+
+    Method FixCase:String(command:String)
+        For Local checkCommand:String = EachIn commands.Keys()
+            If checkCommand.ToLower() = command.ToLower()
+                Return checkCommand
+            End
+        End
+
+        Return ""
+    End
 
     Method PrintInvalidCommandError:Void(command:String)
         PrintHelp()
