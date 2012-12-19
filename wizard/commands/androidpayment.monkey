@@ -2,8 +2,8 @@ Strict
 
 Private
 
-Import mp.app
-Import mp.command
+Import wizard.app
+Import wizard.command
 
 Public
 

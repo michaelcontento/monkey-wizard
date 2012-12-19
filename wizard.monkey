@@ -2,7 +2,7 @@ Strict
 
 Private
 
-Import mp.app
+Import wizard.app
 
 Public
 

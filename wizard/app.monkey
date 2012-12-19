@@ -2,7 +2,7 @@ Strict
 
 Private
 
-#REFLECTION_FILTER+="mp.commands.*"
+#REFLECTION_FILTER+="wizard.commands.*"
 
 Import os
 Import reflection
@@ -59,7 +59,7 @@ Class App
 
     Method LoadPatchCommands:Void()
         For Local classInfo:ClassInfo = EachIn GetClasses()
-            If classInfo.Name().Contains("mp.commands.")
+            If classInfo.Name().Contains("wizard.commands.")
                 commands.Add(GetShortName(classInfo.Name()), classInfo)
             End
         End
