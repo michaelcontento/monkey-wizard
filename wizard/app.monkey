@@ -31,7 +31,7 @@ Class App
     End
 
     Method PrintHelp:Void()
-        Print "Usage: mp COMMAND [COMMAND SPECIFIC OPTIONS]"
+        Print "Usage: wizard COMMAND [COMMAND SPECIFIC OPTIONS]"
         Print ""
 
         Print "Commands:"
