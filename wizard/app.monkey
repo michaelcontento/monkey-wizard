@@ -7,10 +7,10 @@ Private
 Import os
 Import reflection
 Import wizard.command
-Import wizard.dir
 Import wizard.commands
+Import wizard.dir
 Import wizard.file
-Import wizard.oshelper
+Import wizard.helperos
 
 Public
 
@@ -43,16 +43,16 @@ Class App
         Return openFiles.Get(filename)
     End
 
+    Method SourceFile:File(path:String)
+        Return New File(GetCommandDataDir() + path)
+    End
+
     Method TargetDir:Dir(path:String)
         Return New Dir(GetTargetDir() + path)
     End
 
     Method SourceDir:Dir(path:String)
-        Local baseDir:String = RealPath(ExtractDir(AppPath()) + "/../../") + "/"
-        Local dataDir:String = baseDir + "wizard.data/commands/"
-        Local finalDir:String = dataDir + GetCommandRaw().ToLower() + "/"
-
-        Return New Dir(finalDir + path)
+        Return New Dir(GetCommandDataDir() + path)
     End
 
     Method PrintHelp:Void()
@@ -149,5 +149,11 @@ Class App
 
     Method GetTargetDir:String()
         Return AppArgs()[2] + "/"
+    End
+
+    Method GetCommandDataDir:String()
+        Local baseDir:String = RealPath(ExtractDir(AppPath()) + "/../../") + "/"
+        Local dataDir:String = baseDir + "wizard.data/commands/"
+        Return dataDir + GetCommandRaw().ToLower() + "/"
     End
 End

@@ -3,7 +3,7 @@ Strict
 Private
 
 Import os
-Import wizard.oshelper
+Import wizard.helperos
 
 Public
 
@@ -11,17 +11,21 @@ Class File
     Private
 
     Field path:String
-    Field data:String = ""
+    Field _data:String
+    Field dirty:Bool
+    Field loaded:Bool
 
     Public
 
     Method New(path:String)
         Self.path = path
-        If FileExists(path) Then data = LoadString(path)
     End
 
     Method Save:Void()
-        SaveString(data, path)
+        If dirty
+            dirty = False
+            SaveString(data, path)
+        End
     End
 
     Method GetLine:String(line:Int)
@@ -55,11 +59,31 @@ Class File
         data = data.Replace(match, text)
     End
 
+    Method CopyTo:Void(dst:File)
+        CopyFile(path, dst.GetPath())
+    End
+
     Method InsertAfter:Void(match:String, text:String)
         Replace(match, match + "~n" + text)
     End
 
     Method InsertBefore:Void(match:String, text:String)
         Replace(match, text + "~n" + match)
+    End
+
+    Private
+
+    Method data:String() Property
+        If Not loaded And FileExists(path)
+            loaded = True
+            _data = LoadString(path)
+        End
+
+        Return _data
+    End
+
+    Method data:Void(newData:String) Property
+        dirty = True
+        _data = newData
     End
 End

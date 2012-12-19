@@ -3,7 +3,7 @@ Strict
 Private
 
 Import os
-Import wizard.oshelper
+Import wizard.helperos
 
 Public
 
