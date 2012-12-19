@@ -6,15 +6,17 @@ Private
 
 Import os
 Import reflection
-Import command
-Import commands
+Import wizard.command
+Import wizard.commands
+Import wizard.file
 
 Public
 
 Class App
     Private
 
-    Field commands:StringMap<ClassInfo> = New StringMap<ClassInfo>
+    Field commands:StringMap<ClassInfo> = New StringMap<ClassInfo>()
+    Field openFiles:StringMap<File> = New StringMap<File>()
 
     Public
 
@@ -25,9 +27,18 @@ Class App
 
         If fixedCommand
             ExecuteCommand(fixedCommand)
+            SaveOpenFiles()
         Else
             PrintInvalidCommandError(rawCommand)
         End
+    End
+
+    Method TargetFile:File(filename:String)
+        If Not openFiles.Contains(filename)
+            openFiles.Set(filename, New File(filename))
+        End
+
+        Return openFiles.Get(filename)
     End
 
     Method PrintHelp:Void()
@@ -41,6 +52,12 @@ Class App
     End
 
     Private
+
+    Method SaveOpenFiles:Void()
+        For Local f:File = EachIn openFiles.Values()
+            f.Save()
+        End
+    End
 
     Method FixCase:String(command:String)
         For Local checkCommand:String = EachIn commands.Keys()
