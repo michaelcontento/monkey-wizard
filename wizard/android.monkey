@@ -13,19 +13,19 @@ Class Android Abstract
     End
 
     Function AddPermission:Void(app:App, permission:String)
-        Local match:String = "<application "
-        Local patchStr:String = "<uses-permission " +
-            "android:name=~q" + permission + "~q />"
+        Local addBefore:String = "<application"
+        Local searchStr:String = "uses-permission android:name=~q" + permission + "~q"
+        Local patchStr:String = "<" + searchStr + " />"
         Local target:File = Android.GetManifest(app)
 
-        If target.Contains(patchStr) Then Return
+        If target.Contains(searchStr) Then Return
 
-        If Not target.Contains(match)
+        If Not target.Contains(addBefore)
             app.LogWarning("Unable to add required permission to AndroidManifest.xml")
             app.LogWarning("Please add the following permission manually:")
             app.LogWarning("    " + patchStr)
         Else
-            target.InsertBefore(match, patchStr)
+            target.InsertBefore(addBefore, patchStr)
         End
     End
 
