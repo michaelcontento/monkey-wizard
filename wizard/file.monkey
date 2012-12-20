@@ -59,6 +59,10 @@ Class File
         Return FileExists(path)
     End
 
+    Method Remove:Void()
+        DeleteFile(path)
+    End
+
     Method GetPath:String()
         Return path
     End
@@ -109,6 +113,14 @@ Class File
 
     Method InsertBeforeBetween:Void(match:String, text:String, strStart:String, strEnd:String)
         ReplaceBetween(match, text + "~n" + match, strStart, strEnd)
+    End
+
+    Method Set:Void(text:String)
+        data = text
+    End
+
+    Method Get:String()
+        Return data
     End
 
     Private
