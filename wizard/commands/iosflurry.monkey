@@ -72,7 +72,7 @@ Class IosFlurry Implements Command
             "~t<key>CFBundleShortVersionString</key>" +
             "~t<string>" + VERSION + "</string>" +
             "~t<key>CFBundleSignature</key>" +
-            "~t<string>????</string>" +
+            "~t<string>?</string>" +
             "~t<key>CFBundleVersion</key>" +
             "~t<string>" + VERSION + "</string>" +
             "</dict>" +
