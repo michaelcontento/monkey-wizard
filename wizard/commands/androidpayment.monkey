@@ -41,6 +41,9 @@ Class AndroidPayment Implements Command
         Local src:Dir = app.SourceDir("AndroidBillingLibrary/AndroidBillingLibrary/src")
         Local dst:Dir = app.TargetDir("src_AndroidBillingLibrary/src")
 
+        If Not src.Exists() Then app.LogError(
+            "AndroidBillingLibrary folger seems to be empty! " +
+            "Did you run 'git submodule update --init'?")
         If Not dst.Parent().Exists() Then dst.Parent().Create()
         src.CopyTo(dst)
     End
