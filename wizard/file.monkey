@@ -123,6 +123,10 @@ Class File
         Return data
     End
 
+    Method Append:Void(text:String)
+        data += text
+    End
+
     Private
 
     Method data:String() Property
