@@ -10,7 +10,7 @@ Import wizard.file
 
 Public
 
-Class AndroidPayment Implements Command
+Class GooglePayment Implements Command
     Method Run:Void(app:App)
         Android.AddPermission(app, "android.permission.INTERNET")
         Android.AddPermission(app, "com.android.vending.BILLING")
