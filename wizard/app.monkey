@@ -78,6 +78,10 @@ Class App
         ExitApp(2)
     End
 
+    Method GetAdditionArguments:String[]()
+        Return AppArgs()[3..]
+    End
+
     Private
 
     Method SaveOpenFiles:Void()

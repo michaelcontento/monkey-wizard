@@ -68,7 +68,11 @@ Class File
     End
 
     Method CopyTo:Void(dst:File)
-        CopyFile(path, dst.GetPath())
+        CopyTo(dst.GetPath())
+    End
+
+    Method CopyTo:Void(dst:String)
+        CopyFile(path, dst)
     End
 
     Method Replace:Void(match:String, text:String)
