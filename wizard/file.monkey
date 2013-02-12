@@ -32,6 +32,19 @@ Class File
         Return data.Split("~n")[line - 1]
     End
 
+    Method FindLines:Int[](match:String)
+        Local lines:String[] = data.Split("~n")
+        Local result:IntList = New IntList()
+
+        Local i:Int = 0
+        For Local line:String = EachIn lines
+            If line.Contains(match) Then result.AddLast(i)
+            i += 1
+        End
+
+        Return result.ToArray()
+    End
+
     Method RemoveLine:Void(line:Int)
         Local dataArr:String[] = data.Split("~n")
         data = "~n".Join(dataArr[..line - 1]) +
@@ -89,6 +102,20 @@ Class File
 
     Method InsertBefore:Void(match:String, text:String)
         Replace(match, text + "~n" + match)
+    End
+
+    Method ReplaceLine:Void(line:Int, text:String)
+        Local dataArr:String[] = data.Split("~n")
+        dataArr[line] = text
+        data = "~n".Join(dataArr)
+    End
+
+    Method InsertAfterLine:Void(line:Int, text:String)
+        ReplaceLine(line, GetLine(line) + "~n" + text)
+    End
+
+    Method InsertBeforeLine:Void(line:Int, text:String)
+        ReplaceLine(line, text + "~n" + GetLine(line))
     End
 
     Method ReplaceBetween:Void(match:String, text:String, strStart:String, strEnd:String)
