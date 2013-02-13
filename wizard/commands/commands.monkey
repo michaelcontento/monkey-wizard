@@ -3,6 +3,7 @@ Strict
 Public
 
 Import amazonpayment
+Import androidantkey
 Import androidicons
 Import androidrevmob
 Import androidversion
