@@ -82,7 +82,7 @@ Class AndroidRevmob Implements Command
             "~t~t<LinearLayout~n" +
             "~t~t~tandroid:id=~q@+id/banner~q~n" +
             "~t~t~tandroid:layout_width=~qwrap_content~q~n" +
-            "~t~t~tandroid:layout_height=~qwrap_content~q~n" +
+            "~t~t~tandroid:layout_height=~q48dp~q~n" +
             "~t~t~tandroid:layout_alignParentBottom=~qtrue~q >~n" +
             "~t~t</LinearLayout>~n" +
             "~t</RelativeLayout>~n" +
