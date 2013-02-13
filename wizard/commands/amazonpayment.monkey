@@ -60,10 +60,14 @@ Class AmazonPayment Implements Command
         Local json:File = app.SourceFile("amazon.sdktester.json")
 
         app.LogInfo("Monkey interface can be found here: http://goo.gl/JGfIm")
+        app.LogInfo("")
         app.LogInfo("And if you want to test the IAP process please note this files:")
         app.LogInfo("1) Amazon SDK Tester App")
         app.LogInfo("   => " + tester.GetPath())
         app.LogInfo("2) Example SDKTester JSON file")
         app.LogInfo("   => " + json.GetPath())
+        app.LogInfo("")
+        app.LogInfo("Unsure how or where to push the json file?")
+        app.LogInfo("   => adb push amazon.sdktester.json /mnt/sdcard/amazon.sdktester.json")
     End
 End
