@@ -8,7 +8,7 @@ Import wizard.ios
 
 Public
 
-Class IosAddFramework Implements Command
+Class IosFramework Implements Command
     Method Run:Void(app:App)
         If app.GetAdditionArguments().Length() <> 2
             app.LogInfo("First argument must be the name of the framework")

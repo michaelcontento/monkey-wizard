@@ -8,9 +8,9 @@ Import androidicons
 Import androidrevmob
 Import androidversion
 Import googlepayment
-Import iosaddframework
 Import iosbundleid
 Import iosflurry
 Import iosflurryads
+Import iosframework
 Import iosrevmob
 Import iosversion
