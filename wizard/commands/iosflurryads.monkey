@@ -16,10 +16,7 @@ Class IosFlurryAds Implements Command
     Method Run:Void(app:App)
         Ios.AddFrameworkSystemConfiguration(app)
 
-        Ios.AddFrameworkFromPath(app,
-            "FlurryAds.framework",
-            "C881932B1682981E00B054F9",
-            "C881932A1682981E00B054F9")
+        Ios.AddFrameworkFromPath(app, "FlurryAds.framework")
         CopyFramework(app)
 
         app.LogInfo("!! You need to add IosFlurry too !!")

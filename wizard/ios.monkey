@@ -9,30 +9,21 @@ Public
 
 Class Ios Abstract
     Function AddFrameworkAdSupport:Void(app:App, optional:Bool=False)
-        AddFramework(app,
-            "AdSupport.framework",
-            "C82D748416827CC600AFC5FC",
-            "C82D748316827CC600AFC5FC",
-            optional)
+        AddFramework(app, "AdSupport.framework", optional)
     End
 
     Function AddFrameworkSystemConfiguration:Void(app:App, optional:Bool=False)
-        AddFramework(app,
-            "SystemConfiguration.framework",
-            "C836AAD516827E7400CA5862",
-            "C836AAD416827E7400CA5862",
-            optional)
+        AddFramework(app, "SystemConfiguration.framework", optional)
     End
 
     Function AddFrameworkStoreKit:Void(app:App, optional:Bool=False)
-        AddFramework(app,
-            "StoreKit.framework",
-            "C836AAD216827E6F00CA5862",
-            "C836AAD116827E6F00CA5862",
-            optional)
+        AddFramework(app, "StoreKit.framework", optional)
     End
 
-    Function AddFramework:Void(app:App, name:String, firstId:String, secondId:String, optional:Bool=False)
+    Function AddFramework:Void(app:App, name:String, optional:Bool=False)
+        Local firstId:String = GenerateUniqueId(GetProject(app))
+        Local secondId:String = GenerateUniqueId(GetProject(app))
+
         AddPbxFileReferenceSdk(app, name, secondId)
 
         AddPbxBuildFile(app, name, firstId, secondId, optional)
@@ -40,7 +31,10 @@ Class Ios Abstract
         AddPbxGroup(app, name, secondId)
     End
 
-    Function AddFrameworkFromPath:Void(app:App, name:String, firstId:String, secondId:String, optional:Bool=False)
+    Function AddFrameworkFromPath:Void(app:App, name:String, optional:Bool=False)
+        Local firstId:String = GenerateUniqueId(GetProject(app))
+        Local secondId:String = GenerateUniqueId(GetProject(app))
+
         AddPbxFileReferencePath(app, name, secondId)
         EnsureSearchPathWithSRCROOT(app, "Debug")
         EnsureSearchPathWithSRCROOT(app, "Release")
@@ -55,6 +49,42 @@ Class Ios Abstract
     End
 
     Private
+
+    ' Copied from michaelcontento/bono
+    ' See: https://github.com/michaelcontento/bono/blob/master/src/helper/mathhelper.monkey#L56-L67
+    Const HEX_CHARS:String = "0123456789ABCDEF"
+    Function IntToHex:String(value:Int)
+        If value < 9 Then Return "" + value
+
+        Local result:String
+
+        While value > 0
+            result = String.FromChar(HEX_CHARS[(value Mod 16)]) + result
+            value /= 16
+        End
+
+        Return result
+    End
+
+    Function GenerateUniqueId:String(file:File)
+        Local result:String
+
+        Repeat
+            result = GenerateRandomId()
+        Until Not file.Contains(result)
+
+        Return result
+    End
+
+    Function GenerateRandomId:String()
+        Local result:String = ""
+        While result.Length() < 24
+            result += IntToHex(Rnd(0, 17))
+        End
+
+        ' Ensure length of 24 even if the last random number was 10
+        Return result[0..24]
+    End
 
     Function EnsureSearchPathWithSRCROOT:Void(app:App, config:String)
         Local searchStr:String = "FRAMEWORK_SEARCH_PATHS"

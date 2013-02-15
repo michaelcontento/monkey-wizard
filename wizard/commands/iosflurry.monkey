@@ -16,10 +16,7 @@ Class IosFlurry Implements Command
     Method Run:Void(app:App)
         Ios.AddFrameworkSystemConfiguration(app)
 
-        Ios.AddFrameworkFromPath(app,
-            "Flurry.framework",
-            "C8819326168296B000B054F9",
-            "C8819325168296B000B054F9")
+        Ios.AddFrameworkFromPath(app, "Flurry.framework")
         CopyFramework(app)
 
         app.LogInfo("Monkey interface can be found here: http://goo.gl/d7jh5")

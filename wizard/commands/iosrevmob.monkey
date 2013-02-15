@@ -16,10 +16,7 @@ Class IosRevmob Implements Command
         Ios.AddFrameworkStoreKit(app)
         Ios.AddFrameworkSystemConfiguration(app)
 
-        Ios.AddFrameworkFromPath(app,
-            "RevMobAds.framework",
-            "C8E07091168282A200693F9F",
-            "C8E07090168282A200693F9F")
+        Ios.AddFrameworkFromPath(app, "RevMobAds.framework")
         CopyFramework(app)
 
         app.LogInfo("Monkey interface can be found here: http://goo.gl/yVTiV")
