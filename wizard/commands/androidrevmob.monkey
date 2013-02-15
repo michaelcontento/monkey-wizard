@@ -11,7 +11,7 @@ Import wizard.file
 Public
 
 Class AndroidRevmob Implements Command
-    Const VERSION:String = "5.1.1"
+    Const VERSION:String = "5.2.3"
 
     Method Run:Void(app:App)
         PatchActivity(app)
