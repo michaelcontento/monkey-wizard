@@ -9,6 +9,8 @@ Public
 
 Class Ios Abstract
     Function AddFramework:Void(app:App, name:String, optional:Bool=False)
+        If ContainsFramework(app, name) Then Return
+
         Local firstId:String = GenerateUniqueId(GetProject(app))
         Local secondId:String = GenerateUniqueId(GetProject(app))
 
@@ -20,6 +22,8 @@ Class Ios Abstract
     End
 
     Function AddFrameworkFromPath:Void(app:App, name:String, optional:Bool=False)
+        If ContainsFramework(app, name) Then Return
+
         Local firstId:String = GenerateUniqueId(GetProject(app))
         Local secondId:String = GenerateUniqueId(GetProject(app))
 
@@ -34,6 +38,10 @@ Class Ios Abstract
 
     Function GetProject:File(app:App)
         Return app.TargetFile("MonkeyGame.xcodeproj/project.pbxproj")
+    End
+
+    Function ContainsFramework:Bool(app:App, name:String)
+        Return GetProject(app).Contains("/* " + name + " ")
     End
 
     Private
