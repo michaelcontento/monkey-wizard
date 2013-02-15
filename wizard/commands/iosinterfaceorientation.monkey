@@ -58,7 +58,6 @@ Class IosInterfaceOrientation Implements Command
         If rows <= 0 Then Return
 
         For Local i := rows To 0 Step -1
-            Print file.GetLine(startLine + i)
             file.RemoveLine(startLine + i)
         End
     End
