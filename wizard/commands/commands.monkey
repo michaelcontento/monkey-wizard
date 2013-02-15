@@ -14,6 +14,7 @@ Import iosdeploymenttarget
 Import iosflurry
 Import iosflurryads
 Import iosframework
+Import ioshidestatusbar
 Import iosproductname
 Import iosrevmob
 Import iosversion
