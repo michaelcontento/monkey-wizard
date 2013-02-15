@@ -8,18 +8,6 @@ Import wizard.file
 Public
 
 Class Ios Abstract
-    Function AddFrameworkAdSupport:Void(app:App, optional:Bool=False)
-        AddFramework(app, "AdSupport.framework", optional)
-    End
-
-    Function AddFrameworkSystemConfiguration:Void(app:App, optional:Bool=False)
-        AddFramework(app, "SystemConfiguration.framework", optional)
-    End
-
-    Function AddFrameworkStoreKit:Void(app:App, optional:Bool=False)
-        AddFramework(app, "StoreKit.framework", optional)
-    End
-
     Function AddFramework:Void(app:App, name:String, optional:Bool=False)
         Local firstId:String = GenerateUniqueId(GetProject(app))
         Local secondId:String = GenerateUniqueId(GetProject(app))
