@@ -5,7 +5,7 @@
  Class responsable for handle the Fullscreen ad unit.
 
  */
-@interface RevMobFullscreen : NSObject <RevMobAdsDelegate>
+@interface RevMobFullscreen : NSObject
 
 /**
  The delegate setted on this property is called when ad related events happend, see
