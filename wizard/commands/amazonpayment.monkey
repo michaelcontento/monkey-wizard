@@ -14,7 +14,7 @@ Class AmazonPayment Implements Command
     Const VERSION:String = "1.0.3"
 
     Method Run:Void(app:App)
-        Android.AddPermission(app, "android.permission.INTERNET")
+        Android.AddPermission("android.permission.INTERNET")
         PatchReceiver(app)
         CopyLibs(app)
         PrintDeveloperHints(app)
@@ -31,7 +31,7 @@ Class AmazonPayment Implements Command
             "~t~tandroid:permission=~qcom.amazon.inapp.purchasing.Permission.NOTIFY~q />~n" +
             "~t</intent-filter>" +
             "</receiver>"
-        Local target:File = Android.GetManifest(app)
+        Local target:File = Android.GetManifest()
 
         If target.Contains("com.amazon.inapp.purchasing.ResponseReceiver")
             Return
@@ -47,7 +47,7 @@ Class AmazonPayment Implements Command
     End
 
     Method CopyLibs:Void(app:App)
-        Android.EnsureLibsFolder(app)
+        Android.EnsureLibsFolder()
 
         Local src:File = app.SourceFile("in-app-purchasing-" + VERSION + ".jar")
         Local dst:File = app.TargetFile("libs/in-app-purchasing-" + VERSION + ".jar")

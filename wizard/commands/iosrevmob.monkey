@@ -12,11 +12,11 @@ Public
 
 Class IosRevmob Implements Command
     Method Run:Void(app:App)
-        Ios.AddFramework(app, "AdSupport.framework", True)
-        Ios.AddFramework(app, "StoreKit.framework")
-        Ios.AddFramework(app, "SystemConfiguration.framework")
+        Ios.AddFramework("AdSupport.framework", True)
+        Ios.AddFramework("StoreKit.framework")
+        Ios.AddFramework("SystemConfiguration.framework")
 
-        Ios.AddFrameworkFromPath(app, "RevMobAds.framework")
+        Ios.AddFrameworkFromPath("RevMobAds.framework")
         CopyFramework(app)
 
         app.LogInfo("Monkey interface can be found here: http://goo.gl/yVTiV")

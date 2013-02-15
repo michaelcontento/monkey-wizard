@@ -10,7 +10,7 @@ Public
 
 Class IosVersion Implements Command
     Method Run:Void(app:App)
-        Ios.UpdatePlistSetting(app, "CFBundleVersion", GetVersion(app))
+        Ios.UpdatePlistSetting("CFBundleVersion", GetVersion(app))
     End
 
     Private

@@ -8,15 +8,17 @@ Import wizard.file
 Public
 
 Class Android Abstract
-    Function GetManifest:File(app:App)
+    Global app:App
+
+    Function GetManifest:File()
         Return app.TargetFile("templates/AndroidManifest.xml")
     End
 
-    Function AddPermission:Void(app:App, permission:String)
+    Function AddPermission:Void(permission:String)
         Local addBefore:String = "<application"
         Local searchStr:String = "uses-permission android:name=~q" + permission + "~q"
         Local patchStr:String = "<" + searchStr + " />"
-        Local target:File = Android.GetManifest(app)
+        Local target:File = Android.GetManifest()
 
         If target.Contains(searchStr) Then Return
 
@@ -29,7 +31,7 @@ Class Android Abstract
         End
     End
 
-    Function EnsureLibsFolder:Void(app:App)
+    Function EnsureLibsFolder:Void()
         app.TargetDir("libs").Create()
     End
 End

@@ -8,52 +8,54 @@ Import wizard.file
 Public
 
 Class Ios Abstract
-    Function AddFramework:Void(app:App, name:String, optional:Bool=False)
-        If ContainsFramework(app, name) Then Return
+    Global app:App
 
-        Local firstId:String = GenerateUniqueId(app)
-        Local secondId:String = GenerateUniqueId(app)
+    Function AddFramework:Void(name:String, optional:Bool=False)
+        If ContainsFramework(name) Then Return
 
-        AddPbxFileReferenceSdk(app, name, secondId)
+        Local firstId:String = GenerateUniqueId()
+        Local secondId:String = GenerateUniqueId()
 
-        AddPbxBuildFile(app, name, firstId, secondId, optional)
-        AddPbxFrameworkBuildPhase(app, name, firstId)
-        AddPbxGroup(app, name, secondId)
+        AddPbxFileReferenceSdk(name, secondId)
+
+        AddPbxBuildFile(name, firstId, secondId, optional)
+        AddPbxFrameworkBuildPhase(name, firstId)
+        AddPbxGroup(name, secondId)
     End
 
-    Function AddFrameworkFromPath:Void(app:App, name:String, optional:Bool=False)
-        If ContainsFramework(app, name) Then Return
+    Function AddFrameworkFromPath:Void(name:String, optional:Bool=False)
+        If ContainsFramework(name) Then Return
 
-        Local firstId:String = GenerateUniqueId(app)
-        Local secondId:String = GenerateUniqueId(app)
+        Local firstId:String = GenerateUniqueId()
+        Local secondId:String = GenerateUniqueId()
 
-        AddPbxFileReferencePath(app, name, secondId)
-        EnsureSearchPathWithSRCROOT(app, "Debug")
-        EnsureSearchPathWithSRCROOT(app, "Release")
+        AddPbxFileReferencePath(name, secondId)
+        EnsureSearchPathWithSRCROOT("Debug")
+        EnsureSearchPathWithSRCROOT("Release")
 
-        AddPbxBuildFile(app, name, firstId, secondId, optional)
-        AddPbxFrameworkBuildPhase(app, name, firstId)
-        AddPbxGroup(app, name, secondId)
+        AddPbxBuildFile(name, firstId, secondId, optional)
+        AddPbxFrameworkBuildPhase(name, firstId)
+        AddPbxGroup(name, secondId)
     End
 
-    Function GetProject:File(app:App)
+    Function GetProject:File()
         Return app.TargetFile("MonkeyGame.xcodeproj/project.pbxproj")
     End
 
-    Function GetPlist:File(app:App)
+    Function GetPlist:File()
         Return app.TargetFile("MonkeyGame-Info.plist")
     End
 
-    Function ContainsFramework:Bool(app:App, name:String)
-        Return GetProject(app).Contains("/* " + name + " ")
+    Function ContainsFramework:Bool(name:String)
+        Return GetProject().Contains("/* " + name + " ")
     End
 
-    Function UpdatePlistSetting:Void(app:App, key:String, value:String)
-        Local plist:File = GetPlist(app)
+    Function UpdatePlistSetting:Void(key:String, value:String)
+        Local plist:File = GetPlist()
 
-        Local keyLine:Int = GetKeyLine(app, plist, key)
+        Local keyLine:Int = GetKeyLine(plist, key)
         Local valueLine:Int = keyLine + 1
-        ValidateValueLine(app, plist, valueLine)
+        ValidateValueLine(plist, valueLine)
 
         Local newVersion:String = "~t<string>" + value + "</string>"
         plist.ReplaceLine(valueLine, newVersion)
@@ -61,7 +63,7 @@ Class Ios Abstract
 
     Private
 
-    Function GetKeyLine:Int(app:App, plist:File, key:String)
+    Function GetKeyLine:Int(plist:File, key:String)
         Local lines:Int[] = plist.FindLines("<key>" + key + "</key>")
 
         If lines.Length() <> 1
@@ -71,7 +73,7 @@ Class Ios Abstract
         Return lines[0]
     End
 
-    Function ValidateValueLine:Void(app:App, plist:File, line:Int)
+    Function ValidateValueLine:Void(plist:File, line:Int)
         Local lineStr:String = plist.GetLine(line)
         Local hasStrStart:Bool = lineStr.Contains("<string>")
         Local hasStrEnd:Bool = lineStr.Contains("</string>")
@@ -97,8 +99,8 @@ Class Ios Abstract
         Return result
     End
 
-    Function GenerateUniqueId:String(app:App)
-        Local file:File = GetProject(app)
+    Function GenerateUniqueId:String()
+        Local file:File = GetProject()
         Local result:String
 
         Repeat
@@ -118,13 +120,13 @@ Class Ios Abstract
         Return result[0..24]
     End
 
-    Function EnsureSearchPathWithSRCROOT:Void(app:App, config:String)
+    Function EnsureSearchPathWithSRCROOT:Void(config:String)
         Local searchStr:String = "FRAMEWORK_SEARCH_PATHS"
         Local searchBegin:String = "" +
             "/* " + config + " */ = {~n" +
             "~t~t~tisa = XCBuildConfiguration;"
         Local searchEnd:String = "name = " + config + ";"
-        Local target:File = GetProject(app)
+        Local target:File = GetProject()
 
         ' Whole setting is missing
         If Not target.ContainsBetween(searchStr, searchBegin, searchEnd)
@@ -146,12 +148,12 @@ Class Ios Abstract
         End
     End
 
-    Function AddPbxGroup:Void(app:App, name:String, id:String)
+    Function AddPbxGroup:Void(name:String, id:String)
         Local patchStr:String = "~t~t~t~t" + id + " /* " + name + " in Frameworks */,"
         Local searchBegin:String = "29B97323FDCFA39411CA2CEA /* Frameworks */ = {"
         Local searchEnd:String = "End PBXGroup section"
         Local addAfter:String = "children = ("
-        Local target:File = GetProject(app)
+        Local target:File = GetProject()
 
         If target.ContainsBetween(patchStr, searchBegin, searchEnd) Then Return
 
@@ -163,12 +165,12 @@ Class Ios Abstract
         End
     End
 
-    Function AddPbxFrameworkBuildPhase:Void(app:App, name:String, id:String)
+    Function AddPbxFrameworkBuildPhase:Void(name:String, id:String)
         Local patchStr:String = "~t~t~t~t" + id + " /* " + name + " in Frameworks */,"
         Local searchBegin:String = "Begin PBXFrameworksBuildPhase section"
         Local searchEnd:String = "End PBXFrameworksBuildPhase section"
         Local addAfter:String = "files = ("
-        Local target:File = GetProject(app)
+        Local target:File = GetProject()
 
         If target.ContainsBetween(patchStr, searchBegin, searchEnd) Then Return
 
@@ -180,7 +182,7 @@ Class Ios Abstract
         End
     End
 
-    Function AddPbxFileReferenceSdk:Void(app:App, name:String, id:String)
+    Function AddPbxFileReferenceSdk:Void(name:String, id:String)
         Local patchStr:String = "~t~t" +
             id + " " +
             "/* " + name + "*/ = " +
@@ -190,10 +192,10 @@ Class Ios Abstract
             "path = System/Library/Frameworks/" + name + "; " +
             "sourceTree = SDKROOT; };"
 
-        AddPbxFileReference(app, name, patchStr)
+        AddPbxFileReference(name, patchStr)
     End
 
-    Function AddPbxFileReferencePath:Void(app:App, name:String, id:String)
+    Function AddPbxFileReferencePath:Void(name:String, id:String)
         Local patchStr:String = "~t~t" +
             id + " " +
             "/* " + name + " */ = " +
@@ -201,12 +203,12 @@ Class Ios Abstract
             "lastKnownFileType = wrapper.framework; " +
             "path = " + name + "; sourceTree = ~q<group>~q; };"
 
-        AddPbxFileReference(app, name, patchStr)
+        AddPbxFileReference(name, patchStr)
     End
 
-    Function AddPbxFileReference:Void(app:App, name:String, patchStr:String)
+    Function AddPbxFileReference:Void(name:String, patchStr:String)
         Local match:String = "/* End PBXFileReference section"
-        Local target:File = GetProject(app)
+        Local target:File = GetProject()
 
         If target.Contains(patchStr) Then Return
 
@@ -218,7 +220,7 @@ Class Ios Abstract
         End
     End
 
-    Function AddPbxBuildFile:Void(app:App, name:String, firstId:String, secondId:string, optional:Bool)
+    Function AddPbxBuildFile:Void(name:String, firstId:String, secondId:string, optional:Bool)
         Local settings:String = ""
         If optional
             settings = "settings = {ATTRIBUTES = (Weak, ); };"
@@ -231,7 +233,7 @@ Class Ios Abstract
             "{isa = PBXBuildFile; " +
             "fileRef = " + secondId + " /* " + name + "*/; " +
             settings + " };"
-        Local target:File = GetProject(app)
+        Local target:File = GetProject()
 
         If target.Contains(patchStr) Then Return
 

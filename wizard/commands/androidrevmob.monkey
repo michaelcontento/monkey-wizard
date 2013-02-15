@@ -15,7 +15,7 @@ Class AndroidRevmob Implements Command
 
     Method Run:Void(app:App)
         PatchActivity(app)
-        PatchPermissions(app)
+        PatchPermissions()
         CopyLibs(app)
         PatchLayout(app)
         app.LogInfo("Monkey interface can be found here: http://goo.gl/yVTiV")
@@ -29,7 +29,7 @@ Class AndroidRevmob Implements Command
             "~tandroid:name=~qcom.revmob.ads.fullscreen.FullscreenActivity~q~n" +
             "~tandroid:configChanges=~qkeyboardHidden|orientation~q >~n" +
             "</activity>"
-        Local target:File = Android.GetManifest(app)
+        Local target:File = Android.GetManifest()
 
         If target.Contains("com.revmob.ads.fullscreen.FullscreenActivity")
             Return
@@ -44,15 +44,15 @@ Class AndroidRevmob Implements Command
         End
     End
 
-    Method PatchPermissions:Void(app:App)
-        Android.AddPermission(app, "android.permission.ACCESS_NETWORK_STATE")
-        Android.AddPermission(app, "android.permission.ACCESS_WIFI_STATE")
-        Android.AddPermission(app, "android.permission.INTERNET")
-        Android.AddPermission(app, "android.permission.READ_PHONE_STATE")
+    Method PatchPermissions:Void()
+        Android.AddPermission("android.permission.ACCESS_NETWORK_STATE")
+        Android.AddPermission("android.permission.ACCESS_WIFI_STATE")
+        Android.AddPermission("android.permission.INTERNET")
+        Android.AddPermission("android.permission.READ_PHONE_STATE")
     End
 
     Method CopyLibs:Void(app:App)
-        Android.EnsureLibsFolder(app)
+        Android.EnsureLibsFolder()
 
         Local src:File = app.SourceFile("revmob-" + VERSION + ".jar")
         Local dst:File = app.TargetFile("libs/revmob-" + VERSION + ".jar")

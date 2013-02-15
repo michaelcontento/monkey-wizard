@@ -10,7 +10,7 @@ Public
 
 Class IosBundleId Implements Command
     Method Run:Void(app:App)
-        Ios.UpdatePlistSetting(app, "CFBundleIdentifier", GetBundleId(app))
+        Ios.UpdatePlistSetting("CFBundleIdentifier", GetBundleId(app))
     End
 
     Private

@@ -15,7 +15,7 @@ Class AndroidVersion Implements Command
             app.LogError("First argument must be the new version")
         End
 
-        Local manifest := Android.GetManifest(app)
+        Local manifest := Android.GetManifest()
         Local codeLines := manifest.FindLines("android:versionCode")
         Local nameLines := manifest.FindLines("android:versionName")
 

@@ -6,11 +6,13 @@ Private
 
 Import os
 Import reflection
+Import wizard.android
 Import wizard.command
 Import wizard.commands
 Import wizard.dir
 Import wizard.file
 Import wizard.helperos
+Import wizard.ios
 
 Public
 
@@ -28,6 +30,9 @@ Class App
         CheckTargetDirExists()
 
         If GetCommand()
+            Ios.app = Self
+            Android.app = Self
+
             ExecuteCommand(GetCommand())
             SaveOpenFiles()
         Else

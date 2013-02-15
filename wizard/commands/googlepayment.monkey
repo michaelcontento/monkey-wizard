@@ -12,8 +12,8 @@ Public
 
 Class GooglePayment Implements Command
     Method Run:Void(app:App)
-        Android.AddPermission(app, "android.permission.INTERNET")
-        Android.AddPermission(app, "com.android.vending.BILLING")
+        Android.AddPermission("android.permission.INTERNET")
+        Android.AddPermission("com.android.vending.BILLING")
         PatchServiceAndReceiver(app)
 
         CopyAndroidBillingLibrary(app)
@@ -36,7 +36,7 @@ Class GooglePayment Implements Command
             "~t~t<action android:name=~qcom.android.vending.billing.PURCHASE_STATE_CHANGED~q />~n" +
             "~t</intent-filter>~n" +
             "</receiver>"
-        Local target:File = Android.GetManifest(app)
+        Local target:File = Android.GetManifest()
 
         If target.Contains("net.robotmedia.billing.BillingService")
             Return

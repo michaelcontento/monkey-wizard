@@ -14,9 +14,9 @@ Class IosFlurryAds Implements Command
     Const VERSION:String = "4.1.0"
 
     Method Run:Void(app:App)
-        Ios.AddFramework(app, "SystemConfiguration.framework")
+        Ios.AddFramework("SystemConfiguration.framework")
 
-        Ios.AddFrameworkFromPath(app, "FlurryAds.framework")
+        Ios.AddFrameworkFromPath("FlurryAds.framework")
         CopyFramework(app)
 
         app.LogInfo("!! You need to add IosFlurry too !!")

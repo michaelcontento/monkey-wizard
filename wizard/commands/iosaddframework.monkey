@@ -18,6 +18,6 @@ Class IosAddFramework Implements Command
 
         Local name:String = app.GetAdditionArguments()[0]
         Local optional:Bool = (app.GetAdditionArguments()[1] = "1")
-        Ios.AddFramework(app, name, optional)
+        Ios.AddFramework(name, optional)
     End
 End
