@@ -9,6 +9,7 @@ Import androidrevmob
 Import androidversion
 Import googlepayment
 Import iosbundleid
+Import ioscompresspngfiles
 Import iosdeploymenttarget
 Import iosflurry
 Import iosflurryads
