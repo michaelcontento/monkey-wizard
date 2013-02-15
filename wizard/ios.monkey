@@ -40,6 +40,10 @@ Class Ios Abstract
         Return app.TargetFile("MonkeyGame.xcodeproj/project.pbxproj")
     End
 
+    Function GetPlist:File(app:App)
+        Return app.TargetFile("MonkeyGame-Info.plist")
+    End
+
     Function ContainsFramework:Bool(app:App, name:String)
         Return GetProject(app).Contains("/* " + name + " ")
     End

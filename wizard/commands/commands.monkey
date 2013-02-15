@@ -12,3 +12,4 @@ Import iosaddframework
 Import iosflurry
 Import iosflurryads
 Import iosrevmob
+Import iosversion
