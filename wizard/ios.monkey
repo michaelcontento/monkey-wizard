@@ -11,8 +11,8 @@ Class Ios Abstract
     Function AddFramework:Void(app:App, name:String, optional:Bool=False)
         If ContainsFramework(app, name) Then Return
 
-        Local firstId:String = GenerateUniqueId(GetProject(app))
-        Local secondId:String = GenerateUniqueId(GetProject(app))
+        Local firstId:String = GenerateUniqueId(app)
+        Local secondId:String = GenerateUniqueId(app)
 
         AddPbxFileReferenceSdk(app, name, secondId)
 
@@ -24,8 +24,8 @@ Class Ios Abstract
     Function AddFrameworkFromPath:Void(app:App, name:String, optional:Bool=False)
         If ContainsFramework(app, name) Then Return
 
-        Local firstId:String = GenerateUniqueId(GetProject(app))
-        Local secondId:String = GenerateUniqueId(GetProject(app))
+        Local firstId:String = GenerateUniqueId(app)
+        Local secondId:String = GenerateUniqueId(app)
 
         AddPbxFileReferencePath(app, name, secondId)
         EnsureSearchPathWithSRCROOT(app, "Debug")
@@ -62,7 +62,8 @@ Class Ios Abstract
         Return result
     End
 
-    Function GenerateUniqueId:String(file:File)
+    Function GenerateUniqueId:String(app:App)
+        Local file:File = GetProject(app)
         Local result:String
 
         Repeat
