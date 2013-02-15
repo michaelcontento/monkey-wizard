@@ -50,6 +50,41 @@ Class Ios Abstract
         Return GetProject().Contains("/* " + name + " ")
     End
 
+    Function UpdateProjectSetting:Void(key:String, newValue:String)
+        Local oldValue := GetProjectSetting(key)
+
+        Local file := GetProject()
+        file.Replace(
+            key + " = " + oldValue + ";",
+            key + " = " + newValue + ";")
+    End
+
+    Function GetProjectSetting:String(key:String)
+        Local file := GetProject()
+        Local lines := file.FindLines(key + " = ")
+
+        If lines.Length() = 0
+            app.LogError("No current " + key + " found")
+        End
+
+        Local lastValue := ""
+        For Local i := 0 Until lines.Length()
+            Local currValue := ExtractSettingKey(file.GetLine(lines[i]))
+
+            If lastValue And lastValue <> currValue
+                app.LogError("Different old " + key + " settings found")
+            End
+
+            lastValue = currValue
+        End
+
+        If lastValue.Length() <= 0
+            app.LogError("No old " + key + " found")
+        End
+
+        Return lastValue
+    End
+
     Function UpdatePlistSetting:Void(key:String, value:String)
         Local plist:File = GetPlist()
 
@@ -62,6 +97,13 @@ Class Ios Abstract
     End
 
     Private
+
+    Function ExtractSettingKey:String(row:String)
+        Local parts := row.Split(" ")
+        Local key := parts[parts.Length() - 1]
+        Return key.Replace(";", "").Trim()
+    End
+
 
     Function GetKeyLine:Int(plist:File, key:String)
         Local lines:Int[] = plist.FindLines("<key>" + key + "</key>")
