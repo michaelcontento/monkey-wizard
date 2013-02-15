@@ -8,41 +8,44 @@ Import wizard.file
 Public
 
 Class Ios Abstract
-    Function AddFrameworkAdSupport:Void(app:App)
+    Function AddFrameworkAdSupport:Void(app:App, optional:Bool=False)
         AddFramework(app,
             "AdSupport.framework",
             "C82D748416827CC600AFC5FC",
-            "C82D748316827CC600AFC5FC")
+            "C82D748316827CC600AFC5FC",
+            optional)
     End
 
-    Function AddFrameworkSystemConfiguration:Void(app:App)
+    Function AddFrameworkSystemConfiguration:Void(app:App, optional:Bool=False)
         AddFramework(app,
             "SystemConfiguration.framework",
             "C836AAD516827E7400CA5862",
-            "C836AAD416827E7400CA5862")
+            "C836AAD416827E7400CA5862",
+            optional)
     End
 
-    Function AddFrameworkStoreKit:Void(app:App)
+    Function AddFrameworkStoreKit:Void(app:App, optional:Bool=False)
         AddFramework(app,
             "StoreKit.framework",
             "C836AAD216827E6F00CA5862",
-            "C836AAD116827E6F00CA5862")
+            "C836AAD116827E6F00CA5862",
+            optional)
     End
 
-    Function AddFramework:Void(app:App, name:String, firstId:String, secondId:String)
+    Function AddFramework:Void(app:App, name:String, firstId:String, secondId:String, optional:Bool=False)
         AddPbxFileReferenceSdk(app, name, secondId)
 
-        AddPbxBuildFile(app, name, firstId, secondId)
+        AddPbxBuildFile(app, name, firstId, secondId, optional)
         AddPbxFrameworkBuildPhase(app, name, firstId)
         AddPbxGroup(app, name, secondId)
     End
 
-    Function AddFrameworkFromPath:Void(app:App, name:String, firstId:String, secondId:String)
+    Function AddFrameworkFromPath:Void(app:App, name:String, firstId:String, secondId:String, optional:Bool=False)
         AddPbxFileReferencePath(app, name, secondId)
         EnsureSearchPathWithSRCROOT(app, "Debug")
         EnsureSearchPathWithSRCROOT(app, "Release")
 
-        AddPbxBuildFile(app, name, firstId, secondId)
+        AddPbxBuildFile(app, name, firstId, secondId, optional)
         AddPbxFrameworkBuildPhase(app, name, firstId)
         AddPbxGroup(app, name, secondId)
     End
@@ -153,13 +156,19 @@ Class Ios Abstract
         End
     End
 
-    Function AddPbxBuildFile:Void(app:App, name:String, firstId:String, secondId:string)
+    Function AddPbxBuildFile:Void(app:App, name:String, firstId:String, secondId:string, optional:Bool)
+        Local settings:String = ""
+        If optional
+            settings = "settings = {ATTRIBUTES = (Weak, ); };"
+        End
+
         Local match:String = "/* End PBXBuildFile section"
         Local patchStr:String = "~t~t" +
             firstId + " " +
             "/* " + name + " in Frameworks */ = " +
             "{isa = PBXBuildFile; " +
-            "fileRef = " + secondId + " /* " + name + "*/; };"
+            "fileRef = " + secondId + " /* " + name + "*/; " +
+            settings + " };"
         Local target:File = GetProject(app)
 
         If target.Contains(patchStr) Then Return

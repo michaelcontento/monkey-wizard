@@ -12,7 +12,7 @@ Public
 
 Class IosRevmob Implements Command
     Method Run:Void(app:App)
-        Ios.AddFrameworkAdSupport(app)
+        Ios.AddFrameworkAdSupport(app, True)
         Ios.AddFrameworkStoreKit(app)
         Ios.AddFrameworkSystemConfiguration(app)
 
