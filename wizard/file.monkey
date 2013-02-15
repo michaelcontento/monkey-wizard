@@ -36,7 +36,7 @@ Class File
         Local lines:String[] = data.Split("~n")
         Local result:IntList = New IntList()
 
-        Local i:Int = 0
+        Local i:Int = 1
         For Local line:String = EachIn lines
             If line.Contains(match) Then result.AddLast(i)
             i += 1
@@ -106,7 +106,7 @@ Class File
 
     Method ReplaceLine:Void(line:Int, text:String)
         Local dataArr:String[] = data.Split("~n")
-        dataArr[line] = text
+        dataArr[line - 1] = text
         data = "~n".Join(dataArr)
     End
 
