@@ -15,6 +15,7 @@ Import iosflurry
 Import iosflurryads
 Import iosframework
 Import ioshidestatusbar
+Import iosinterfaceorientation
 Import iosproductname
 Import iosrevmob
 Import iosversion
