@@ -48,7 +48,38 @@ Class Ios Abstract
         Return GetProject(app).Contains("/* " + name + " ")
     End
 
+    Function UpdatePlistSetting:Void(app:App, key:String, value:String)
+        Local plist:File = GetPlist(app)
+
+        Local keyLine:Int = GetKeyLine(app, plist, key)
+        Local valueLine:Int = keyLine + 1
+        ValidateValueLine(app, plist, valueLine)
+
+        Local newVersion:String = "~t<string>" + value + "</string>"
+        plist.ReplaceLine(valueLine, newVersion)
+    End
+
     Private
+
+    Function GetKeyLine:Int(app:App, plist:File, key:String)
+        Local lines:Int[] = plist.FindLines("<key>" + key + "</key>")
+
+        If lines.Length() <> 1
+            app.LogError("Found zero Or more than one setting For " + key)
+        End
+
+        Return lines[0]
+    End
+
+    Function ValidateValueLine:Void(app:App, plist:File, line:Int)
+        Local lineStr:String = plist.GetLine(line)
+        Local hasStrStart:Bool = lineStr.Contains("<string>")
+        Local hasStrEnd:Bool = lineStr.Contains("</string>")
+
+        If hasStrStart And hasStrEnd Then Return
+
+        app.LogError("Expected <string></string> after <key>CFBundleVersion</key>")
+    End
 
     ' Copied from michaelcontento/bono
     ' See: https://github.com/michaelcontento/bono/blob/master/src/helper/mathhelper.monkey#L56-L67

@@ -8,16 +8,16 @@ Import wizard.ios
 
 Public
 
-Class IosVersion Implements Command
+Class IosBundleId Implements Command
     Method Run:Void(app:App)
-        Ios.UpdatePlistSetting(app, "CFBundleVersion", GetVersion(app))
+        Ios.UpdatePlistSetting(app, "CFBundleIdentifier", GetBundleId(app))
     End
 
     Private
 
-    Function GetVersion:String(app:App)
+    Function GetBundleId:String(app:App)
         If app.GetAdditionArguments().Length() <> 1
-            app.LogError("Version string argument missing")
+            app.LogError("Bundle id argument missing")
         End
 
         Return app.GetAdditionArguments()[0]
