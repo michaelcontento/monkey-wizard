@@ -80,6 +80,11 @@ Class File
         Return path
     End
 
+    Method GetBasename:String()
+        Local parts:String[] = GetPath().Split("/")
+        Return parts[parts.Length() - 1]
+    End
+
     Method CopyTo:Void(dst:File)
         CopyTo(dst.GetPath())
     End

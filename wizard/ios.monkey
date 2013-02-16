@@ -96,6 +96,17 @@ Class Ios Abstract
         plist.ReplaceLine(valueLine, newVersion)
     End
 
+    Function GenerateUniqueId:String()
+        Local file:File = GetProject()
+        Local result:String
+
+        Repeat
+            result = GenerateRandomId()
+        Until Not file.Contains(result)
+
+        Return result
+    End
+
     Private
 
     Function ExtractSettingKey:String(row:String)
@@ -137,17 +148,6 @@ Class Ios Abstract
             result = String.FromChar(HEX_CHARS[(value Mod 16)]) + result
             value /= 16
         End
-
-        Return result
-    End
-
-    Function GenerateUniqueId:String()
-        Local file:File = GetProject()
-        Local result:String
-
-        Repeat
-            result = GenerateRandomId()
-        Until Not file.Contains(result)
 
         Return result
     End

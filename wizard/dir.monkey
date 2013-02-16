@@ -45,6 +45,6 @@ Class Dir
     End
 
     Method GetPath:String()
-        Return path
+        Return path + "/"
     End
 End
