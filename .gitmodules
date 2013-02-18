@@ -1,3 +1,6 @@
 [submodule "wizard.data/commands/googlepayment/AndroidBillingLibrary"]
 	path = wizard.data/commands/googlepayment/AndroidBillingLibrary
 	url = git://github.com/robotmedia/AndroidBillingLibrary.git
+[submodule "wizard.data/commands/iosappirater/appirater"]
+	path = wizard.data/commands/iosappirater/appirater
+	url = git://github.com/arashpayan/appirater.git

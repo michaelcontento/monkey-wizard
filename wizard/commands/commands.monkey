@@ -8,6 +8,7 @@ Import androidicons
 Import androidrevmob
 Import androidversion
 Import googlepayment
+Import iosappirater
 Import iosbundleid
 Import ioscompresspngfiles
 Import iosdeploymenttarget

@@ -20,7 +20,7 @@ Class Ios Abstract
 
         AddPbxBuildFile(name, firstId, secondId, optional)
         AddPbxFrameworkBuildPhase(name, firstId)
-        AddPbxGroup(name, secondId)
+        AddPbxGroupChild("Frameworks", name, secondId)
     End
 
     Function AddFrameworkFromPath:Void(name:String, optional:Bool=False)
@@ -35,7 +35,7 @@ Class Ios Abstract
 
         AddPbxBuildFile(name, firstId, secondId, optional)
         AddPbxFrameworkBuildPhase(name, firstId)
-        AddPbxGroup(name, secondId)
+        AddPbxGroupChild("Frameworks", name, secondId)
     End
 
     Function GetProject:File()
@@ -107,6 +107,240 @@ Class Ios Abstract
         Return result
     End
 
+    Function EnsurePBXVariantGroupSection:Void()
+        If GetProject().Contains("PBXVariantGroup section") Then Return
+
+        Local match:String = "/* End PBXSourcesBuildPhase section */"
+        Local text:String = "~n" +
+            "/* Begin PBXVariantGroup section */~n" +
+            "/* End PBXVariantGroup section */"
+        GetProject().InsertAfter(match, text)
+    End
+
+    Function AddPBXVariantGroup:Void(id:String, name:String, ids:String[], children:String[])
+        EnsurePBXVariantGroupSection()
+
+        Local childrenRecords:String = ""
+        For Local i:Int = 0 Until children.Length()
+            childrenRecords += "~t~t~t~t" +
+                ids[i] + " /* " + children[i] + " */,~n"
+        End
+
+        Local match:String = "/* End PBXVariantGroup section */"
+        Local text:String = "" +
+            "~t~t" + id + " /* " + name + " */ = {~n" +
+            "~t~t~tisa = PBXVariantGroup;~n" +
+            "~t~t~tchildren = (~n" +
+            childrenRecords +
+            "~t~t~t);~n" +
+            "~t~t~tname = " + name + ";~n" +
+            "~t~t~tsourceTree = ~q<group>~q;~n" +
+            "~t~t};"
+        GetProject().InsertBefore(match, text)
+    End
+
+    Function AddKnownRegion:Void(region:String)
+        Local text:String = "~t~t~t~t~q" + region + "~q,"
+        GetProject().InsertAfter("knownRegions = (", text)
+    End
+
+    Function EnsureSearchPathWithSRCROOT:Void(config:String)
+        Local searchStr:String = "FRAMEWORK_SEARCH_PATHS"
+        Local searchBegin:String = "" +
+            "/* " + config + " */ = {~n" +
+            "~t~t~tisa = XCBuildConfiguration;"
+        Local searchEnd:String = "name = " + config + ";"
+        Local target:File = GetProject()
+
+        ' Whole setting is missing
+        If Not target.ContainsBetween(searchStr, searchBegin, searchEnd)
+            Local addAfter:String = "buildSettings = {"
+            Local patchStr:String = "" +
+                "~t~t~t~tFRAMEWORK_SEARCH_PATHS = (~n" +
+                "~t~t~t~t~t~q$(inherited)~q,~n" +
+                "~t~t~t~t~t~q\~q$(SRCROOT)\~q~q,~n" +
+                "~t~t~t~t);"
+            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
+            Return
+        End
+
+        ' We need just to update the existing setting
+        If Not target.ContainsBetween("$(SRCROOT)", searchBegin, searchEnd)
+            Local addAfter:String = "FRAMEWORK_SEARCH_PATHS = ("
+            Local patchStr:String = "~t~t~t~t~t~q\~q$(SRCROOT)\~q~q,"
+            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
+        End
+    End
+
+    Function AddPbxGroupChild:Void(where:String, name:String, id:String)
+        Local patchStr:String = "~t~t~t~t" + id + " /* " + name + " */,"
+        Local searchBegin:String = " /* " + where + " */ = {"
+        Local searchEnd:String = "End PBXGroup section"
+        Local addAfter:String = "children = ("
+        Local target:File = GetProject()
+
+        If target.ContainsBetween(patchStr, searchBegin, searchEnd) Then Return
+
+        If Not target.ContainsBetween(addAfter, searchBegin, searchEnd)
+            app.LogWarning("Unable to add " + name + " to PBXGroup " + where)
+            app.LogWarning("Please add this framework manually!")
+        Else
+            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
+        End
+    End
+
+    Function AddPbxGroup:Void(name:String, id:String)
+        Local headline:String = id + " /* " + name + " */ = {"
+        If GetProject().Contains(headline) Then Return
+
+        Local text:String = "~t~t" + headline + "~n" +
+            "~t~t~tisa = PBXGroup;~n" +
+            "~t~t~tchildren = (~n" +
+            "~t~t~t);~n" +
+            "~t~t~tpath = appirater;~n" +
+            "~t~t~tsourceTree = ~q<group>~q;~n" +
+            "~t~t};"
+
+        GetProject().InsertBefore("/* End PBXGroup section */", text)
+    End
+
+    Function RegisterPxbGroup:Void(name:String, id:String)
+        Local lines:Int[] = GetProject().FindLines("/* CustomTemplate */ = {")
+        If lines.Length() <> 1
+            app.LogError("Unable to locate CustomTemplate definition")
+        End
+
+        Local childLine:Int = lines[0] + 2
+        If Not GetProject().GetLine(childLine).Contains("children = (")
+            app.LogError("Unable to locate children of CustomTemplate")
+        End
+
+        Local text:String = "~t~t~t~t" + id + " /* " + name + " */,"
+        GetProject().InsertAfterLine(childLine, text)
+    End
+
+    Function AddPbxFrameworkBuildPhase:Void(name:String, id:String)
+        Local patchStr:String = "~t~t~t~t" + id + " /* " + name + " in Frameworks */,"
+        Local searchBegin:String = "Begin PBXFrameworksBuildPhase section"
+        Local searchEnd:String = "End PBXFrameworksBuildPhase section"
+        Local addAfter:String = "files = ("
+        Local target:File = GetProject()
+
+        If target.ContainsBetween(patchStr, searchBegin, searchEnd) Then Return
+
+        If Not target.ContainsBetween(addAfter, searchBegin, searchEnd)
+            app.LogWarning("Unable To add " + name + " PBXFrameworksBuildPhase")
+            app.LogWarning("Please add this framework manually!")
+        Else
+            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
+        End
+    End
+
+    Function AddPbxFileReferenceSdk:Void(name:String, id:String)
+        Local patchStr:String = "~t~t" +
+            id + " " +
+            "/* " + name + " */ = " +
+            "{isa = PBXFileReference; " +
+            "lastKnownFileType = wrapper.framework; " +
+            "name = " + name + "; " +
+            "path = System/Library/Frameworks/" + name + "; " +
+            "sourceTree = SDKROOT; };"
+
+        AddPbxFileReference(name, patchStr)
+    End
+
+    Function AddPbxFileReferencePath:Void(name:String, id:String)
+        Local patchStr:String = "~t~t" +
+            id + " " +
+            "/* " + name + " */ = " +
+            "{isa = PBXFileReference; " +
+            "lastKnownFileType = wrapper.framework; " +
+            "path = " + name + "; " +
+            "sourceTree = ~q<group>~q; };"
+
+        AddPbxFileReference(name, patchStr)
+    End
+
+    Function AddPbxFileReferenceFile:Void(id:String, name:String, path:String, type:String)
+        Local patchStr:String = "~t~t" +
+            id + " " +
+            "/* " + name + " */ = " +
+            "{isa = PBXFileReference; " +
+            "fileEncoding = 4; " +
+            "lastKnownFileType = " + type + "; " +
+            "path = " + name + "; " +
+            "sourceTree = ~q<group>~q; };"
+
+        AddPbxFileReference(name, patchStr)
+    End
+
+    Function AddPbxFileReferenceLProj:Void(id:String, name:String, path:String)
+        Local patchStr:String = "~t~t" +
+            id + " " +
+            "/* " + name + " */ = " +
+            "{isa = PBXFileReference; " +
+            "lastKnownFileType = text.plist.strings; " +
+            "name = ~q" + name + "~q; " +
+            "path = ~q" + name + ".lproj/" + path + "~q; " +
+            "sourceTree = ~q<group>~q; };"
+
+        AddPbxFileReference(name, patchStr)
+    End
+
+    Function AddPbxFileReference:Void(name:String, patchStr:String)
+        Local match:String = "/* End PBXFileReference section"
+        Local target:File = GetProject()
+
+        If target.Contains(patchStr) Then Return
+
+        If Not target.Contains(match)
+            app.LogWarning("Unable to add " + name + " PBXFileReference")
+            app.LogWarning("Please add this framework manually!")
+        Else
+            target.InsertBefore(match, patchStr)
+        End
+    End
+
+    Function AddPbxResource:Void(name:String, id:String)
+        Local lines:Int[] = GetProject().FindLines(" /* Resources */ = {")
+        If lines.Length() <> 2
+            app.LogError("Unable to detect PBXResourcesBuildPhase section")
+        End
+
+        Local filesLine:Int = lines[1] + 3
+        If Not GetProject().GetLine(filesLine).Contains("files = (")
+            app.LogError("Unable to find files in PBXResourcesBuildPhase")
+        End
+
+        Local text:String = "~t~t~t~t" + id + " /* " + name + " in Resources */,"
+        GetProject().InsertAfterLine(filesLine, text)
+    End
+
+    Function AddPbxBuildFile:Void(name:String, firstId:String, secondId:String, optional:Bool)
+        Local settings:String = ""
+        If optional
+            settings = "settings = {ATTRIBUTES = (Weak, ); };"
+        End
+
+        Local match:String = "/* End PBXBuildFile section"
+        Local patchStr:String = "~t~t" +
+            firstId + " " +
+            "/* " + name + " in Frameworks */ = " +
+            "{isa = PBXBuildFile; " +
+            "fileRef = " + secondId + " /* " + name + " */; " +
+            settings + " };"
+        Local target:File = GetProject()
+
+        If target.Contains(patchStr) Then Return
+
+        If Not target.Contains(match)
+            app.LogWarning("Unable to add " + name + " PBXBuildFile")
+            app.LogWarning("Please add this framework manually!")
+        Else
+            target.InsertBefore(match, patchStr)
+        End
+    End
+
     Private
 
     Function ExtractSettingKey:String(row:String)
@@ -160,130 +394,5 @@ Class Ios Abstract
 
         ' Ensure length of 24 even if the last random number was 10
         Return result[0..24]
-    End
-
-    Function EnsureSearchPathWithSRCROOT:Void(config:String)
-        Local searchStr:String = "FRAMEWORK_SEARCH_PATHS"
-        Local searchBegin:String = "" +
-            "/* " + config + " */ = {~n" +
-            "~t~t~tisa = XCBuildConfiguration;"
-        Local searchEnd:String = "name = " + config + ";"
-        Local target:File = GetProject()
-
-        ' Whole setting is missing
-        If Not target.ContainsBetween(searchStr, searchBegin, searchEnd)
-            Local addAfter:String = "buildSettings = {"
-            Local patchStr:String = "" +
-                "~t~t~t~tFRAMEWORK_SEARCH_PATHS = (~n" +
-                "~t~t~t~t~t~q$(inherited)~q,~n" +
-                "~t~t~t~t~t~q\~q$(SRCROOT)\~q~q,~n" +
-                "~t~t~t~t);"
-            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
-            Return
-        End
-
-        ' We need just to update the existing setting
-        If Not target.ContainsBetween("$(SRCROOT)", searchBegin, searchEnd)
-            Local addAfter:String = "FRAMEWORK_SEARCH_PATHS = ("
-            Local patchStr:String = "~t~t~t~t~t~q\~q$(SRCROOT)\~q~q,"
-            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
-        End
-    End
-
-    Function AddPbxGroup:Void(name:String, id:String)
-        Local patchStr:String = "~t~t~t~t" + id + " /* " + name + " in Frameworks */,"
-        Local searchBegin:String = "29B97323FDCFA39411CA2CEA /* Frameworks */ = {"
-        Local searchEnd:String = "End PBXGroup section"
-        Local addAfter:String = "children = ("
-        Local target:File = GetProject()
-
-        If target.ContainsBetween(patchStr, searchBegin, searchEnd) Then Return
-
-        If Not target.ContainsBetween(addAfter, searchBegin, searchEnd)
-            app.LogWarning("Unable To add " + name + " PBXGroup")
-            app.LogWarning("Please add this framework manually!")
-        Else
-            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
-        End
-    End
-
-    Function AddPbxFrameworkBuildPhase:Void(name:String, id:String)
-        Local patchStr:String = "~t~t~t~t" + id + " /* " + name + " in Frameworks */,"
-        Local searchBegin:String = "Begin PBXFrameworksBuildPhase section"
-        Local searchEnd:String = "End PBXFrameworksBuildPhase section"
-        Local addAfter:String = "files = ("
-        Local target:File = GetProject()
-
-        If target.ContainsBetween(patchStr, searchBegin, searchEnd) Then Return
-
-        If Not target.ContainsBetween(addAfter, searchBegin, searchEnd)
-            app.LogWarning("Unable To add " + name + " PBXFrameworksBuildPhase")
-            app.LogWarning("Please add this framework manually!")
-        Else
-            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
-        End
-    End
-
-    Function AddPbxFileReferenceSdk:Void(name:String, id:String)
-        Local patchStr:String = "~t~t" +
-            id + " " +
-            "/* " + name + "*/ = " +
-            "{isa = PBXFileReference; " +
-            "lastKnownFileType = wrapper.framework; " +
-            "name = " + name + "; " +
-            "path = System/Library/Frameworks/" + name + "; " +
-            "sourceTree = SDKROOT; };"
-
-        AddPbxFileReference(name, patchStr)
-    End
-
-    Function AddPbxFileReferencePath:Void(name:String, id:String)
-        Local patchStr:String = "~t~t" +
-            id + " " +
-            "/* " + name + " */ = " +
-            "{isa = PBXFileReference; " +
-            "lastKnownFileType = wrapper.framework; " +
-            "path = " + name + "; sourceTree = ~q<group>~q; };"
-
-        AddPbxFileReference(name, patchStr)
-    End
-
-    Function AddPbxFileReference:Void(name:String, patchStr:String)
-        Local match:String = "/* End PBXFileReference section"
-        Local target:File = GetProject()
-
-        If target.Contains(patchStr) Then Return
-
-        If Not target.Contains(match)
-            app.LogWarning("Unable to add " + name + " PBXFileReference")
-            app.LogWarning("Please add this framework manually!")
-        Else
-            target.InsertBefore(match, patchStr)
-        End
-    End
-
-    Function AddPbxBuildFile:Void(name:String, firstId:String, secondId:string, optional:Bool)
-        Local settings:String = ""
-        If optional
-            settings = "settings = {ATTRIBUTES = (Weak, ); };"
-        End
-
-        Local match:String = "/* End PBXBuildFile section"
-        Local patchStr:String = "~t~t" +
-            firstId + " " +
-            "/* " + name + " in Frameworks */ = " +
-            "{isa = PBXBuildFile; " +
-            "fileRef = " + secondId + " /* " + name + "*/; " +
-            settings + " };"
-        Local target:File = GetProject()
-
-        If target.Contains(patchStr) Then Return
-
-        If Not target.Contains(match)
-            app.LogWarning("Unable to add " + name + " PBXBuildFile")
-            app.LogWarning("Please add this framework manually!")
-        Else
-            target.InsertBefore(match, patchStr)
-        End
     End
 End
