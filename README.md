@@ -24,7 +24,26 @@ Just execute `make run` and you should see something like this:
     Usage: wizard COMMAND TARGETDIR [COMMAND SPECIFIC OPTIONS]
 
     Commands:
-      AndroidPayment
+      AmazonPayment
+      AndroidAntKey
+      AndroidIcons
+      AndroidRevmob
+      AndroidVersion
+      GooglePayment
+      IosAppirater
+      IosBundleId
+      IosCompressPngFiles
+      IosDeploymentTarget
+      IosFlurry
+      IosFlurryAds
+      IosFramework
+      IosHideStatusBar
+      IosIcons
+      IosInterfaceOrientation
+      IosLaunchImage
+      IosProductName
+      IosRevmob
+      IosVersion
 
     ERRO: Invalid number of arguments
     make: *** [run] Error 2
