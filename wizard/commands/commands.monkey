@@ -18,6 +18,7 @@ Import iosframework
 Import ioshidestatusbar
 Import iosicons
 Import iosinterfaceorientation
+Import ioslaunchimage
 Import iosproductname
 Import iosrevmob
 Import iosversion

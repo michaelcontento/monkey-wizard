@@ -49,68 +49,20 @@ Class IosIcons Implements Command
 
     Method AddIcons:Void(icons:File[], isPrerendered:Bool)
         AddIconsPlist(icons, isPrerendered)
-        AddIconsDefinitions(icons, isPrerendered)
+        AddIconsDefinitions(icons)
     End
 
-    Method AddIconsDefinitions:Void(icons:File[], isPrerendered:Bool)
+    Method AddIconsDefinitions:Void(icons:File[])
         For Local i := 0 Until icons.Length()
             Local filename := icons[i].GetBasename()
             Local firstId := Ios.GenerateUniqueId()
             Local secondId := Ios.GenerateUniqueId()
 
-            AddIconPBXBuildFile(filename, firstId, secondId)
-            AddIconPBXFileReference(filename, secondId)
-            AddIconPBXGroup(filename, secondId)
-            AddIconPBXResourcesBuildPhase(filename, firstId)
+            Ios.AddIconPBXBuildFile(filename, firstId, secondId)
+            Ios.AddIconPBXFileReference(filename, secondId)
+            Ios.AddIconPBXGroup(filename, secondId)
+            Ios.AddIconPBXResourcesBuildPhase(filename, firstId)
         End
-    End
-
-    Method AddIconPBXResourcesBuildPhase:Void(filename:String, id:String)
-        Local project := Ios.GetProject()
-        Local lines := project.FindLines("isa = PBXResourcesBuildPhase;")
-        Local insertLine := lines[0] + 2
-
-        If Not project.GetLine(insertLine).Contains("files = (")
-            app.LogError("Unable to add icon into PBXResourcesBuildPhase")
-        End
-
-        project.InsertAfterLine(
-            insertLine,
-            "~t~t~t~t" + id + " " +
-            "/* " + filename + " in Resources */,")
-    End
-
-    Method AddIconPBXGroup:Void(filename:String, id:String)
-        Local project := Ios.GetProject()
-        Local lines := project.FindLines("29B97314FDCFA39411CA2CEA /* CustomTemplate */")
-        Local insertLine := lines[0] + 2
-
-        If Not project.GetLine(insertLine).Contains("children = (")
-            app.LogError("Unable to add icon into PBXGroup")
-        End
-
-        project.InsertAfterLine(
-            insertLine,
-            "~t~t~t~t" + id + " " +
-            "/* " + filename + " */,")
-    End
-
-    Method AddIconPBXFileReference:Void(filename:String, id:String)
-        Ios.GetProject().InsertBefore(
-            "/* End PBXFileReference section */",
-            "~t~t" + id + " " +
-            "/* " + filename + " */ = " +
-            "{isa = PBXFileReference; lastKnownFileType = image.png; " +
-            "path = ~q" + filename + "~q; sourceTree = ~q<group>~q; };")
-    End
-
-    Method AddIconPBXBuildFile:Void(filename:String, firstId:String, secondId:String)
-        Ios.GetProject().InsertBefore(
-            "/* End PBXBuildFile section */",
-            "~t~t" + firstId + " " +
-            "/* " + filename + " in Resources */ = " +
-            "{isa = PBXBuildFile; fileRef = " + secondId + " " +
-            "/* " + filename + " */; };")
     End
 
     Method AddIconsPlist:Void(icons:File[], isPrerendered:Bool)
