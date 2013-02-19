@@ -81,6 +81,10 @@ Class IosIcons Implements Command
         Local file := Ios.GetPlist()
         file.InsertBefore(
             "</dict>",
+            "~t<key>CFBundleIconFiles</key>~n" +
+            "~t<array>~n" +
+            files +
+            "~t</array>~n" +
             "~t<key>CFBundleIcons</key>~n" +
             "~t<dict>~n" +
             "~t~t<key>CFBundlePrimaryIcon</key>~n" +
@@ -116,6 +120,11 @@ Class IosIcons Implements Command
 
     Method RemoveIcons:Void()
         Local removedRows := RemoveKeyWithValues("CFBundleIconFiles")
+        ParseRowsAndRemoveFiles(removedRows)
+
+        ' Can occur twice because this setting is valid as stand alone key
+        ' (< iOS 5) and inside the new (> iOS 5) CFBundleIcons
+        removedRows = RemoveKeyWithValues("CFBundleIconFiles")
         ParseRowsAndRemoveFiles(removedRows)
 
         RemoveKeyWithValues("CFBundlePrimaryIcon")
