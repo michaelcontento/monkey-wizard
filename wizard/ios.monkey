@@ -52,11 +52,15 @@ Class Ios Abstract
 
     Function UpdateProjectSetting:Void(key:String, newValue:String)
         Local oldValue := GetProjectSetting(key)
+        Local oldRow := key + " = " + oldValue + ";"
+        Local oldRowQuoted := key + " = ~q" + oldValue + "~q;"
 
         Local file := GetProject()
-        file.Replace(
-            key + " = " + oldValue + ";",
-            key + " = " + newValue + ";")
+
+        For Local old := EachIn [oldRow, oldRowQuoted]
+            If Not file.Contains(old) Then Continue
+            file.Replace(old, key + " = ~q" + newValue + "~q;")
+        End
     End
 
     Function GetProjectSetting:String(key:String)

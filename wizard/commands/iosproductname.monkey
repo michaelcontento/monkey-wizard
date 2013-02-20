@@ -19,15 +19,16 @@ Class IosProductName Implements Command
         Self.app = app
 
         Local newName := GetNewName()
+        Local newNameTrimmed := newName.Replace(" ", "").Trim()
         Local oldName := Ios.GetProjectSetting("PRODUCT_NAME")
 
         Local file := Ios.GetProject()
         file.Replace(
             "/* " + oldName + ".app */",
-            "/* " + newName + ".app */")
+            "/* " + newNameTrimmed + ".app */")
         file.Replace(
             "; path = " + oldName + ".app;",
-            "; path = " + newName + ".app;")
+            "; path = " + newNameTrimmed + ".app;")
         Ios.UpdateProjectSetting("PRODUCT_NAME", newName)
     End
 
