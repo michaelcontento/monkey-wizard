@@ -79,6 +79,10 @@ Class IosLaunchImage Implements Command
 
         Local dstDir := app.TargetDir("").GetPath()
         Local file := New File(filename)
+
+        If Not file.Exists()
+            app.LogError("Invalid file given: " + file.GetPath())
+        End
         file.CopyTo(dstDir + name)
     End
 
