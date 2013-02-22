@@ -22,3 +22,4 @@ Import ioslaunchimage
 Import iosproductname
 Import iosrevmob
 Import iosversion
+Import samsungpayment

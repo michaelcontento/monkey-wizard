@@ -52,6 +52,7 @@ Just execute `make run` and you should see something like this:
       IosProductName
       IosRevmob
       IosVersion
+      SamsungPayment
 
     ERRO: Invalid number of arguments
     make: *** [run] Error 2
