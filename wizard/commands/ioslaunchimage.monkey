@@ -14,7 +14,7 @@ Class IosLaunchImage Implements Command
     Private
 
     Const IPAD_LANDSCAPE := "IPAD-LANDSCAPE"
-    Const IPAD_PORTAIT := "IPAD-PORTRAIT"
+    Const IPAD_PORTRAIT := "IPAD-PORTRAIT"
     Const IPHONE := "IPHONE"
 
     Method Run:Void(app:App)
@@ -23,7 +23,7 @@ Class IosLaunchImage Implements Command
             ProcessIPhone(app)
         Case IPAD_LANDSCAPE
             ProcessIPadLandscape(app)
-        Case IPAD_PORTAIT
+        Case IPAD_PORTRAIT
             ProcessIPadPortrait(app)
         Default
             app.LogError("Invalid mode given.")
