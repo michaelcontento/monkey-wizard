@@ -14,7 +14,7 @@ Class IosLaunchImage Implements Command
     Private
 
     Const IPAD_LANDSCAPE := "IPAD-LANDSCAPE"
-    Const IPAD_PORTAIT := "IPAD-PORTAIT"
+    Const IPAD_PORTAIT := "IPAD-PORTRAIT"
     Const IPHONE := "IPHONE"
 
     Method Run:Void(app:App)
