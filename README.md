@@ -1,9 +1,17 @@
 # [Monkey-Wizard][]
 
+Like it? Support it! 
+
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=kaffeefleck&url=https://github.com/michaelcontento/monkey-wizard&title=Monkey-Wizard&language=en_GB&tags=github&category=software)
+
 ## What?
 
 This tool can be used to configure / inject third party libs into [Monkey][]
 based projects.
+
+<iframe style="border: 0; margin: 0; padding: 0;"
+        src="https://www.gittip.com/michaelcontento/widget.html"
+        width="48pt" height="22pt"></iframe>
 
 ## Why?
 
