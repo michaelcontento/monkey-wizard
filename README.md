@@ -61,7 +61,7 @@ As you can see you need to specify the desired command and the target directoy,
 in which the wizard should perfom it's magic. So to do some real work just
 execute
 
-	make run ARGS="androidpayment ../some-project/project.build/android"
+	make run ARGS="googlepayment ../some-project/project.build/android"
 	
 and the result should be:
 
