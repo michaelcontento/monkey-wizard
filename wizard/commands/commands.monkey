@@ -19,7 +19,7 @@ Import ioshidestatusbar
 Import iosicons
 Import iosinterfaceorientation
 Import ioslaunchimage
+Import iospatchcodesigningidentity
 Import iosproductname
 Import iosrevmob
 Import iosversion
-Import samsungpayment
