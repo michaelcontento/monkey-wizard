@@ -1,11 +1,11 @@
-TRANS=/Applications/Monkey/bin/trans_macos
+TRANS=/Applications/Monkey/bin/transcc_macos
 CONFIG=debug
 IMPORT=wizard/commands/commands.monkey
 
 all: commandsimport build run
 
 build:
-	${TRANS} -config=${CONFIG} -target=stdcpp -build wizard.monkey
+	${TRANS} -config=${CONFIG} -target=C++_Tool -build wizard.monkey
 
 run:
 	./wizard.build/stdcpp/main_macos ${ARGS}
