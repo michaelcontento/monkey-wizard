@@ -68,6 +68,16 @@ Class File
         Return data[posStart..posEnd].Contains(match)
     End
 
+    Method GetContentBetween:String(strStart:String, strEnd:String)
+        Local posStart:Int = data.Find(strStart)
+        Local posEnd:Int = data.Find(strEnd, posStart)
+
+        If posStart = -1 Or posEnd = -1 Then Return ""
+        posEnd += strEnd.Length() + 1
+
+        Return data[posStart..posEnd]
+    End
+
     Method Exists:Bool()
         Return FileExists(path)
     End

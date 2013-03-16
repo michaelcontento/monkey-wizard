@@ -66,36 +66,21 @@ Class AndroidRevmob Implements Command
 
         If target.Contains(match) Then Return
 
-        Local topSearch:String = "<?xml version=~q1.0~q encoding=~qutf-8~q?>"
-        Local topValue:String = "" +
-            "<FrameLayout~n" +
-            "~tandroid:id=~q@+id/mainframe~q~n" +
-            "~tandroid:layout_width=~qfill_parent~q~n" +
-            "~txmlns:android=~qhttp://schemas.android.com/apk/res/android~q~n" +
-            "~tandroid:layout_height=~qfill_parent~q >"
 
-        Local bottomSearch:String = "</LinearLayout>"
-        Local bottomValue:String = "" +
-            "~t<RelativeLayout~n" +
-            "~t~t~tandroid:layout_width=~qfill_parent~q~n" +
-            "~t~t~tandroid:layout_height=~qfill_parent~q >~n" +
-            "~t~t<LinearLayout~n" +
-            "~t~t~tandroid:id=~q@+id/banner~q~n" +
-            "~t~t~tandroid:layout_width=~qwrap_content~q~n" +
-            "~t~t~tandroid:layout_height=~q48dp~q~n" +
-            "~t~t~tandroid:layout_alignParentBottom=~qtrue~q >~n" +
-            "~t~t</LinearLayout>~n" +
-            "~t</RelativeLayout>~n" +
-            "</FrameLayout>~n"
+        '
+        ' Find monkey view
+        '
+        Local monkeyView:String = target.GetContentBetween("<view class=", "/>")
 
-        If target.Contains(topSearch) And target.Contains(bottomSearch)
-            target.InsertAfter(topSearch, topValue)
-            target.InsertAfter(bottomSearch, bottomValue)
+        If (monkeyView <> "")
+            Local manifestTemplate:File = app.SourceFile("manifestTemplate.xml")
+            manifestTemplate.Replace("{%%MONKEY_VIEW%%}", monkeyView)
+
+            target.data = manifestTemplate.Get()
         Else
             app.LogWarning("Unable to add revmob layout elements")
             app.LogWarning("A layout with @id/banner is required!")
-            app.LogWarning("I've tried to add this:~n" +
-                topValue + "~n" + "%MONKEY_VIEW%~n" + bottomValue)
+            app.LogWarning("Monkey view wasn't found in base-manifest")
         End
     End
 End
