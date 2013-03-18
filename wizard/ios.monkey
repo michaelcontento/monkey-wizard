@@ -368,10 +368,13 @@ Class Ios Abstract
         GetProject().InsertAfterLine(filesLine, text)
     End
 
-    Function AddPbxBuildFile:Void(name:String, firstId:String, secondId:String, optional:Bool)
-        Local settings:String = ""
+    Function AddPbxBuildFile:Void(name:String, firstId:String, secondId:String, optional:Bool, compilerFlags:String="")
+        Local settings:String = "settings = {};"
         If optional
-            settings = "settings = {ATTRIBUTES = (Weak, ); };"
+            settings = settings.Replace("};", "ATTRIBUTES = (Weak, ); };")
+        End
+        If compilerFlags
+            settings = settings.Replace("};", "COMPILER_FLAGS = ~q" + compilerFlags + "~q; };")
         End
 
         Local match:String = "/* End PBXBuildFile section"

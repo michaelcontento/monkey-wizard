@@ -41,7 +41,7 @@ Class IosAppirater Implements Command
 
         ' --- Add sources files to buildgroup
         Local fileId := Ios.GenerateUniqueId()
-        Ios.AddPbxBuildFile("Appirater.m", fileId, files[0][0], False)
+        Ios.AddPbxBuildFile("Appirater.m", fileId, files[0][0], False, "-fobjc-arc")
         Ios.GetProject().InsertAfter(
             "/* main.mm in Sources */,",
             "~t~t~t~t" + fileId + " /* Appirater.m in Sources */,")
