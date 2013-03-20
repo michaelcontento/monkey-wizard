@@ -5,6 +5,7 @@ Public
 Import amazonpayment
 Import androidantkey
 Import androidicons
+Import androidlocalytics
 Import androidrevmob
 Import androidversion
 Import googlepayment
