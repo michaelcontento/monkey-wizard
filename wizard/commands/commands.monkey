@@ -8,6 +8,7 @@ Import androidicons
 Import androidrevmob
 Import androidversion
 Import googlepayment
+Import iosaddlanguage
 Import iosappirater
 Import iosbundleid
 Import ioscompresspngfiles
@@ -23,3 +24,4 @@ Import iospatchcodesigningidentity
 Import iosproductname
 Import iosrevmob
 Import iosversion
+Import samsungpayment

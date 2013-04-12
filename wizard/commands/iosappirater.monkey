@@ -71,7 +71,7 @@ Class IosAppirater Implements Command
 
         Local groupId := Ios.GenerateUniqueId()
         Ios.RegisterPxbGroup("appirater", groupId)
-        Ios.AddPbxGroup("appirater", groupId)
+        Ios.AddPbxGroup("appirater", groupId, "appirater")
         Ios.AddPbxGroupChild("appirater", "AppiraterLocalizable.strings", variantId)
 
         Local fileId := Ios.GenerateUniqueId()

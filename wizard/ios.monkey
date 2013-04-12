@@ -143,6 +143,24 @@ Class Ios Abstract
         GetProject().InsertBefore(match, text)
     End
 
+    Function AddPBXVariantGroupChildren:Void(name$, childId$, childName$)
+        Local variantGroup := GetProject().GetContentBetween("/* Begin PBXVariantGroup section */", "/* End PBXVariantGroup section */")
+        Local pos := variantGroup.Find(" /* " + name + " */")
+        If (pos = -1) 
+            Print name + " not found, Creating new group"
+            AddPBXVariantGroup(Ios.GenerateUniqueId(), name, [childId], [childName])            
+            Return
+        End
+
+        Local posChild := variantGroup.Find("children = (", pos)
+        If (posChild = -1) Then app.LogError("Child in group " + name + " not found!") ; Return
+
+        Local newChild := "~t~t~t~t" + childId + " /* " + childName + " */,~n"
+        Local newContent := variantGroup[0..(posChild + 12)] + newChild + variantGroup[(posChild + 12)..variantGroup.Length()]
+
+        GetProject().Replace(variantGroup, newContent)
+    End
+
     Function AddKnownRegion:Void(region:String)
         Local text:String = "~t~t~t~t~q" + region + "~q,"
         GetProject().InsertAfter("knownRegions = (", text)
@@ -193,15 +211,17 @@ Class Ios Abstract
         End
     End
 
-    Function AddPbxGroup:Void(name:String, id:String)
+
+    Function AddPbxGroup:Void(name:String, id:String, path$)
         Local headline:String = id + " /* " + name + " */ = {"
         If GetProject().Contains(headline) Then Return
+        Print name
 
         Local text:String = "~t~t" + headline + "~n" +
             "~t~t~tisa = PBXGroup;~n" +
             "~t~t~tchildren = (~n" +
             "~t~t~t);~n" +
-            "~t~t~tpath = appirater;~n" +
+            "~t~t~tpath = " + path + ";~n" +
             "~t~t~tsourceTree = ~q<group>~q;~n" +
             "~t~t};"
 
@@ -320,7 +340,7 @@ Class Ios Abstract
             "{isa = PBXFileReference; " +
             "fileEncoding = 4; " +
             "lastKnownFileType = " + type + "; " +
-            "path = " + name + "; " +
+            "path = " + path + "; " +
             "sourceTree = ~q<group>~q; };"
 
         AddPbxFileReference(name, patchStr)
