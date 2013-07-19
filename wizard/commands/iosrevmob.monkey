@@ -15,7 +15,6 @@ Class IosRevmob Implements Command
         Ios.AddFramework("AdSupport.framework", True)
         Ios.AddFramework("StoreKit.framework")
         Ios.AddFramework("SystemConfiguration.framework")
-
         Ios.AddFrameworkFromPath("RevMobAds.framework")
         CopyFramework(app)
 

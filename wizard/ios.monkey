@@ -11,6 +11,7 @@ Class Ios Abstract
     Global app:App
 
     Function AddFramework:Void(name:String, optional:Bool=False)
+        app.LogInfo("Adding framework: " + name)
         If ContainsFramework(name) Then Return
 
         Local firstId:String = GenerateUniqueId()
@@ -24,16 +25,19 @@ Class Ios Abstract
     End
 
     Function AddFrameworkFromPath:Void(name:String, optional:Bool=False)
+        app.LogInfo("Adding framework from path: " + name)
         If ContainsFramework(name) Then Return
 
         Local firstId:String = GenerateUniqueId()
         Local secondId:String = GenerateUniqueId()
 
         AddPbxFileReferencePath(name, secondId)
+
         EnsureSearchPathWithSRCROOT("Debug")
         EnsureSearchPathWithSRCROOT("Release")
 
         AddPbxBuildFile(name, firstId, secondId, optional)
+
         AddPbxFrameworkBuildPhase(name, firstId)
         AddPbxGroupChild("Frameworks", name, secondId)
     End
@@ -168,14 +172,20 @@ Class Ios Abstract
 
     Function EnsureSearchPathWithSRCROOT:Void(config:String)
         Local searchStr:String = "FRAMEWORK_SEARCH_PATHS"
+  ''      Local searchBegin:String = "" +
+ ''           "/* " + config + " */ = {~n" +
+''            "~t~t~tisa = XCBuildConfiguration;"
+
         Local searchBegin:String = "" +
-            "/* " + config + " */ = {~n" +
-            "~t~t~tisa = XCBuildConfiguration;"
+            "/* " + config + " */ = {"
+
         Local searchEnd:String = "name = " + config + ";"
         Local target:File = GetProject()
 
         ' Whole setting is missing
         If Not target.ContainsBetween(searchStr, searchBegin, searchEnd)
+
+            If (Not target.Contains(searchBegin)) Then Error searchBegin + " --- Not found! in " + target.Get()
             Local addAfter:String = "buildSettings = {"
             Local patchStr:String = "" +
                 "~t~t~t~tFRAMEWORK_SEARCH_PATHS = (~n" +
