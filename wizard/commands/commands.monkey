@@ -2,6 +2,7 @@ Strict
 
 Public
 
+Import amazonads
 Import amazonpayment
 Import androidantkey
 Import androidicons

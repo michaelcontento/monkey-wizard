@@ -80,6 +80,12 @@ Class AndroidRevmob Implements Command
             "~t~t~tandroid:layout_width=~qfill_parent~q~n" +
             "~t~t~tandroid:layout_height=~qfill_parent~q >~n" +
             "~t~t<LinearLayout~n" +
+            "~t~t~tandroid:id=~q@+id/amazonAdsView~q~n" +
+            "~t~t~tandroid:layout_width=~qmatch_parent~q~n" +
+            "~t~t~tandroid:layout_height=~qwrap_content~q~n" +
+            "~t~t~tandroid:layout_alignParentBottom=~qtrue~q >~n" +
+            "~t~t</LinearLayout>~n" +
+            "~t~t<LinearLayout~n" +
             "~t~t~tandroid:id=~q@+id/banner~q~n" +
             "~t~t~tandroid:layout_width=~qwrap_content~q~n" +
             "~t~t~tandroid:layout_height=~q48dp~q~n" +
