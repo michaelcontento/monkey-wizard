@@ -14,9 +14,11 @@ Class AmazonAds Implements Command
     Const VERSION:String = "5.1.14"
 
     Method Run:Void(app:App)
-        Android.AddPermission("android.permission.INTERNET")
+        Android.AddPermission("android.permission.ACCESS_COARSE_LOCATION")
+        Android.AddPermission("android.permission.ACCESS_FINE_LOCATION")
         Android.AddPermission("android.permission.ACCESS_NETWORK_STATE")
         Android.AddPermission("android.permission.ACCESS_WIFI_STATE")
+        Android.AddPermission("android.permission.INTERNET")
         PatchReceiver(app)
         CopyLibs(app)
     End
