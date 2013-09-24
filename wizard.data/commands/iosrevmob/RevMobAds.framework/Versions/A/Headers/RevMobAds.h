@@ -9,6 +9,8 @@
 #import "RevMobFullscreen.h"
 #import "RevMobPopup.h"
 
+//#import <CoreLocation/CoreLocation.h>
+
 
 typedef enum {
     RevMobAdsTestingModeOff = 0,
@@ -31,7 +33,7 @@ typedef enum {
 @interface RevMobAds : NSObject {
 }
 
-@property (nonatomic, assign) id<RevMobAdsDelegate> delegate;
+@property (nonatomic, assign) id<RevMobAdsDelegate> delegate __attribute__((deprecated));
 @property (nonatomic, assign) NSUInteger connectionTimeout;
 
 
@@ -116,6 +118,28 @@ typedef enum {
  */
 @property (nonatomic, strong) NSString *userPage;
 
+
+/**
+ This method is used to set user location in order to get targeted ads with higher eCPM.
+ You should pass double values for the user latitude, longitude and accuracy.
+ 
+ Example of usage:
+ 
+ RevMobAds *revmob = [RevMobAds session];
+ 
+ CLLocation *location = self.locationManager.location;
+ 
+ [self.locationManager setDistanceFilter: kCLDistanceFilterNone];
+ [self.locationManager setDesiredAccuracy: kCLLocationAccuracyHundredMeters];
+ [self.locationManager startUpdatingLocation];
+ 
+ [revmob setUserLatitude: location.coordinate.latitude
+ userLongitude: location.coordinate.longitude
+ userAccuracy: location.horizontalAccuracy];
+
+// */
+- (void)setUserLatitude:(double)userLatitude userLongitude: (double)userLongitude userAccuracy: (double)userAccuracy;
+
 #pragma mark - Alternative use
 
 /**
@@ -127,7 +151,7 @@ typedef enum {
  
      - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  
-         [RevMobAds startSessionWithAppID:@"your RevMob ID"];
+         [RevMobAds startSessionWithAppID:@"your RevMob App ID"];
  
          self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
  
@@ -200,11 +224,6 @@ typedef enum {
 
  */
 - (void)openAdLinkWithDelegate:(id<RevMobAdsDelegate>)adelegate;
-
-- (void)scheduleLocalNotification:(NSDate *)fireDate __attribute__((deprecated));
-- (void)scheduleLocalNotification __attribute__((deprecated));
-- (void)cancelAllLocalNotifications __attribute__((deprecated));
-- (void)processLocalNotification:(UILocalNotification *)notification __attribute__((deprecated));
 
 #pragma mark - Advanced mode
 

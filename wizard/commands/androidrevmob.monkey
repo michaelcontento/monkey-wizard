@@ -74,7 +74,7 @@ Class AndroidRevmob Implements Command
             "~txmlns:android=~qhttp://schemas.android.com/apk/res/android~q~n" +
             "~tandroid:layout_height=~qfill_parent~q >"
 
-        Local bottomSearch:String = "</RelativeLayout>"
+        Local bottomSearch:String = "</LinearLayout>"
         Local bottomValue:String = "" +
             "~t<RelativeLayout~n" +
             "~t~t~tandroid:layout_width=~qfill_parent~q~n" +
