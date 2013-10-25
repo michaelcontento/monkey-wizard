@@ -5,21 +5,17 @@ Private
 Import wizard.android
 Import wizard.app
 Import wizard.command
+Import wizard.dir
 Import wizard.file
 
 Public
 
 Class SamsungPayment Implements Command
-    Const VERSION:String = "1.95.0"
-
     Method Run:Void(app:App)
         Android.AddPermission("android.permission.INTERNET")
-        Android.AddPermission("android.permission.READ_PHONE_STATE")
-        Android.AddPermission("android.permission.GET_ACCOUNTS")
-        Android.AddPermission("android.permission.SEND_SMS")
+        Android.AddPermission("com.sec.android.iap.permission.BILLING")
         CopyLibs(app)
-
-        app.LogInfo("Monkey interface can be found here: http://goo.gl/JGoi0")
+        PatchBuildXml(app)
     End
 
     Private
@@ -27,9 +23,25 @@ Class SamsungPayment Implements Command
     Method CopyLibs:Void(app:App)
         Android.EnsureLibsFolder()
 
-        Local src:File = app.SourceFile("plasma-" + VERSION + ".jar")
-        Local dst:File = app.TargetFile("libs/plasma-" + VERSION + ".jar")
+        Local src:Dir = app.SourceDir("src")
+        Local dst:Dir = app.TargetDir("src_AndroidBillingLibrary/src")
 
         src.CopyTo(dst)
+    End
+
+    Method PatchBuildXml:Void(app:App)
+        Local patchStr:String = "<copy todir=~qsrc~q><fileset dir=~qsrc_AndroidBillingLibrary~q/></copy>"
+        Local match:String = "</project>"
+        Local target:File = app.TargetFile("build.xml")
+
+        If Not target.Contains(patchStr)
+            If Not target.Contains(match)
+                app.LogWarning("Unable to add required copy instructions to build.xml")
+                app.LogWarning("please add the following line to your build.xml:")
+                app.LogWarning("    " + patchStr)
+            Else
+                target.InsertBefore(match, patchStr)
+            End
+        End
     End
 End
