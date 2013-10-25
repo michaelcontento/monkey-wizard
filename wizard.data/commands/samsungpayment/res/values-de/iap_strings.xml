@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="iap_title_iap">Shop</string>
+    <string name="iap_title_samsungaccount_authentication">Samsung Anmeldung</string>
+
+    <string name="iap_msg_payment_was_not_processed_successfully">Item konnte nicht verarbeitet werden.</string>
+    <string name="iap_msg_payment_cancelled">Vorgang wurde abgebrochen.</string>
+    <string name="iap_msg_payment_success">Item erfolgreich gekauft.</string>
+
+    <string name="iap_msg_invalid_iap_package">Die installierte Shop Anwendung ist nicht gültig.</string>
+    <string name="iap_msg_invalid_purchase">Ungültige Antwort erhalten.</string>
+
+    <string name="iap_msg_iap_is_not_installed">Shop Anwendung ist nicht installiert. Installieren?</string>
+    <string name="iap_msg_iap_service_bind_failed">Konnte keine Verbindung zum Shop herstellen.</string>
+    <string name="iap_msg_iap_upgrade_is_required">Shop Anwendung muss aktualisiert werden.</string>
+
+    <string name="iap_msg_failed_to_initialize_iap">Konnte den Shop nicht initialisieren.</string>
+    <string name="iap_msg_failed_to_load_list_of_product">Fehler beim laden aller Produkte.</string>
+    <string name="iap_msg_failed_to_load_list_of_purchase">Fehler beim laden vorheriger Einkäufe.</string>
+
+    <string name="iap_msg_authentication_has_been_cancelled">Samsung Anmeldung wurde abgebrochen.</string>
+    <string name="iap_msg_no_internet">Eine Internetverbindung ist erforderlich.</string>
+    <string name="iap_msg_waiting">Warten...</string>
+</resources>

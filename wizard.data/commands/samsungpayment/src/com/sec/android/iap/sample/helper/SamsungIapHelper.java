@@ -21,6 +21,7 @@ import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.Signature;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
@@ -32,7 +33,6 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.sec.android.iap.IAPConnector;
-import com.sec.android.iap.sample.R;
 import com.sec.android.iap.sample.vo.ErrorVO;
 import com.sec.android.iap.sample.vo.InBoxVO;
 import com.sec.android.iap.sample.vo.ItemVO;
@@ -49,11 +49,11 @@ public class SamsungIapHelper
     // ========================================================================
     public static final int     IAP_SIGNATURE_HASHCODE          = 0x7a7eaf4b;
     // ========================================================================
-    
+
     // IAP NAME
     // ========================================================================
     public static final String  IAP_PACKAGE_NAME = "com.sec.android.iap";
-    public static final String  IAP_SERVICE_NAME = 
+    public static final String  IAP_SERVICE_NAME =
                                       "com.sec.android.iap.service.iapService";
     // ========================================================================
 
@@ -89,34 +89,34 @@ public class SamsungIapHelper
     public static final int   REQUEST_CODE_IS_IAP_PAYMENT            = 1;
     public static final int   REQUEST_CODE_IS_ACCOUNT_CERTIFICATION  = 2;
     // ========================================================================
-    
+
     // 3rd party 에 전달되는 코드 정의
-    // define status code passed to 3rd party application 
+    // define status code passed to 3rd party application
     // ========================================================================
     /** 처리결과가 성공 */
     final public static int IAP_ERROR_NONE                   = 0;
-    
+
     /** 결제 취소일 경우 */
     final public static int IAP_PAYMENT_IS_CANCELED          = 1;
-    
+
     /** initialization 과정중 에러 발생 */
     final public static int IAP_ERROR_INITIALIZATION         = -1000;
-    
+
     /** IAP 업그레이드가 필요함 */
     final public static int IAP_ERROR_NEED_APP_UPGRADE       = -1001;
-    
+
     /** 공통 에러코드 */
     final public static int IAP_ERROR_COMMON                 = -1002;
-    
+
     /** NON CONSUMABLE 재구매일 경우 */
     final public static int IAP_ERROR_ALREADY_PURCHASED      = -1003;
-    
+
     /** 결제상세 호출시 Bundle 값 없을 경우 */
     final public static int IAP_ERROR_WHILE_RUNNING          = -1004;
-    
+
     /** 요청한 상품 목록이 없는 경우 */
     final public static int IAP_ERROR_PRODUCT_DOES_NOT_EXIST = -1005;
-    
+
     /** 결제 결과가 성공은 아니지만 구매되었을 수 있기 때문에
      *  구매한 상품 목록 확인이 필요할 경우 */
     final public static int IAP_ERROR_CONFIRM_INBOX          = -1006;
@@ -127,15 +127,15 @@ public class SamsungIapHelper
     /**테스트를 위한 개발자 모드로 항상 성공한 결과를 리턴합니다.
      * Developer mode for test. Always return successful result*/
     final public static int IAP_MODE_TEST_SUCCESS             =  1;
-    
+
     /**테스트를 위한 개발자 모드로 항상 실패한 결과를 리턴합니다.
      * Developer mode for test. Always return failed result*/
     final public static int IAP_MODE_TEST_FAIL                = -1;
-    
+
     /**실제 서비스 운영모드입니다.
      * Real service mode*/
     final public static int IAP_MODE_COMMERCIAL               =  0;
-    
+
     /**
      * ※ 모드를 IAP_MODE_COMMERCIAL로 설정해야만 실제 결제가 발생합니다.
      *   릴리즈 전에 반드시 확인해 주세요.<BR>
@@ -144,19 +144,19 @@ public class SamsungIapHelper
      */
     private int                   mMode = IAP_MODE_TEST_SUCCESS;
     // ========================================================================
-    
+
     private Context               mContext         = null;
     private ProgressDialog        mProgressDialog  = null;
 
     private IAPConnector          mIapConnector    = null;
     private ServiceConnection     mServiceConn     = null;
-    
+
     // AsyncTask for IAPService Initialization
     // ========================================================================
     private InitIapTask           mInitIapTask            = null;
     private OnInitIapListener     mOnInitIapListener      = null;
     // ========================================================================
-    
+
     // AsyncTask for get item list
     // ========================================================================
     private GetItemListTask       mGetItemListTask        = null;
@@ -174,25 +174,25 @@ public class SamsungIapHelper
     // ========================================================================
     private VerifyClientToServer   mVerifyClientToServer   = null;
     // ========================================================================
-    
-    
+
+
     private static SamsungIapHelper mInstance = null;
-    
+
     // IAP Service 상태
     // State of IAP Service
     // ========================================================================
     private int mState = STATE_TERM;
-    
+
     /** initial state */
     private static final int STATE_TERM     = 0;
-    
+
     /** state of bound to IAPService successfully */
     private static final int STATE_BINDING  = 1;
-    
+
     /** state of InitIapTask successfully finished */
-    private static final int STATE_READY    = 2; // 
+    private static final int STATE_READY    = 2; //
     // ========================================================================
-    
+
     public static SamsungIapHelper getInstance( Context _context, int _mode )
     {
         if( null == mInstance )
@@ -203,17 +203,17 @@ public class SamsungIapHelper
         {
             mInstance.setContextAndMode( _context, _mode );
         }
-        
+
         return mInstance;
     }
 
-    
+
     public void setContextAndMode( Context _context, int _mode )
     {
         mContext = _context.getApplicationContext();
-        mMode    = _mode;        
+        mMode    = _mode;
     }
-    
+
     /**
      * SamsungIapHelper 생성자 Application의 Context를 사용한다.
      * constructor
@@ -223,7 +223,7 @@ public class SamsungIapHelper
     {
         setContextAndMode( _context, _mode );
     }
-    
+
     /**
      * IAP 서비스 모드 세팅
      * set of IAP service mode
@@ -233,7 +233,7 @@ public class SamsungIapHelper
     {
         mMode = _mode;
     }
-    
+
     /**
      * IAP 서비스 초기화가 완료되었을 때 호출되는 콜백 함수를 등록한다.
      * Register a callback to be invoked
@@ -244,7 +244,7 @@ public class SamsungIapHelper
     {
         mOnInitIapListener = _onInitIaplistener;
     }
-    
+
     /**
      * {@link GetItemListTask}가 완료되었을 때 호출되는 콜백을 등록한다.
      * Register a callback to be invoked
@@ -256,19 +256,19 @@ public class SamsungIapHelper
     {
         mOnGetItemListListener = _onGetItemListListener;
     }
-    
+
     /**
      * {@link GetInboxListTask}가 완료되었을 때 호출되는 콜백을 등록한다.
      * Register a callback to be invoked
      * when {@link GetInboxListTask} has been finished.
      * @param _onInitIaplistener
      */
-    public void setOnGetInboxListListener( 
+    public void setOnGetInboxListListener(
                                OnGetInboxListListener _onGetInboxListListener )
     {
         mOnGetInboxListListener = _onGetInboxListListener;
     }
-    
+
     /**
      * SamsungAccount 인증
      * SamsungAccount Authentication
@@ -276,7 +276,7 @@ public class SamsungIapHelper
      */
     public void startAccountActivity( final Activity _activity )
     {
-        ComponentName com = new ComponentName( "com.sec.android.iap", 
+        ComponentName com = new ComponentName( "com.sec.android.iap",
                               "com.sec.android.iap.activity.AccountActivity" );
 
         Intent intent = new Intent();
@@ -285,7 +285,7 @@ public class SamsungIapHelper
         _activity.startActivityForResult( intent,
                                        REQUEST_CODE_IS_ACCOUNT_CERTIFICATION );
     }
-    
+
     /**
      * IAP 설치화면으로 이동
      * go to page of SamsungApps in order to install IAP
@@ -300,10 +300,10 @@ public class SamsungIapHelper
                 // SamsungApps의 IAP 주소
                 // Link of SamsungApps for IAP install
                 // ============================================================
-                Uri iapDeepLink = Uri.parse( 
+                Uri iapDeepLink = Uri.parse(
                            "samsungapps://ProductDetail/com.sec.android.iap" );
                 // ============================================================
-                
+
                 Intent intent = new Intent();
                 intent.setData( iapDeepLink );
 
@@ -313,28 +313,28 @@ public class SamsungIapHelper
                 // ============================================================
                 if( Build.VERSION.SDK_INT >= HONEYCOMB_MR1 )
                 {
-                    intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK | 
-                                     Intent.FLAG_ACTIVITY_CLEAR_TOP | 
+                    intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK |
+                                     Intent.FLAG_ACTIVITY_CLEAR_TOP |
                                      FLAG_INCLUDE_STOPPED_PACKAGES );
                 }
                 // ============================================================
                 else
                 {
-                    intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK | 
+                    intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK |
                                      Intent.FLAG_ACTIVITY_CLEAR_TOP );
                 }
 
                 mContext.startActivity( intent );
             }
         };
-        
-        showIapDialog( _activity, 
-                       _activity.getString(R.string.in_app_purchase), 
-                       _activity.getString(R.string.msg_iap_is_not_installed), 
-                       true, 
+
+        showIapDialog( _activity,
+                       getValueString(_activity, "title_iap"),
+                       getValueString(_activity, "msg_iap_is_not_installed"),
+                       true,
                        OkBtnRunnable );
     }
-    
+
     /**
      * IAP 패키지가 설치되어 있는 지 여부 확인
      * check that IAP package is installed
@@ -344,7 +344,7 @@ public class SamsungIapHelper
     public boolean isInstalledIapPackage( Context _context )
     {
         PackageManager pm = _context.getPackageManager();
-        
+
         try
         {
             pm.getApplicationInfo( IAP_PACKAGE_NAME,
@@ -367,13 +367,13 @@ public class SamsungIapHelper
     public boolean isValidIapPackage( Context _context )
     {
         boolean result = true;
-        
+
         try
         {
             Signature[] sigs = _context.getPackageManager().getPackageInfo(
                                     IAP_PACKAGE_NAME,
                                     PackageManager.GET_SIGNATURES ).signatures;
-            
+
             if( sigs[0].hashCode() != IAP_SIGNATURE_HASHCODE )
             {
                 result = false;
@@ -384,23 +384,23 @@ public class SamsungIapHelper
             e.printStackTrace();
             result = false;
         }
-        
+
         return result;
     }
-    
-    
+
+
     /**
-     * IAP Interface를 사용하기 위하여 Service Bind 처리를 한다. 
+     * IAP Interface를 사용하기 위하여 Service Bind 처리를 한다.
      * 처리결과를 Listener에 반환한다.
      * bind to IAPService
-     *  
+     *
      * @param _listener The listener that receives notifications
      * when bindIapService method is finished.
      */
     public void bindIapService( final OnIapBindListener _listener )
     {
         // 이미 바인드된 경우
-        // exit If already bound 
+        // exit If already bound
         // ====================================================================
         if( mState >= STATE_BINDING )
         {
@@ -408,7 +408,7 @@ public class SamsungIapHelper
             {
                 _listener.onBindIapFinished( IAP_RESPONSE_RESULT_OK );
             }
-            
+
             return;
         }
         // ====================================================================
@@ -429,7 +429,7 @@ public class SamsungIapHelper
 
             @Override
             public void onServiceConnected
-            (   
+            (
                 ComponentName _name,
                 IBinder       _service
             )
@@ -439,31 +439,31 @@ public class SamsungIapHelper
                 if( mIapConnector != null && _listener != null )
                 {
                     mState = STATE_BINDING;
-                    
+
                     _listener.onBindIapFinished( IAP_RESPONSE_RESULT_OK );
                 }
                 else
                 {
                     mState = STATE_TERM;
-                    
-                    _listener.onBindIapFinished( 
+
+                    _listener.onBindIapFinished(
                                              IAP_RESPONSE_RESULT_UNAVAILABLE );
                 }
             }
         };
         // ====================================================================
-        
+
         Intent serviceIntent = new Intent( IAP_SERVICE_NAME );
-        
+
         // bind to IAPService
         // ====================================================================
-        mContext.bindService( serviceIntent, 
+        mContext.bindService( serviceIntent,
                               mServiceConn,
                               Context.BIND_AUTO_CREATE );
         // ====================================================================
     }
-    
-    
+
+
     /**
      * IAP의 init Interface를 호출하여 IAP 초기화 작업을 진행한다.
      * process IAP initialization by calling init() interface in IAPConnector
@@ -472,19 +472,19 @@ public class SamsungIapHelper
     public ErrorVO init()
     {
         ErrorVO errorVO = new ErrorVO();
-        
+
         try
         {
             Bundle bundle = mIapConnector.init( mMode );
-            
+
             if( null != bundle )
             {
                 errorVO.setErrorCode( bundle.getInt( KEY_NAME_STATUS_CODE ) );
-                
-                errorVO.setErrorString( 
+
+                errorVO.setErrorString(
                                    bundle.getString( KEY_NAME_ERROR_STRING ) );
-                
-                errorVO.setExtraString( 
+
+                errorVO.setExtraString(
                                 bundle.getString( KEY_NAME_IAP_UPGRADE_URL ) );
             }
         }
@@ -492,14 +492,14 @@ public class SamsungIapHelper
         {
             e.printStackTrace();
         }
-        
+
         return errorVO;
     }
 
     /**
      * IAP 상품 목록 Interface 를 호출하고 결과를 반환
      * load list of item by calling getItemList() method in IAPConnector
-     * 
+     *
      * @param _itemGroupId
      * @param _startNum
      * @param _endNum
@@ -507,7 +507,7 @@ public class SamsungIapHelper
      * @return Bundle
      */
     public Bundle getItemList
-    (   
+    (
         String  _itemGroupId,
         int     _startNum,
         int     _endNum,
@@ -515,7 +515,7 @@ public class SamsungIapHelper
     )
     {
         Bundle itemList = null;
-        
+
         try
         {
             itemList = mIapConnector.getItemList( mMode,
@@ -537,7 +537,7 @@ public class SamsungIapHelper
      * IAP 구매한 상품 목록  Interface 를 호출하고 결과를 반환
      * call getItemsInbox() method in IAPConnector
      * to load List of purchased item
-     * 
+     *
      * @param _itemGroupId  String
      * @param _startNum     int
      * @param _endNum       int
@@ -546,7 +546,7 @@ public class SamsungIapHelper
      * @return Bundle
      */
     public Bundle getItemsInbox
-    (   
+    (
         String  _itemGroupId,
         int     _startNum,
         int     _endNum,
@@ -555,13 +555,13 @@ public class SamsungIapHelper
     )
     {
         Bundle purchaseItemList = null;
-        
+
         try
         {
             purchaseItemList = mIapConnector.getItemsInbox(
                                                      mContext.getPackageName(),
                                                      _itemGroupId,
-                                                     _startNum, 
+                                                     _startNum,
                                                      _endNum,
                                                      _startDate,
                                                      _endDate );
@@ -574,7 +574,7 @@ public class SamsungIapHelper
         return purchaseItemList;
     }
 
-    
+
     /**
      * IAP의 결제 Activity 를 호출한다.
      * call PaymentMethodListActivity in IAP in order to process payment
@@ -584,7 +584,7 @@ public class SamsungIapHelper
      * @param _itemId
      */
     public void startPurchase
-    (   
+    (
         Activity  _activity,
         int       _requestCode,
         String    _itemGroupId,
@@ -596,12 +596,12 @@ public class SamsungIapHelper
             Bundle bundle = new Bundle();
             bundle.putString( KEY_NAME_THIRD_PARTY_NAME,
                               mContext.getPackageName() );
-            
+
             bundle.putString( KEY_NAME_ITEM_GROUP_ID, _itemGroupId );
-            
+
             bundle.putString( KEY_NAME_ITEM_ID, _itemId );
-            
-            ComponentName com = new ComponentName( "com.sec.android.iap", 
+
+            ComponentName com = new ComponentName( "com.sec.android.iap",
                     "com.sec.android.iap.activity.PaymentMethodListActivity" );
 
             Intent intent = new Intent( Intent.ACTION_MAIN );
@@ -618,7 +618,7 @@ public class SamsungIapHelper
         }
     }
 
-    
+
     /**
      * Dialog 를 보여준다.
      * show dialog
@@ -626,19 +626,19 @@ public class SamsungIapHelper
      * @param _message
      */
     public void showIapDialog
-    ( 
+    (
         final Activity _activity,
-        String         _title, 
+        String         _title,
         String         _message,
         final boolean  _finishActivity,
-        final Runnable _onClickRunable 
+        final Runnable _onClickRunable
     )
     {
         AlertDialog.Builder alert = new AlertDialog.Builder( _activity );
-        
+
         alert.setTitle( _title );
         alert.setMessage( _message );
-        
+
         alert.setPositiveButton( android.R.string.ok,
                                           new DialogInterface.OnClickListener()
         {
@@ -649,16 +649,16 @@ public class SamsungIapHelper
                 {
                     _onClickRunable.run();
                 }
-                
+
                 _dialog.dismiss();
-                
+
                 if( true == _finishActivity )
                 {
                     _activity.finish();
                 }
             }
         } );
-        
+
         if( true == _finishActivity )
         {
             alert.setOnCancelListener( new DialogInterface.OnCancelListener()
@@ -670,10 +670,10 @@ public class SamsungIapHelper
                 }
             });
         }
-            
+
         alert.show();
     }
-    
+
     /**
      * 실행중인 태스크를 중지한다.
      * Stop running task
@@ -687,7 +687,7 @@ public class SamsungIapHelper
                 mInitIapTask.cancel( true );
             }
         }
-        
+
         if( mGetItemListTask != null )
         {
             if ( mGetItemListTask.getStatus() != Status.FINISHED )
@@ -695,15 +695,15 @@ public class SamsungIapHelper
                 mGetItemListTask.cancel( true );
             }
         }
-        
+
         if( mGetInboxListTask != null )
         {
             if( mGetInboxListTask.getStatus() != Status.FINISHED )
             {
                 mGetInboxListTask.cancel( true );
             }
-        }         
-        
+        }
+
         if( mVerifyClientToServer != null )
         {
             if( mVerifyClientToServer.getStatus() != Status.FINISHED )
@@ -712,10 +712,10 @@ public class SamsungIapHelper
             }
         }
     }
-    
+
     /**
      * IAP 종료시 사용중인 Connecter 종료와 Service를 unbind 시킨다.
-     * unbind from IAPService when you are done with activity. 
+     * unbind from IAPService when you are done with activity.
      */
     public void dispose()
     {
@@ -723,7 +723,7 @@ public class SamsungIapHelper
         {
             mContext.unbindService( mServiceConn );
         }
-        
+
         mState         = STATE_TERM;
         mServiceConn   = null;
         mIapConnector  = null;
@@ -734,14 +734,14 @@ public class SamsungIapHelper
      * show progress dialog
      * @param _context
      */
-    public void showProgressDialog( Context _context )
+    public void showProgressDialog( Activity _context )
     {
         if( mProgressDialog == null || false == mProgressDialog.isShowing() )
         {
             mProgressDialog = ProgressDialog.show(
                                     _context,
                                     "",
-                                    _context.getString( R.string.waiting_ing ),
+                                    getValueString(_context, "msg_waiting"),
                                     true );
         }
     }
@@ -765,7 +765,7 @@ public class SamsungIapHelper
             e.printStackTrace();
         }
     }
-    
+
     /**
      * bindIapService 메소스가 완료되었을 때 호출되는 인터페이스 정의
      * Interface definition for a callback to be invoked
@@ -781,8 +781,8 @@ public class SamsungIapHelper
          */
         public void onBindIapFinished( int result );
     }
-    
-    
+
+
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////// InitIapTask /////////////////////////////////
@@ -796,12 +796,12 @@ public class SamsungIapHelper
     public interface OnInitIapListener
     {
         /**
-         * Callback method to be invoked 
-         * when {@link InitIapTask} has been finished successfully. 
+         * Callback method to be invoked
+         * when {@link InitIapTask} has been finished successfully.
          */
         public void onSucceedInitIap();
     }
-    
+
     /**
      * execute {@link InitIapTask}
      */
@@ -828,7 +828,7 @@ public class SamsungIapHelper
             Log.e( TAG, "safeInitTask()\n" + e.toString() );
         }
     }
-    
+
     /**
      * IAP를 초기화하는 AsyncTask
      * AsyncTask for initializing of IAPService
@@ -837,31 +837,21 @@ public class SamsungIapHelper
     {
         private Activity       mActivity       = null;
         private ErrorVO        mErrorVO        = new ErrorVO();
-        
+
         public InitIapTask( Activity _activity )
         {
             mActivity = _activity;
         }
-        
+
         @Override
         protected void onPreExecute()
         {
             super.onPreExecute();
-            
+
             if( null == mOnInitIapListener || null == mActivity )
             {
                 cancel( true );
             }
-
-            showProgressDialog( mActivity );
-        }
-        
-        
-        @Override
-        protected void onCancelled()
-        {
-            dismissProgressDialog();
-            super.onCancelled();
         }
 
         @Override
@@ -881,7 +871,7 @@ public class SamsungIapHelper
                     mErrorVO = init();
                 }
                 // ============================================================
-                
+
                 return true;
             }
             catch( Exception e )
@@ -904,7 +894,7 @@ public class SamsungIapHelper
                 // ============================================================
                 if( mErrorVO.getErrorCode() == IAP_ERROR_NONE )
                 {
-                    // 초기화에 성공했을 경우 Listener 의 onSucceedInitIap 
+                    // 초기화에 성공했을 경우 Listener 의 onSucceedInitIap
                     // 콜백 메소드 호출
                     // Callback method call
                     // --------------------------------------------------------
@@ -921,24 +911,22 @@ public class SamsungIapHelper
                 // ============================================================
                 else if( mErrorVO.getErrorCode() == IAP_ERROR_NEED_APP_UPGRADE )
                 {
-                    dismissProgressDialog();
-                    
                     Runnable OkBtnRunnable = new Runnable()
                     {
                         @Override
                         public void run()
                         {
-                            if( true == TextUtils.isEmpty( 
+                            if( true == TextUtils.isEmpty(
                                                   mErrorVO.getExtraString() ) )
                             {
                                 return;
                             }
-                            
+
                             Intent intent = new Intent();
-                            
-                            intent.setData( 
+
+                            intent.setData(
                                       Uri.parse( mErrorVO.getExtraString() ) );
-                            
+
                             intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
 
                             try
@@ -951,15 +939,15 @@ public class SamsungIapHelper
                             }
                         }
                     };
-                    
+
                     showIapDialog(
                             mActivity,
-                            mActivity.getString( R.string.in_app_purchase ), 
-                            mActivity.getString( R.string.msg_iap_upgrade_is_requred ) +
+                            getValueString(mActivity, "title_iap"),
+                            getValueString(mActivity, "msg_iap_upgrade_is_required") +
                                 "\n\n" + mErrorVO.getErrorString(),
                             true,
                             OkBtnRunnable );
-                
+
                     Log.e( TAG, mErrorVO.getErrorString() );
                 }
                 // ============================================================
@@ -968,16 +956,14 @@ public class SamsungIapHelper
                 // ============================================================
                 else
                 {
-                    dismissProgressDialog();
-                    
                     showIapDialog(
                            mActivity,
-                           mActivity.getString( R.string.in_app_purchase ), 
-                           mActivity.getString( R.string.msg_failed_to_initialize_iap ) +
-                               "\n\n" + mErrorVO.getErrorString(), 
+                            getValueString(mActivity, "title_iap"),
+                            getValueString(mActivity, "msg_failed_to_initialize_iap") +
+                               "\n\n" + mErrorVO.getErrorString(),
                            false,
                            null );
-                
+
                     Log.e( TAG, mErrorVO.getErrorString() );
                 }
                 // ============================================================
@@ -988,22 +974,20 @@ public class SamsungIapHelper
             // ================================================================
             else
             {
-                dismissProgressDialog();
-                
                 showIapDialog(
                         mActivity,
-                        mActivity.getString( R.string.in_app_purchase ), 
-                        mActivity.getString( R.string.msg_failed_to_initialize_iap ),
+                        getValueString(mActivity, "title_iap"),
+                        getValueString(mActivity, "msg_failed_to_initialize_iap"),
                         false,
                         null );
-                
+
                 Log.e( TAG,  mErrorVO.getErrorString() );
             }
             // ================================================================
         }
     }
-    
-    
+
+
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     /////////////////////////// GetItemListTask ///////////////////////////////
@@ -1013,7 +997,7 @@ public class SamsungIapHelper
      * execute GetItemListTask
      */
     public void safeGetItemList
-    (   
+    (
         Activity _activity,
         String   _itemGroupId,
         int      _startNum,
@@ -1054,12 +1038,12 @@ public class SamsungIapHelper
     public interface OnGetItemListListener
     {
         /**
-         * Callback method to be invoked 
-         * when {@link GetItemListTask} has been succeeded. 
+         * Callback method to be invoked
+         * when {@link GetItemListTask} has been succeeded.
          */
         public void onSucceedGetItemList( ArrayList<ItemVO>   _itemList );
     }
-    
+
     /**
      * AsyncTask to load a list of items
      */
@@ -1071,7 +1055,7 @@ public class SamsungIapHelper
         private int               mStartNum         = 1;
         private int               mEndNum           = 15;
         private String            mItemType         = "";
-        
+
         private Activity          mActivity         = null;
 
         public GetItemListTask
@@ -1087,30 +1071,28 @@ public class SamsungIapHelper
             mItemGroupId = _itemGroupId;
             mStartNum    = _startNum;
             mEndNum      = _endNum;
-            mItemType    = _itemType; 
+            mItemType    = _itemType;
         }
-        
+
         @Override
         protected void onPreExecute()
         {
             super.onPreExecute();
-            
+
             if( mActivity == null && mOnGetItemListListener == null )
             {
                 cancel( true );
             }
-            
+
             mMoreItemVOList = new ArrayList<ItemVO>();
-            showProgressDialog( mActivity );
         }
 
         @Override
         protected void onCancelled()
         {
-            dismissProgressDialog();
             super.onCancelled();
         }
-        
+
         @Override
         protected Boolean doInBackground( String... params )
         {
@@ -1124,37 +1106,37 @@ public class SamsungIapHelper
                                              mEndNum,
                                              mItemType );
                 // ============================================================
-                
+
                 // status Code, error String, extra String 을 저장해둔다
                 // save status code, error string android extra String.
                 // ============================================================
                 mErrorVO.setErrorCode( bundle.getInt( KEY_NAME_STATUS_CODE ) );
-                
-                mErrorVO.setErrorString( bundle.getString( 
+
+                mErrorVO.setErrorString( bundle.getString(
                                                      KEY_NAME_ERROR_STRING ) );
-                
-                mErrorVO.setExtraString( bundle.getString( 
+
+                mErrorVO.setExtraString( bundle.getString(
                                                   KEY_NAME_IAP_UPGRADE_URL ) );
                 // ============================================================
-                
+
                 if( mErrorVO.getErrorCode() == IAP_ERROR_NONE )
                 {
-                    ArrayList<String> itemStringList = 
+                    ArrayList<String> itemStringList =
                              bundle.getStringArrayList( KEY_NAME_RESULT_LIST );
-                    
+
                     if( itemStringList != null )
                     {
                         for( String itemString : itemStringList )
                         {
                             ItemVO itemVO = new ItemVO( itemString );
-                            
+
                             // TODO 삭제 대상
                             // ------------------------------------------------
                             Log.i( TAG, "S================================>" );
                             Log.i( TAG, itemVO.dump() );
                             Log.i( TAG, "E================================>" );
                             // ------------------------------------------------
-                            
+
                             mMoreItemVOList.add( itemVO );
                         }
                     }
@@ -1173,7 +1155,7 @@ public class SamsungIapHelper
                 e.printStackTrace();
                 return false;
             }
-            
+
             return true;
         }
 
@@ -1194,7 +1176,7 @@ public class SamsungIapHelper
                     // --------------------------------------------------------
                     if( null != mOnGetItemListListener )
                     {
-                        mOnGetItemListListener.onSucceedGetItemList( 
+                        mOnGetItemListListener.onSucceedGetItemList(
                                                              mMoreItemVOList );
                     }
                     // --------------------------------------------------------
@@ -1205,24 +1187,22 @@ public class SamsungIapHelper
                 // ============================================================
                 else if( mErrorVO.getErrorCode() == IAP_ERROR_NEED_APP_UPGRADE )
                 {
-                    dismissProgressDialog();
-                    
                     Runnable OkBtnRunnable = new Runnable()
                     {
                         @Override
                         public void run()
                         {
-                            if( true == TextUtils.isEmpty( 
+                            if( true == TextUtils.isEmpty(
                                                   mErrorVO.getExtraString() ) )
                             {
                                 return;
                             }
-                            
+
                             Intent intent = new Intent();
-                            
-                            intent.setData( 
+
+                            intent.setData(
                                       Uri.parse( mErrorVO.getExtraString() ) );
-                            
+
                             intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
 
                             try
@@ -1235,15 +1215,15 @@ public class SamsungIapHelper
                             }
                         }
                     };
-                    
+
                     showIapDialog(
                             mActivity,
-                            mActivity.getString( R.string.in_app_purchase ), 
-                            mActivity.getString( R.string.msg_iap_upgrade_is_requred ) +
+                            getValueString(mActivity, "title_iap"),
+                            getValueString(mActivity, "msg_iap_upgrade_is_required") +
                                 "\n\n" + mErrorVO.getErrorString(),
                             true,
                             OkBtnRunnable );
-                
+
                     Log.e( TAG, mErrorVO.getErrorString() );
                 }
                 // ============================================================
@@ -1252,16 +1232,14 @@ public class SamsungIapHelper
                 // ============================================================
                 else
                 {
-                    dismissProgressDialog();
-                    
                     showIapDialog(
                            mActivity,
-                           mActivity.getString( R.string.in_app_purchase ), 
-                           mActivity.getString( R.string.msg_failed_to_load_list_of_product ) +
-                               "\n\n" + mErrorVO.getErrorString(), 
+                            getValueString(mActivity, "title_iap"),
+                            getValueString(mActivity, "msg_failed_to_load_list_of_product") +
+                               "\n\n" + mErrorVO.getErrorString(),
                            false,
                            null );
-                
+
                     Log.e( TAG, mErrorVO.getErrorString() );
                 }
                 // ============================================================
@@ -1271,20 +1249,18 @@ public class SamsungIapHelper
             // ================================================================
             else
             {
-                dismissProgressDialog();
-                
                 showIapDialog(
                         mActivity,
-                        mActivity.getString( R.string.in_app_purchase ), 
-                        mActivity.getString( R.string.msg_failed_to_load_list_of_product ),
+                        getValueString(mActivity, "title_iap"),
+                        getValueString(mActivity, "msg_failed_to_load_list_of_product"),
                         false,
                         null );
             }
             // ================================================================
         }
     }
-    
-    
+
+
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////// GetInBoxListTask ////////////////////////////////
@@ -1328,7 +1304,7 @@ public class SamsungIapHelper
             e.printStackTrace();
         }
     }
-    
+
     /**
      * {@link GetInboxListTask}가 완료되었을 때 호출되는 콜백메소스를 위한 인터페이스
      * Interface definition for a callback to be invoked
@@ -1337,12 +1313,12 @@ public class SamsungIapHelper
     public interface OnGetInboxListListener
     {
         /**
-         * Callback method to be invoked 
-         * when {@link GetInboxListTask} has been succeeded. 
+         * Callback method to be invoked
+         * when {@link GetInboxListTask} has been succeeded.
          */
         public void OnSucceedGetInboxList( ArrayList<InBoxVO>  _inboxList );
     }
-    
+
     /**
      * AsyncTask to load a list of purchased items
      */
@@ -1354,12 +1330,12 @@ public class SamsungIapHelper
         private int                 mEndNum             = 15;
         private String              mStartDate          = "20130101";
         private String              mEndDate            = "20130729";
-        
+
         private ErrorVO             mErrorVO            = new ErrorVO();
         private ArrayList<InBoxVO>  mMoreInboxVOList    = null;
-        
+
         public GetInboxListTask
-        (   
+        (
             Activity    _activity,
             String      _itemGroupId,
             int         _startNum,
@@ -1375,30 +1351,23 @@ public class SamsungIapHelper
             mStartDate   = _startDate;
             mEndDate     = _endDate;
         }
-        
+
         @Override
         protected void onPreExecute()
         {
             super.onPreExecute();
-            
+
             if( null == mActivity || null == mOnGetInboxListListener )
             {
                 cancel( true );
             }
-            
+
             mMoreInboxVOList = new ArrayList<InBoxVO>();
-            
-            // Progress Dialog 를 보여준다.
-            // show progress dialog
-            // ================================================================
-            showProgressDialog( mActivity );
-            // ================================================================
         }
-        
+
         @Override
         protected void onCancelled()
         {
-            dismissProgressDialog();
             super.onCancelled();
         }
 
@@ -1416,27 +1385,27 @@ public class SamsungIapHelper
                                                mStartDate,
                                                mEndDate );
                 // ============================================================
-                
+
                 // status Code, error String 을 저장해둔다
                 // save status code, error string
                 // ============================================================
                 mErrorVO.setErrorCode( bundle.getInt( KEY_NAME_STATUS_CODE ) );
-                
-                mErrorVO.setErrorString( bundle.getString( 
+
+                mErrorVO.setErrorString( bundle.getString(
                                                      KEY_NAME_ERROR_STRING ) );
                 // ============================================================
-                
+
                 if( IAP_ERROR_NONE == mErrorVO.getErrorCode() )
                 {
-                    ArrayList<String> purchaseItemStringList = 
+                    ArrayList<String> purchaseItemStringList =
                              bundle.getStringArrayList( KEY_NAME_RESULT_LIST );
-                
+
                     if( purchaseItemStringList != null )
                     {
                         for( String itemString : purchaseItemStringList )
                         {
                             InBoxVO inboxVO = new InBoxVO( itemString );
-                            
+
                             // TODO  삭제 대상
                             // ------------------------------------------------
                             Log.i( TAG, "S================================>" );
@@ -1462,7 +1431,7 @@ public class SamsungIapHelper
                 e.printStackTrace();
                 return false;
             }
-            
+
             return true;
         }
 
@@ -1491,16 +1460,14 @@ public class SamsungIapHelper
                 // ============================================================
                 // 2) 구매 목록을 가져오는 동안 에러가 발생한 경우
                 //    If error is occurred during loading list of purchase
-                // ============================================================ 
+                // ============================================================
                 else
                 {
-                    dismissProgressDialog();
-                    
                     showIapDialog(
                                mActivity,
-                               mActivity.getString( R.string.in_app_purchase ), 
-                               mActivity.getString( R.string.msg_failed_to_load_list_of_purchase ) +
-                                   "\n\n" + mErrorVO.getErrorString(), 
+                               getValueString(mActivity, "title_iap"),
+                               getValueString(mActivity, "msg_failed_to_load_list_of_purchase") +
+                                   "\n\n" + mErrorVO.getErrorString(),
                                false,
                                null );
                 }
@@ -1510,19 +1477,17 @@ public class SamsungIapHelper
             // ================================================================
             else
             {
-                dismissProgressDialog();
-                
                 showIapDialog( mActivity,
-                               mActivity.getString( R.string.in_app_purchase ), 
-                               mActivity.getString( R.string.msg_failed_to_load_list_of_purchase ), 
+                               getValueString(mActivity, "title_iap"),
+                               getValueString(mActivity, "msg_failed_to_load_list_of_purchase"),
                                false,
                                null );
             }
             // ================================================================
         }
     }
-    
-    
+
+
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////// VerifyClientToServer ////////////////////////////
@@ -1534,7 +1499,7 @@ public class SamsungIapHelper
      * @param _purchaseVO
      */
     public void verifyPurchaseResult
-    (   
+    (
         Activity    _activity,
         PurchaseVO  _purchaseVO
     )
@@ -1560,14 +1525,14 @@ public class SamsungIapHelper
             e.printStackTrace();
         }
     }
-    
+
     /**
      * IAP 결제 결과로 넘어온 PurchaseVO의 verifyUrl과 purchaseId 값으로
      * 해당 결제의 유효성을 검사한다. 검사결과 유효한 경우 최종 결제 성공으로
      * 판단한다.<BR>
      * verify purchased result
      * <BR><BR>
-     * 
+     *
      * ※ 좀더 안전한 거래를 위해서는 ThirdParty 서버에서 유효성 검사할 것을 권고함.<BR>
      * ※ For a more secure transaction we recommend to verify from your server to IAP server.
      */
@@ -1576,9 +1541,9 @@ public class SamsungIapHelper
         PurchaseVO       mPurchaseVO      = null;
         VerificationVO   mVerificationVO  = null;
         Activity         mActivity        = null;
-        
+
         public VerifyClientToServer
-        (   
+        (
             Activity    _activity,
             PurchaseVO  _purchaseVO
         )
@@ -1586,12 +1551,12 @@ public class SamsungIapHelper
             mActivity   = _activity;
             mPurchaseVO = _purchaseVO;
         }
-        
+
         @Override
         protected void onPreExecute()
         {
             super.onPreExecute();
-            
+
             if( null == mPurchaseVO ||
                 true == TextUtils.isEmpty( mPurchaseVO.getVerifyUrl() ) ||
                 true == TextUtils.isEmpty( mPurchaseVO.getPurchaseId() ) ||
@@ -1600,17 +1565,17 @@ public class SamsungIapHelper
             {
                 cancel( true );
             }
-            
+
             showProgressDialog( mActivity );
         }
-        
+
         @Override
         protected void onCancelled()
         {
             dismissProgressDialog();
             super.onCancelled();
         }
-        
+
         @Override
         protected Boolean doInBackground( Void... params )
         {
@@ -1619,22 +1584,22 @@ public class SamsungIapHelper
                 StringBuffer strUrl = new StringBuffer();
                 strUrl.append( mPurchaseVO.getVerifyUrl() );
                 strUrl.append( "&purchaseID=" + mPurchaseVO.getPurchaseId() );
-                
+
                 int     retryCount  = 0;
                 String  strResponse = null;
-                
+
                 do
                 {
                     strResponse = getHttpGetData( strUrl.toString(),
                                                   10000,
                                                   10000 );
-                    
+
                     retryCount++;
                 }
                 while( retryCount < 3 &&
                        true == TextUtils.isEmpty( strResponse ) );
-                
-                
+
+
                 if( strResponse == null || TextUtils.isEmpty( strResponse ) )
                 {
                     return false;
@@ -1642,7 +1607,7 @@ public class SamsungIapHelper
                 else
                 {
                     mVerificationVO = new VerificationVO( strResponse );
-                    
+
                     if( mVerificationVO != null &&
                         true == "true".equals( mVerificationVO.getStatus() ) &&
                         true == mPurchaseVO.getPaymentId().equals( mVerificationVO.getPaymentId() ) )
@@ -1666,13 +1631,13 @@ public class SamsungIapHelper
         protected void onPostExecute( Boolean result )
         {
             dismissProgressDialog();
-            
+
             if( true == result )
             {
                 showIapDialog(
                      mActivity,
-                     mActivity.getString( R.string.dlg_title_payment_success ),
-                     mActivity.getString( R.string.dlg_msg_payment_success ),
+                     getValueString(mActivity, "title_iap"),
+                     getValueString(mActivity, "msg_payment_success"),
                      false,
                      null );
             }
@@ -1680,13 +1645,13 @@ public class SamsungIapHelper
             {
                 showIapDialog(
                        mActivity,
-                       mActivity.getString( R.string.dlg_title_payment_error ),           
-                       mActivity.getString( R.string.msg_invalid_purchase ), 
+                       getValueString(mActivity, "title_iap"),
+                       getValueString(mActivity, "msg_invalid_purchase"),
                        false,
                        null );
             }
         }
-        
+
         private String getHttpGetData
         (
             final String _strUrl,
@@ -1697,43 +1662,43 @@ public class SamsungIapHelper
             String                  strResult       = null;
             URLConnection           con             = null;
             HttpURLConnection       httpConnection  = null;
-            BufferedInputStream     bis             = null; 
+            BufferedInputStream     bis             = null;
             ByteArrayOutputStream   buffer          = null;
-            
-            try 
+
+            try
             {
                 URL url = new URL( _strUrl );
                 con = url.openConnection();
                 con.setConnectTimeout(10000);
                 con.setReadTimeout(10000);
-                
+
                 httpConnection = (HttpURLConnection)con;
                 httpConnection.setRequestMethod( "GET" );
                 httpConnection.connect();
-                  
+
                 int responseCode = httpConnection.getResponseCode();
 
                 if( responseCode == 200 )
                 {
                     bis = new BufferedInputStream( httpConnection.getInputStream(),
                                                    4096 );
-    
-                    buffer = new ByteArrayOutputStream( 4096 );             
-            
+
+                    buffer = new ByteArrayOutputStream( 4096 );
+
                     byte [] bData = new byte[ 4096 ];
                     int nRead;
-                    
+
                     while( ( nRead = bis.read( bData, 0, 4096 ) ) != -1 )
                     {
                         buffer.write( bData, 0, nRead );
                     }
-                    
+
                     buffer.flush();
-                    
+
                     strResult = buffer.toString();
                 }
-            } 
-            catch( Exception e ) 
+            }
+            catch( Exception e )
             {
                 e.printStackTrace();
             }
@@ -1743,7 +1708,7 @@ public class SamsungIapHelper
                 {
                     try { bis.close(); } catch (Exception e) {}
                 }
-                
+
                 if( buffer != null )
                 {
                     try { buffer.close(); } catch (IOException e) {}
@@ -1751,8 +1716,15 @@ public class SamsungIapHelper
                 con = null;
                 httpConnection = null;
            }
-            
+
            return strResult;
         }
+    }
+
+    public static String getValueString(final Activity _activity, String name)
+    {
+        Resources res = _activity.getResources();
+        int id = res.getIdentifier("iap_" + name, "string", _activity.getPackageName());
+        return res.getString(id);
     }
 }

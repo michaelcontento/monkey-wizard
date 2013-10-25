@@ -19,8 +19,8 @@ Class Dir
         Self.path = RealPath(path)
     End
 
-    Method CopyTo:Void(dstDir:Dir, recursive:Bool=True, hidden:Bool=True)
-        If dstDir.Exists() Then dstDir.Remove(True)
+    Method CopyTo:Void(dstDir:Dir, recursive:Bool=True, hidden:Bool=True, remove:Bool=True)
+        If remove And dstDir.Exists() Then dstDir.Remove(True)
         CopyDir(path, dstDir.GetPath(), recursive, hidden)
     End
 

@@ -25,8 +25,11 @@ Class SamsungPayment Implements Command
 
         Local src:Dir = app.SourceDir("src")
         Local dst:Dir = app.TargetDir("src_AndroidBillingLibrary/src")
-
         src.CopyTo(dst)
+
+        src = app.SourceDir("res")
+        dst = app.TargetDir("res")
+        src.CopyTo(dst, True, True, False)
     End
 
     Method PatchBuildXml:Void(app:App)
