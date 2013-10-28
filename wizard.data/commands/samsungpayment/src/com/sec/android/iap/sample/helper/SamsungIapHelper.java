@@ -324,15 +324,25 @@ public class SamsungIapHelper
                                      Intent.FLAG_ACTIVITY_CLEAR_TOP );
                 }
 
-                mContext.startActivity( intent );
+                try {
+                  mContext.startActivity( intent );
+                } catch (Exception e) {
+                  AlertDialog.Builder alert = new AlertDialog.Builder( _activity );
+                  alert.setTitle( getValueString(_activity, "title_iap") );
+                  alert.setMessage( "Samsung App Store not found!" );
+                  alert.setPositiveButton( android.R.string.ok, null );
+                  alert.show();
+                }
+
             }
         };
 
         showIapDialog( _activity,
                        getValueString(_activity, "title_iap"),
                        getValueString(_activity, "msg_iap_is_not_installed"),
-                       true,
+                       false,
                        OkBtnRunnable );
+
     }
 
     /**
