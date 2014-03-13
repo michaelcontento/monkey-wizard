@@ -11,7 +11,7 @@ Import wizard.ios
 Public
 
 Class IosChartboost Implements Command
-    Const VERSION:String = "3.2"
+    Const VERSION:String = "4.1"
 
     Method Run:Void(app:App)
         Ios.AddFramework("AdSupport.framework", True)

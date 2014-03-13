@@ -11,7 +11,7 @@ Import wizard.file
 Public
 
 Class AndroidChartboost Implements Command
-    Const VERSION:String = "3.1.5"
+    Const VERSION:String = "3.4.0"
 
     Method Run:Void(app:App)
         Android.AddPermission("android.permission.WRITE_EXTERNAL_STORAGE")
