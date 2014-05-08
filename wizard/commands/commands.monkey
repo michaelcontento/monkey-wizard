@@ -10,6 +10,7 @@ Import androidicons
 Import androidlocalytics
 Import androidrevmob
 Import androidversion
+Import androidvungle
 Import googlepayment
 Import iosaddlanguage
 Import iosappirater
@@ -28,4 +29,5 @@ Import iospatchcodesigningidentity
 Import iosproductname
 Import iosrevmob
 Import iosversion
+Import iosvungle
 Import samsungpayment
