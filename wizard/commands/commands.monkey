@@ -5,6 +5,7 @@ Public
 Import amazonads
 Import amazonpayment
 Import androidantkey
+Import androidbass
 Import androidchartboost
 Import androidicons
 Import androidlocalytics

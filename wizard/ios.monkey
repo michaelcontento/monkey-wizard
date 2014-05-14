@@ -50,6 +50,10 @@ Class Ios Abstract
         Return app.TargetFile("MonkeyGame-Info.plist")
     End
 
+    Function GetMainSource:File()
+        Return app.TargetFile("main.mm")
+    End
+
     Function ContainsFramework:Bool(name:String)
         Return GetProject().Contains("/* " + name + " ")
     End
@@ -65,6 +69,15 @@ Class Ios Abstract
             If Not file.Contains(old) Then Continue
             file.Replace(old, key + " = ~q" + newValue + "~q;")
         End
+    End
+
+    Function UpdateDeploymentTarget:Void(newValue:String)
+        Local file := GetProject()
+        Local lines := file.FindLines("IPHONEOS_DEPLOYMENT_TARGET" + " = ")
+
+        For Local l := EachIn lines
+            file.ReplaceLine(l, "~t~t~t~t" + "IPHONEOS_DEPLOYMENT_TARGET" + " = " + newValue + ";")
+        Next
     End
 
     Function GetProjectSetting:String(key:String)

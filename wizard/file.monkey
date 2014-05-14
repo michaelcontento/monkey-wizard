@@ -100,6 +100,7 @@ Class File
     End
 
     Method CopyTo:Void(dst:String)
+        If Not FileExists(path) Then Error "File doesnt exists: " + path
         CopyFile(path, dst)
     End
 
