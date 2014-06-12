@@ -2461,7 +2461,6 @@ class c_Node3;
 class c_HeadNode2;
 class c_Enumerator2;
 class c_AndroidVungle;
-class c_GooglePayment;
 class c_IosAddLanguage;
 class c_Ios;
 class c_IosAppirater;
@@ -2484,45 +2483,45 @@ class c_IosVungle;
 class c_SamsungPayment;
 class c_ArrayObject;
 class c_ClassInfo;
+class c_R44;
 class c_R45;
-class c_R46;
-class c_R52;
-class c_R62;
-class c_R72;
+class c_R51;
+class c_R61;
+class c_R71;
+class c_R80;
 class c_R81;
-class c_R82;
 class c_UnknownClass;
-class c_R84;
-class c_R86;
-class c_R88;
-class c_R90;
-class c_R92;
-class c_R101;
-class c_R103;
-class c_R106;
-class c_R108;
-class c_R110;
-class c_R112;
+class c_R83;
+class c_R85;
+class c_R87;
+class c_R89;
+class c_R91;
+class c_R100;
+class c_R102;
+class c_R105;
+class c_R107;
+class c_R109;
+class c_R111;
 class c_R114;
-class c_R117;
-class c_R119;
-class c_R121;
-class c_R126;
-class c_R128;
-class c_R130;
-class c_R132;
-class c_R134;
-class c_R139;
-class c_R150;
-class c_R159;
-class c_R161;
+class c_R116;
+class c_R118;
+class c_R123;
+class c_R125;
+class c_R127;
+class c_R129;
+class c_R131;
+class c_R136;
+class c_R147;
+class c_R156;
+class c_R158;
+class c_R160;
 class c_R163;
-class c_R166;
-class c_R168;
-class c_R170;
-class c_R174;
-class c_R176;
+class c_R165;
+class c_R167;
+class c_R171;
+class c_R173;
 class c_FunctionInfo;
+class c_R32;
 class c_R33;
 class c_R34;
 class c_R35;
@@ -2534,7 +2533,6 @@ class c_R40;
 class c_R41;
 class c_R42;
 class c_R43;
-class c_R44;
 class c__GetClass;
 class c___GetClass;
 class c_Map2;
@@ -2553,42 +2551,43 @@ class c_Stack3;
 class c_MethodInfo;
 class c_Stack4;
 class c_Stack5;
-class c_R47;
-class c_R49;
-class c_R50;
+class c_R46;
 class c_R48;
-class c_R51;
-class c_R53;
+class c_R49;
+class c_R47;
+class c_R50;
+class c_R52;
+class c_R55;
 class c_R56;
 class c_R57;
 class c_R58;
 class c_R59;
-class c_R60;
+class c_R53;
 class c_R54;
-class c_R55;
-class c_R61;
-class c_R63;
+class c_R60;
+class c_R62;
+class c_R65;
 class c_R66;
 class c_R67;
 class c_R68;
 class c_R69;
-class c_R70;
+class c_R63;
 class c_R64;
-class c_R65;
-class c_R71;
-class c_R73;
+class c_R70;
+class c_R72;
+class c_R76;
 class c_R77;
 class c_R78;
-class c_R79;
+class c_R73;
 class c_R74;
 class c_R75;
-class c_R76;
-class c_R80;
-class c_R83;
-class c_R85;
-class c_R87;
-class c_R89;
-class c_R91;
+class c_R79;
+class c_R82;
+class c_R84;
+class c_R86;
+class c_R88;
+class c_R90;
+class c_R92;
 class c_R93;
 class c_R94;
 class c_R95;
@@ -2596,30 +2595,31 @@ class c_R96;
 class c_R97;
 class c_R98;
 class c_R99;
-class c_R100;
-class c_R102;
+class c_R101;
+class c_R103;
 class c_R104;
-class c_R105;
-class c_R107;
-class c_R109;
-class c_R111;
+class c_R106;
+class c_R108;
+class c_R110;
+class c_R112;
 class c_R113;
 class c_R115;
-class c_R116;
-class c_R118;
+class c_R117;
+class c_R119;
 class c_R120;
+class c_R121;
 class c_R122;
-class c_R123;
 class c_R124;
-class c_R125;
-class c_R127;
-class c_R129;
-class c_R131;
+class c_R126;
+class c_R128;
+class c_R130;
+class c_R132;
 class c_R133;
+class c_R134;
 class c_R135;
-class c_R136;
 class c_R137;
 class c_R138;
+class c_R139;
 class c_R140;
 class c_R141;
 class c_R142;
@@ -2627,31 +2627,28 @@ class c_R143;
 class c_R144;
 class c_R145;
 class c_R146;
-class c_R147;
 class c_R148;
 class c_R149;
+class c_R150;
 class c_R151;
 class c_R152;
 class c_R153;
 class c_R154;
 class c_R155;
-class c_R156;
 class c_R157;
-class c_R158;
-class c_R160;
+class c_R159;
+class c_R161;
 class c_R162;
 class c_R164;
-class c_R165;
-class c_R167;
+class c_R166;
+class c_R168;
 class c_R169;
-class c_R171;
+class c_R170;
 class c_R172;
-class c_R173;
+class c_R174;
+class c_R176;
 class c_R175;
 class c_R177;
-class c_R179;
-class c_R178;
-class c_R180;
 class c_BoolObject : public Object{
 	public:
 	bool m_value;
@@ -2801,15 +2798,15 @@ class c_File : public Object{
 	String p_Get();
 	Array<int > p_FindLines(String);
 	void p_ReplaceLine(int,String);
-	String p_GetLine(int);
-	void p_RemoveLine(int);
 	void p_Save();
+	String p_GetLine(int);
 	void p_InsertAfterLine(int,String);
 	bool p_ContainsBetween(String,String,String);
 	void p_ReplaceBetween(String,String,String,String);
 	void p_InsertAfterBetween(String,String,String,String);
 	void p_Remove();
 	void p_Set(String);
+	void p_RemoveLine(int);
 	String p_GetBasename();
 	void mark();
 	String debug();
@@ -3106,19 +3103,6 @@ class c_AndroidVungle : public Object,public virtual c_Command{
 	String debug();
 };
 String dbg_type(c_AndroidVungle**p){return "AndroidVungle";}
-class c_GooglePayment : public Object,public virtual c_Command{
-	public:
-	c_GooglePayment();
-	void p_PatchServiceAndReceiver(c_App*);
-	void p_CopyAndroidBillingLibrary(c_App*);
-	void p_PatchAndroidBillingLibray(c_App*);
-	void p_PatchBuildXml(c_App*);
-	void p_Run(c_App*);
-	c_GooglePayment* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_GooglePayment**p){return "GooglePayment";}
 class c_IosAddLanguage : public Object,public virtual c_Command{
 	public:
 	c_IosAddLanguage();
@@ -3440,78 +3424,78 @@ class c_ClassInfo : public Object{
 };
 String dbg_type(c_ClassInfo**p){return "ClassInfo";}
 extern Array<c_ClassInfo* > bb_reflection__classes;
+class c_R44 : public c_ClassInfo{
+	public:
+	c_R44();
+	c_R44* m_new();
+	int p_Init();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R44**p){return "R44";}
 class c_R45 : public c_ClassInfo{
 	public:
 	c_R45();
 	c_R45* m_new();
+	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
 String dbg_type(c_R45**p){return "R45";}
-class c_R46 : public c_ClassInfo{
-	public:
-	c_R46();
-	c_R46* m_new();
-	Object* p_NewInstance();
-	int p_Init();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R46**p){return "R46";}
 extern c_ClassInfo* bb_reflection__boolClass;
-class c_R52 : public c_ClassInfo{
+class c_R51 : public c_ClassInfo{
 	public:
-	c_R52();
-	c_R52* m_new();
+	c_R51();
+	c_R51* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R52**p){return "R52";}
+String dbg_type(c_R51**p){return "R51";}
 extern c_ClassInfo* bb_reflection__intClass;
-class c_R62 : public c_ClassInfo{
+class c_R61 : public c_ClassInfo{
 	public:
-	c_R62();
-	c_R62* m_new();
+	c_R61();
+	c_R61* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R62**p){return "R62";}
+String dbg_type(c_R61**p){return "R61";}
 extern c_ClassInfo* bb_reflection__floatClass;
-class c_R72 : public c_ClassInfo{
+class c_R71 : public c_ClassInfo{
 	public:
-	c_R72();
-	c_R72* m_new();
+	c_R71();
+	c_R71* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R72**p){return "R72";}
+String dbg_type(c_R71**p){return "R71";}
 extern c_ClassInfo* bb_reflection__stringClass;
+class c_R80 : public c_ClassInfo{
+	public:
+	c_R80();
+	c_R80* m_new();
+	int p_Init();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R80**p){return "R80";}
 class c_R81 : public c_ClassInfo{
 	public:
 	c_R81();
 	c_R81* m_new();
+	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
 String dbg_type(c_R81**p){return "R81";}
-class c_R82 : public c_ClassInfo{
-	public:
-	c_R82();
-	c_R82* m_new();
-	Object* p_NewInstance();
-	int p_Init();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R82**p){return "R82";}
 class c_UnknownClass : public c_ClassInfo{
 	public:
 	c_UnknownClass();
@@ -3521,116 +3505,116 @@ class c_UnknownClass : public c_ClassInfo{
 };
 String dbg_type(c_UnknownClass**p){return "UnknownClass";}
 extern c_ClassInfo* bb_reflection__unknownClass;
-class c_R84 : public c_ClassInfo{
+class c_R83 : public c_ClassInfo{
 	public:
-	c_R84();
-	c_R84* m_new();
+	c_R83();
+	c_R83* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R84**p){return "R84";}
-class c_R86 : public c_ClassInfo{
+String dbg_type(c_R83**p){return "R83";}
+class c_R85 : public c_ClassInfo{
 	public:
-	c_R86();
-	c_R86* m_new();
+	c_R85();
+	c_R85* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R86**p){return "R86";}
-class c_R88 : public c_ClassInfo{
+String dbg_type(c_R85**p){return "R85";}
+class c_R87 : public c_ClassInfo{
 	public:
-	c_R88();
-	c_R88* m_new();
+	c_R87();
+	c_R87* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R88**p){return "R88";}
-class c_R90 : public c_ClassInfo{
+String dbg_type(c_R87**p){return "R87";}
+class c_R89 : public c_ClassInfo{
 	public:
-	c_R90();
-	c_R90* m_new();
+	c_R89();
+	c_R89* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R90**p){return "R90";}
-class c_R92 : public c_ClassInfo{
+String dbg_type(c_R89**p){return "R89";}
+class c_R91 : public c_ClassInfo{
 	public:
-	c_R92();
-	c_R92* m_new();
+	c_R91();
+	c_R91* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R92**p){return "R92";}
-class c_R101 : public c_ClassInfo{
+String dbg_type(c_R91**p){return "R91";}
+class c_R100 : public c_ClassInfo{
 	public:
-	c_R101();
-	c_R101* m_new();
+	c_R100();
+	c_R100* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R101**p){return "R101";}
-class c_R103 : public c_ClassInfo{
+String dbg_type(c_R100**p){return "R100";}
+class c_R102 : public c_ClassInfo{
 	public:
-	c_R103();
-	c_R103* m_new();
+	c_R102();
+	c_R102* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R103**p){return "R103";}
-class c_R106 : public c_ClassInfo{
+String dbg_type(c_R102**p){return "R102";}
+class c_R105 : public c_ClassInfo{
 	public:
-	c_R106();
-	c_R106* m_new();
+	c_R105();
+	c_R105* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R106**p){return "R106";}
-class c_R108 : public c_ClassInfo{
+String dbg_type(c_R105**p){return "R105";}
+class c_R107 : public c_ClassInfo{
 	public:
-	c_R108();
-	c_R108* m_new();
+	c_R107();
+	c_R107* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R108**p){return "R108";}
-class c_R110 : public c_ClassInfo{
+String dbg_type(c_R107**p){return "R107";}
+class c_R109 : public c_ClassInfo{
 	public:
-	c_R110();
-	c_R110* m_new();
+	c_R109();
+	c_R109* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R110**p){return "R110";}
-class c_R112 : public c_ClassInfo{
+String dbg_type(c_R109**p){return "R109";}
+class c_R111 : public c_ClassInfo{
 	public:
-	c_R112();
-	c_R112* m_new();
+	c_R111();
+	c_R111* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R112**p){return "R112";}
+String dbg_type(c_R111**p){return "R111";}
 class c_R114 : public c_ClassInfo{
 	public:
 	c_R114();
@@ -3641,126 +3625,126 @@ class c_R114 : public c_ClassInfo{
 	String debug();
 };
 String dbg_type(c_R114**p){return "R114";}
-class c_R117 : public c_ClassInfo{
+class c_R116 : public c_ClassInfo{
 	public:
-	c_R117();
-	c_R117* m_new();
+	c_R116();
+	c_R116* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R117**p){return "R117";}
-class c_R119 : public c_ClassInfo{
+String dbg_type(c_R116**p){return "R116";}
+class c_R118 : public c_ClassInfo{
 	public:
-	c_R119();
-	c_R119* m_new();
+	c_R118();
+	c_R118* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R119**p){return "R119";}
-class c_R121 : public c_ClassInfo{
+String dbg_type(c_R118**p){return "R118";}
+class c_R123 : public c_ClassInfo{
 	public:
-	c_R121();
-	c_R121* m_new();
+	c_R123();
+	c_R123* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R121**p){return "R121";}
-class c_R126 : public c_ClassInfo{
+String dbg_type(c_R123**p){return "R123";}
+class c_R125 : public c_ClassInfo{
 	public:
-	c_R126();
-	c_R126* m_new();
+	c_R125();
+	c_R125* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R126**p){return "R126";}
-class c_R128 : public c_ClassInfo{
+String dbg_type(c_R125**p){return "R125";}
+class c_R127 : public c_ClassInfo{
 	public:
-	c_R128();
-	c_R128* m_new();
+	c_R127();
+	c_R127* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R128**p){return "R128";}
-class c_R130 : public c_ClassInfo{
+String dbg_type(c_R127**p){return "R127";}
+class c_R129 : public c_ClassInfo{
 	public:
-	c_R130();
-	c_R130* m_new();
+	c_R129();
+	c_R129* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R130**p){return "R130";}
-class c_R132 : public c_ClassInfo{
+String dbg_type(c_R129**p){return "R129";}
+class c_R131 : public c_ClassInfo{
 	public:
-	c_R132();
-	c_R132* m_new();
+	c_R131();
+	c_R131* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R132**p){return "R132";}
-class c_R134 : public c_ClassInfo{
+String dbg_type(c_R131**p){return "R131";}
+class c_R136 : public c_ClassInfo{
 	public:
-	c_R134();
-	c_R134* m_new();
+	c_R136();
+	c_R136* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R134**p){return "R134";}
-class c_R139 : public c_ClassInfo{
+String dbg_type(c_R136**p){return "R136";}
+class c_R147 : public c_ClassInfo{
 	public:
-	c_R139();
-	c_R139* m_new();
+	c_R147();
+	c_R147* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R139**p){return "R139";}
-class c_R150 : public c_ClassInfo{
+String dbg_type(c_R147**p){return "R147";}
+class c_R156 : public c_ClassInfo{
 	public:
-	c_R150();
-	c_R150* m_new();
+	c_R156();
+	c_R156* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R150**p){return "R150";}
-class c_R159 : public c_ClassInfo{
+String dbg_type(c_R156**p){return "R156";}
+class c_R158 : public c_ClassInfo{
 	public:
-	c_R159();
-	c_R159* m_new();
+	c_R158();
+	c_R158* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R159**p){return "R159";}
-class c_R161 : public c_ClassInfo{
+String dbg_type(c_R158**p){return "R158";}
+class c_R160 : public c_ClassInfo{
 	public:
-	c_R161();
-	c_R161* m_new();
+	c_R160();
+	c_R160* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R161**p){return "R161";}
+String dbg_type(c_R160**p){return "R160";}
 class c_R163 : public c_ClassInfo{
 	public:
 	c_R163();
@@ -3771,56 +3755,46 @@ class c_R163 : public c_ClassInfo{
 	String debug();
 };
 String dbg_type(c_R163**p){return "R163";}
-class c_R166 : public c_ClassInfo{
+class c_R165 : public c_ClassInfo{
 	public:
-	c_R166();
-	c_R166* m_new();
+	c_R165();
+	c_R165* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R166**p){return "R166";}
-class c_R168 : public c_ClassInfo{
+String dbg_type(c_R165**p){return "R165";}
+class c_R167 : public c_ClassInfo{
 	public:
-	c_R168();
-	c_R168* m_new();
+	c_R167();
+	c_R167* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R168**p){return "R168";}
-class c_R170 : public c_ClassInfo{
+String dbg_type(c_R167**p){return "R167";}
+class c_R171 : public c_ClassInfo{
 	public:
-	c_R170();
-	c_R170* m_new();
+	c_R171();
+	c_R171* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R170**p){return "R170";}
-class c_R174 : public c_ClassInfo{
+String dbg_type(c_R171**p){return "R171";}
+class c_R173 : public c_ClassInfo{
 	public:
-	c_R174();
-	c_R174* m_new();
+	c_R173();
+	c_R173* m_new();
 	Object* p_NewInstance();
 	int p_Init();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R174**p){return "R174";}
-class c_R176 : public c_ClassInfo{
-	public:
-	c_R176();
-	c_R176* m_new();
-	Object* p_NewInstance();
-	int p_Init();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R176**p){return "R176";}
+String dbg_type(c_R173**p){return "R173";}
 class c_FunctionInfo : public Object{
 	public:
 	String m__name;
@@ -3835,6 +3809,14 @@ class c_FunctionInfo : public Object{
 };
 String dbg_type(c_FunctionInfo**p){return "FunctionInfo";}
 extern Array<c_FunctionInfo* > bb_reflection__functions;
+class c_R32 : public c_FunctionInfo{
+	public:
+	c_R32();
+	c_R32* m_new();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R32**p){return "R32";}
 class c_R33 : public c_FunctionInfo{
 	public:
 	c_R33();
@@ -3923,14 +3905,6 @@ class c_R43 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R43**p){return "R43";}
-class c_R44 : public c_FunctionInfo{
-	public:
-	c_R44();
-	c_R44* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R44**p){return "R44";}
 class c__GetClass : public Object{
 	public:
 	c__GetClass();
@@ -4161,14 +4135,22 @@ class c_Stack5 : public Object{
 	String debug();
 };
 String dbg_type(c_Stack5**p){return "Stack";}
-class c_R47 : public c_FieldInfo{
+class c_R46 : public c_FieldInfo{
 	public:
-	c_R47();
-	c_R47* m_new();
+	c_R46();
+	c_R46* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R47**p){return "R47";}
+String dbg_type(c_R46**p){return "R46";}
+class c_R48 : public c_MethodInfo{
+	public:
+	c_R48();
+	c_R48* m_new();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R48**p){return "R48";}
 class c_R49 : public c_MethodInfo{
 	public:
 	c_R49();
@@ -4177,7 +4159,15 @@ class c_R49 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R49**p){return "R49";}
-class c_R50 : public c_MethodInfo{
+class c_R47 : public c_FunctionInfo{
+	public:
+	c_R47();
+	c_R47* m_new();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R47**p){return "R47";}
+class c_R50 : public c_FunctionInfo{
 	public:
 	c_R50();
 	c_R50* m_new();
@@ -4185,30 +4175,22 @@ class c_R50 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R50**p){return "R50";}
-class c_R48 : public c_FunctionInfo{
+class c_R52 : public c_FieldInfo{
 	public:
-	c_R48();
-	c_R48* m_new();
+	c_R52();
+	c_R52* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R48**p){return "R48";}
-class c_R51 : public c_FunctionInfo{
+String dbg_type(c_R52**p){return "R52";}
+class c_R55 : public c_MethodInfo{
 	public:
-	c_R51();
-	c_R51* m_new();
+	c_R55();
+	c_R55* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R51**p){return "R51";}
-class c_R53 : public c_FieldInfo{
-	public:
-	c_R53();
-	c_R53* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R53**p){return "R53";}
+String dbg_type(c_R55**p){return "R55";}
 class c_R56 : public c_MethodInfo{
 	public:
 	c_R56();
@@ -4241,14 +4223,14 @@ class c_R59 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R59**p){return "R59";}
-class c_R60 : public c_MethodInfo{
+class c_R53 : public c_FunctionInfo{
 	public:
-	c_R60();
-	c_R60* m_new();
+	c_R53();
+	c_R53* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R60**p){return "R60";}
+String dbg_type(c_R53**p){return "R53";}
 class c_R54 : public c_FunctionInfo{
 	public:
 	c_R54();
@@ -4257,30 +4239,30 @@ class c_R54 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R54**p){return "R54";}
-class c_R55 : public c_FunctionInfo{
+class c_R60 : public c_FunctionInfo{
 	public:
-	c_R55();
-	c_R55* m_new();
+	c_R60();
+	c_R60* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R55**p){return "R55";}
-class c_R61 : public c_FunctionInfo{
+String dbg_type(c_R60**p){return "R60";}
+class c_R62 : public c_FieldInfo{
 	public:
-	c_R61();
-	c_R61* m_new();
+	c_R62();
+	c_R62* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R61**p){return "R61";}
-class c_R63 : public c_FieldInfo{
+String dbg_type(c_R62**p){return "R62";}
+class c_R65 : public c_MethodInfo{
 	public:
-	c_R63();
-	c_R63* m_new();
+	c_R65();
+	c_R65* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R63**p){return "R63";}
+String dbg_type(c_R65**p){return "R65";}
 class c_R66 : public c_MethodInfo{
 	public:
 	c_R66();
@@ -4313,14 +4295,14 @@ class c_R69 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R69**p){return "R69";}
-class c_R70 : public c_MethodInfo{
+class c_R63 : public c_FunctionInfo{
 	public:
-	c_R70();
-	c_R70* m_new();
+	c_R63();
+	c_R63* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R70**p){return "R70";}
+String dbg_type(c_R63**p){return "R63";}
 class c_R64 : public c_FunctionInfo{
 	public:
 	c_R64();
@@ -4329,30 +4311,30 @@ class c_R64 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R64**p){return "R64";}
-class c_R65 : public c_FunctionInfo{
+class c_R70 : public c_FunctionInfo{
 	public:
-	c_R65();
-	c_R65* m_new();
+	c_R70();
+	c_R70* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R65**p){return "R65";}
-class c_R71 : public c_FunctionInfo{
+String dbg_type(c_R70**p){return "R70";}
+class c_R72 : public c_FieldInfo{
 	public:
-	c_R71();
-	c_R71* m_new();
+	c_R72();
+	c_R72* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R71**p){return "R71";}
-class c_R73 : public c_FieldInfo{
+String dbg_type(c_R72**p){return "R72";}
+class c_R76 : public c_MethodInfo{
 	public:
-	c_R73();
-	c_R73* m_new();
+	c_R76();
+	c_R76* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R73**p){return "R73";}
+String dbg_type(c_R76**p){return "R76";}
 class c_R77 : public c_MethodInfo{
 	public:
 	c_R77();
@@ -4369,14 +4351,14 @@ class c_R78 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R78**p){return "R78";}
-class c_R79 : public c_MethodInfo{
+class c_R73 : public c_FunctionInfo{
 	public:
-	c_R79();
-	c_R79* m_new();
+	c_R73();
+	c_R73* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R79**p){return "R79";}
+String dbg_type(c_R73**p){return "R73";}
 class c_R74 : public c_FunctionInfo{
 	public:
 	c_R74();
@@ -4393,63 +4375,63 @@ class c_R75 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R75**p){return "R75";}
-class c_R76 : public c_FunctionInfo{
+class c_R79 : public c_FunctionInfo{
 	public:
-	c_R76();
-	c_R76* m_new();
+	c_R79();
+	c_R79* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R76**p){return "R76";}
-class c_R80 : public c_FunctionInfo{
+String dbg_type(c_R79**p){return "R79";}
+class c_R82 : public c_FunctionInfo{
 	public:
-	c_R80();
-	c_R80* m_new();
+	c_R82();
+	c_R82* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R80**p){return "R80";}
-class c_R83 : public c_FunctionInfo{
+String dbg_type(c_R82**p){return "R82";}
+class c_R84 : public c_FunctionInfo{
 	public:
-	c_R83();
-	c_R83* m_new();
+	c_R84();
+	c_R84* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R83**p){return "R83";}
-class c_R85 : public c_FunctionInfo{
+String dbg_type(c_R84**p){return "R84";}
+class c_R86 : public c_FunctionInfo{
 	public:
-	c_R85();
-	c_R85* m_new();
+	c_R86();
+	c_R86* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R85**p){return "R85";}
-class c_R87 : public c_FunctionInfo{
+String dbg_type(c_R86**p){return "R86";}
+class c_R88 : public c_FunctionInfo{
 	public:
-	c_R87();
-	c_R87* m_new();
+	c_R88();
+	c_R88* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R87**p){return "R87";}
-class c_R89 : public c_FunctionInfo{
+String dbg_type(c_R88**p){return "R88";}
+class c_R90 : public c_FunctionInfo{
 	public:
-	c_R89();
-	c_R89* m_new();
+	c_R90();
+	c_R90* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R89**p){return "R89";}
-class c_R91 : public c_FunctionInfo{
+String dbg_type(c_R90**p){return "R90";}
+class c_R92 : public c_FieldInfo{
 	public:
-	c_R91();
-	c_R91* m_new();
+	c_R92();
+	c_R92* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R91**p){return "R91";}
-class c_R93 : public c_FieldInfo{
+String dbg_type(c_R92**p){return "R92";}
+class c_R93 : public c_MethodInfo{
 	public:
 	c_R93();
 	c_R93* m_new();
@@ -4497,7 +4479,7 @@ class c_R98 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R98**p){return "R98";}
-class c_R99 : public c_MethodInfo{
+class c_R99 : public c_FunctionInfo{
 	public:
 	c_R99();
 	c_R99* m_new();
@@ -4505,23 +4487,23 @@ class c_R99 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R99**p){return "R99";}
-class c_R100 : public c_FunctionInfo{
+class c_R101 : public c_FunctionInfo{
 	public:
-	c_R100();
-	c_R100* m_new();
+	c_R101();
+	c_R101* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R100**p){return "R100";}
-class c_R102 : public c_FunctionInfo{
+String dbg_type(c_R101**p){return "R101";}
+class c_R103 : public c_MethodInfo{
 	public:
-	c_R102();
-	c_R102* m_new();
+	c_R103();
+	c_R103* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R102**p){return "R102";}
-class c_R104 : public c_MethodInfo{
+String dbg_type(c_R103**p){return "R103";}
+class c_R104 : public c_FunctionInfo{
 	public:
 	c_R104();
 	c_R104* m_new();
@@ -4529,38 +4511,38 @@ class c_R104 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R104**p){return "R104";}
-class c_R105 : public c_FunctionInfo{
+class c_R106 : public c_FunctionInfo{
 	public:
-	c_R105();
-	c_R105* m_new();
+	c_R106();
+	c_R106* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R105**p){return "R105";}
-class c_R107 : public c_FunctionInfo{
+String dbg_type(c_R106**p){return "R106";}
+class c_R108 : public c_FunctionInfo{
 	public:
-	c_R107();
-	c_R107* m_new();
+	c_R108();
+	c_R108* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R107**p){return "R107";}
-class c_R109 : public c_FunctionInfo{
+String dbg_type(c_R108**p){return "R108";}
+class c_R110 : public c_FunctionInfo{
 	public:
-	c_R109();
-	c_R109* m_new();
+	c_R110();
+	c_R110* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R109**p){return "R109";}
-class c_R111 : public c_FunctionInfo{
+String dbg_type(c_R110**p){return "R110";}
+class c_R112 : public c_FunctionInfo{
 	public:
-	c_R111();
-	c_R111* m_new();
+	c_R112();
+	c_R112* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R111**p){return "R111";}
+String dbg_type(c_R112**p){return "R112";}
 class c_R113 : public c_FunctionInfo{
 	public:
 	c_R113();
@@ -4577,23 +4559,23 @@ class c_R115 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R115**p){return "R115";}
-class c_R116 : public c_FunctionInfo{
+class c_R117 : public c_FunctionInfo{
 	public:
-	c_R116();
-	c_R116* m_new();
+	c_R117();
+	c_R117* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R116**p){return "R116";}
-class c_R118 : public c_FunctionInfo{
+String dbg_type(c_R117**p){return "R117";}
+class c_R119 : public c_MethodInfo{
 	public:
-	c_R118();
-	c_R118* m_new();
+	c_R119();
+	c_R119* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R118**p){return "R118";}
-class c_R120 : public c_FunctionInfo{
+String dbg_type(c_R119**p){return "R119";}
+class c_R120 : public c_MethodInfo{
 	public:
 	c_R120();
 	c_R120* m_new();
@@ -4601,7 +4583,15 @@ class c_R120 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R120**p){return "R120";}
-class c_R122 : public c_MethodInfo{
+class c_R121 : public c_MethodInfo{
+	public:
+	c_R121();
+	c_R121* m_new();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R121**p){return "R121";}
+class c_R122 : public c_FunctionInfo{
 	public:
 	c_R122();
 	c_R122* m_new();
@@ -4609,15 +4599,7 @@ class c_R122 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R122**p){return "R122";}
-class c_R123 : public c_MethodInfo{
-	public:
-	c_R123();
-	c_R123* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R123**p){return "R123";}
-class c_R124 : public c_MethodInfo{
+class c_R124 : public c_FunctionInfo{
 	public:
 	c_R124();
 	c_R124* m_new();
@@ -4625,39 +4607,39 @@ class c_R124 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R124**p){return "R124";}
-class c_R125 : public c_FunctionInfo{
+class c_R126 : public c_FunctionInfo{
 	public:
-	c_R125();
-	c_R125* m_new();
+	c_R126();
+	c_R126* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R125**p){return "R125";}
-class c_R127 : public c_FunctionInfo{
+String dbg_type(c_R126**p){return "R126";}
+class c_R128 : public c_FunctionInfo{
 	public:
-	c_R127();
-	c_R127* m_new();
+	c_R128();
+	c_R128* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R127**p){return "R127";}
-class c_R129 : public c_FunctionInfo{
+String dbg_type(c_R128**p){return "R128";}
+class c_R130 : public c_FunctionInfo{
 	public:
-	c_R129();
-	c_R129* m_new();
+	c_R130();
+	c_R130* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R129**p){return "R129";}
-class c_R131 : public c_FunctionInfo{
+String dbg_type(c_R130**p){return "R130";}
+class c_R132 : public c_MethodInfo{
 	public:
-	c_R131();
-	c_R131* m_new();
+	c_R132();
+	c_R132* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R131**p){return "R131";}
-class c_R133 : public c_FunctionInfo{
+String dbg_type(c_R132**p){return "R132";}
+class c_R133 : public c_MethodInfo{
 	public:
 	c_R133();
 	c_R133* m_new();
@@ -4665,7 +4647,15 @@ class c_R133 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R133**p){return "R133";}
-class c_R135 : public c_MethodInfo{
+class c_R134 : public c_MethodInfo{
+	public:
+	c_R134();
+	c_R134* m_new();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R134**p){return "R134";}
+class c_R135 : public c_FunctionInfo{
 	public:
 	c_R135();
 	c_R135* m_new();
@@ -4673,14 +4663,6 @@ class c_R135 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R135**p){return "R135";}
-class c_R136 : public c_MethodInfo{
-	public:
-	c_R136();
-	c_R136* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R136**p){return "R136";}
 class c_R137 : public c_MethodInfo{
 	public:
 	c_R137();
@@ -4689,7 +4671,7 @@ class c_R137 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R137**p){return "R137";}
-class c_R138 : public c_FunctionInfo{
+class c_R138 : public c_MethodInfo{
 	public:
 	c_R138();
 	c_R138* m_new();
@@ -4697,6 +4679,14 @@ class c_R138 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R138**p){return "R138";}
+class c_R139 : public c_MethodInfo{
+	public:
+	c_R139();
+	c_R139* m_new();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R139**p){return "R139";}
 class c_R140 : public c_MethodInfo{
 	public:
 	c_R140();
@@ -4745,7 +4735,7 @@ class c_R145 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R145**p){return "R145";}
-class c_R146 : public c_MethodInfo{
+class c_R146 : public c_FunctionInfo{
 	public:
 	c_R146();
 	c_R146* m_new();
@@ -4753,14 +4743,6 @@ class c_R146 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R146**p){return "R146";}
-class c_R147 : public c_MethodInfo{
-	public:
-	c_R147();
-	c_R147* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R147**p){return "R147";}
 class c_R148 : public c_MethodInfo{
 	public:
 	c_R148();
@@ -4769,7 +4751,7 @@ class c_R148 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R148**p){return "R148";}
-class c_R149 : public c_FunctionInfo{
+class c_R149 : public c_MethodInfo{
 	public:
 	c_R149();
 	c_R149* m_new();
@@ -4777,6 +4759,14 @@ class c_R149 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R149**p){return "R149";}
+class c_R150 : public c_MethodInfo{
+	public:
+	c_R150();
+	c_R150* m_new();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R150**p){return "R150";}
 class c_R151 : public c_MethodInfo{
 	public:
 	c_R151();
@@ -4809,7 +4799,7 @@ class c_R154 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R154**p){return "R154";}
-class c_R155 : public c_MethodInfo{
+class c_R155 : public c_FunctionInfo{
 	public:
 	c_R155();
 	c_R155* m_new();
@@ -4817,15 +4807,7 @@ class c_R155 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R155**p){return "R155";}
-class c_R156 : public c_MethodInfo{
-	public:
-	c_R156();
-	c_R156* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R156**p){return "R156";}
-class c_R157 : public c_MethodInfo{
+class c_R157 : public c_FunctionInfo{
 	public:
 	c_R157();
 	c_R157* m_new();
@@ -4833,22 +4815,22 @@ class c_R157 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R157**p){return "R157";}
-class c_R158 : public c_FunctionInfo{
+class c_R159 : public c_FunctionInfo{
 	public:
-	c_R158();
-	c_R158* m_new();
+	c_R159();
+	c_R159* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R158**p){return "R158";}
-class c_R160 : public c_FunctionInfo{
+String dbg_type(c_R159**p){return "R159";}
+class c_R161 : public c_MethodInfo{
 	public:
-	c_R160();
-	c_R160* m_new();
+	c_R161();
+	c_R161* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R160**p){return "R160";}
+String dbg_type(c_R161**p){return "R161";}
 class c_R162 : public c_FunctionInfo{
 	public:
 	c_R162();
@@ -4857,7 +4839,7 @@ class c_R162 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R162**p){return "R162";}
-class c_R164 : public c_MethodInfo{
+class c_R164 : public c_FunctionInfo{
 	public:
 	c_R164();
 	c_R164* m_new();
@@ -4865,23 +4847,23 @@ class c_R164 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R164**p){return "R164";}
-class c_R165 : public c_FunctionInfo{
+class c_R166 : public c_FunctionInfo{
 	public:
-	c_R165();
-	c_R165* m_new();
+	c_R166();
+	c_R166* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R165**p){return "R165";}
-class c_R167 : public c_FunctionInfo{
+String dbg_type(c_R166**p){return "R166";}
+class c_R168 : public c_MethodInfo{
 	public:
-	c_R167();
-	c_R167* m_new();
+	c_R168();
+	c_R168* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R167**p){return "R167";}
-class c_R169 : public c_FunctionInfo{
+String dbg_type(c_R168**p){return "R168";}
+class c_R169 : public c_MethodInfo{
 	public:
 	c_R169();
 	c_R169* m_new();
@@ -4889,15 +4871,15 @@ class c_R169 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R169**p){return "R169";}
-class c_R171 : public c_MethodInfo{
+class c_R170 : public c_FunctionInfo{
 	public:
-	c_R171();
-	c_R171* m_new();
+	c_R170();
+	c_R170* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R171**p){return "R171";}
-class c_R172 : public c_MethodInfo{
+String dbg_type(c_R170**p){return "R170";}
+class c_R172 : public c_FunctionInfo{
 	public:
 	c_R172();
 	c_R172* m_new();
@@ -4905,14 +4887,22 @@ class c_R172 : public c_MethodInfo{
 	String debug();
 };
 String dbg_type(c_R172**p){return "R172";}
-class c_R173 : public c_FunctionInfo{
+class c_R174 : public c_FieldInfo{
 	public:
-	c_R173();
-	c_R173* m_new();
+	c_R174();
+	c_R174* m_new();
 	void mark();
 	String debug();
 };
-String dbg_type(c_R173**p){return "R173";}
+String dbg_type(c_R174**p){return "R174";}
+class c_R176 : public c_MethodInfo{
+	public:
+	c_R176();
+	c_R176* m_new();
+	void mark();
+	String debug();
+};
+String dbg_type(c_R176**p){return "R176";}
 class c_R175 : public c_FunctionInfo{
 	public:
 	c_R175();
@@ -4921,7 +4911,7 @@ class c_R175 : public c_FunctionInfo{
 	String debug();
 };
 String dbg_type(c_R175**p){return "R175";}
-class c_R177 : public c_FieldInfo{
+class c_R177 : public c_FunctionInfo{
 	public:
 	c_R177();
 	c_R177* m_new();
@@ -4929,30 +4919,6 @@ class c_R177 : public c_FieldInfo{
 	String debug();
 };
 String dbg_type(c_R177**p){return "R177";}
-class c_R179 : public c_MethodInfo{
-	public:
-	c_R179();
-	c_R179* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R179**p){return "R179";}
-class c_R178 : public c_FunctionInfo{
-	public:
-	c_R178();
-	c_R178* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R178**p){return "R178";}
-class c_R180 : public c_FunctionInfo{
-	public:
-	c_R180();
-	c_R180* m_new();
-	void mark();
-	String debug();
-};
-String dbg_type(c_R180**p){return "R180";}
 c_BoolObject::c_BoolObject(){
 	m_value=false;
 }
@@ -5991,26 +5957,6 @@ void c_File::p_ReplaceLine(int t_line,String t_text){
 	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<126>");
 	p_data2(String(L"\n",1).Join(t_dataArr));
 }
-String c_File::p_GetLine(int t_line){
-	DBG_ENTER("File.GetLine")
-	c_File *self=this;
-	DBG_LOCAL(self,"Self")
-	DBG_LOCAL(t_line,"line")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<32>");
-	String t_=p_data().Split(String(L"\n",1)).At(t_line-1);
-	return t_;
-}
-void c_File::p_RemoveLine(int t_line){
-	DBG_ENTER("File.RemoveLine")
-	c_File *self=this;
-	DBG_LOCAL(self,"Self")
-	DBG_LOCAL(t_line,"line")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<49>");
-	Array<String > t_dataArr=p_data().Split(String(L"\n",1));
-	DBG_LOCAL(t_dataArr,"dataArr")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<52>");
-	p_data2(String(L"\n",1).Join(t_dataArr.Slice(0,t_line-1))+String(L"\n",1)+String(L"\n",1).Join(t_dataArr.Slice(t_line)));
-}
 void c_File::p_Save(){
 	DBG_ENTER("File.Save")
 	c_File *self=this;
@@ -6023,6 +5969,15 @@ void c_File::p_Save(){
 		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<27>");
 		SaveString(p_data(),m_path);
 	}
+}
+String c_File::p_GetLine(int t_line){
+	DBG_ENTER("File.GetLine")
+	c_File *self=this;
+	DBG_LOCAL(self,"Self")
+	DBG_LOCAL(t_line,"line")
+	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<32>");
+	String t_=p_data().Split(String(L"\n",1)).At(t_line-1);
+	return t_;
 }
 void c_File::p_InsertAfterLine(int t_line,String t_text){
 	DBG_ENTER("File.InsertAfterLine")
@@ -6112,6 +6067,17 @@ void c_File::p_Set(String t_text){
 	DBG_LOCAL(t_text,"text")
 	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<166>");
 	p_data2(t_text);
+}
+void c_File::p_RemoveLine(int t_line){
+	DBG_ENTER("File.RemoveLine")
+	c_File *self=this;
+	DBG_LOCAL(self,"Self")
+	DBG_LOCAL(t_line,"line")
+	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<49>");
+	Array<String > t_dataArr=p_data().Split(String(L"\n",1));
+	DBG_LOCAL(t_dataArr,"dataArr")
+	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/file.monkey<52>");
+	p_data2(String(L"\n",1).Join(t_dataArr.Slice(0,t_line-1))+String(L"\n",1)+String(L"\n",1).Join(t_dataArr.Slice(t_line)));
 }
 String c_File::p_GetBasename(){
 	DBG_ENTER("File.GetBasename")
@@ -8340,178 +8306,6 @@ void c_AndroidVungle::mark(){
 }
 String c_AndroidVungle::debug(){
 	String t="(AndroidVungle)\n";
-	return t;
-}
-c_GooglePayment::c_GooglePayment(){
-}
-void c_GooglePayment::p_PatchServiceAndReceiver(c_App* t_app){
-	DBG_ENTER("GooglePayment.PatchServiceAndReceiver")
-	c_GooglePayment *self=this;
-	DBG_LOCAL(self,"Self")
-	DBG_LOCAL(t_app,"app")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<29>");
-	String t_match=String(L"</application>",14);
-	DBG_LOCAL(t_match,"match")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<38>");
-	String t_patchStr=String(L"<service android:name=\"net.robotmedia.billing.BillingService\" />\n<receiver android:name=\"net.robotmedia.billing.BillingReceiver\">\n\t<intent-filter>\n\t\t<action android:name=\"com.android.vending.billing.IN_APP_NOTIFY\" />\n\t\t<action android:name=\"com.android.vending.billing.RESPONSE_CODE\" />\n\t\t<action android:name=\"com.android.vending.billing.PURCHASE_STATE_CHANGED\" />\n\t</intent-filter>\n</receiver>",395);
-	DBG_LOCAL(t_patchStr,"patchStr")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<39>");
-	c_File* t_target=c_Android::m_GetManifest();
-	DBG_LOCAL(t_target,"target")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<41>");
-	if(t_target->p_Contains(String(L"net.robotmedia.billing.BillingService",37))){
-		DBG_BLOCK();
-		return;
-	}
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<45>");
-	if(!t_target->p_Contains(t_match)){
-		DBG_BLOCK();
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<46>");
-		t_app->p_LogWarning(String(L"Unable to add required activity to AndroidManifest.xml",54));
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<47>");
-		t_app->p_LogWarning(String(L"Please add the following activity manually:",43));
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<48>");
-		t_app->p_LogWarning(String(L"    ",4)+t_patchStr);
-	}else{
-		DBG_BLOCK();
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<50>");
-		t_target->p_InsertBefore(t_match,t_patchStr);
-	}
-}
-void c_GooglePayment::p_CopyAndroidBillingLibrary(c_App* t_app){
-	DBG_ENTER("GooglePayment.CopyAndroidBillingLibrary")
-	c_GooglePayment *self=this;
-	DBG_LOCAL(self,"Self")
-	DBG_LOCAL(t_app,"app")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<71>");
-	c_Dir* t_src=t_app->p_SourceDir(String(L"AndroidBillingLibrary/AndroidBillingLibrary/src",47));
-	DBG_LOCAL(t_src,"src")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<72>");
-	c_Dir* t_dst=t_app->p_TargetDir(String(L"src_AndroidBillingLibrary/src",29));
-	DBG_LOCAL(t_dst,"dst")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<74>");
-	if(!t_src->p_Exists()){
-		DBG_BLOCK();
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<76>");
-		t_app->p_LogError(String(L"AndroidBillingLibrary folger seems to be empty! Did you run 'git submodule update --init'?",90));
-	}
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<77>");
-	if(!t_dst->p_Parent()->p_Exists()){
-		DBG_BLOCK();
-		t_dst->p_Parent()->p_Create();
-	}
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<78>");
-	t_src->p_CopyTo3(t_dst,true,true,true);
-}
-void c_GooglePayment::p_PatchAndroidBillingLibray(c_App* t_app){
-	DBG_ENTER("GooglePayment.PatchAndroidBillingLibray")
-	c_GooglePayment *self=this;
-	DBG_LOCAL(self,"Self")
-	DBG_LOCAL(t_app,"app")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<82>");
-	c_File* t_target=t_app->p_TargetFile(String(L"src_AndroidBillingLibrary/net/robotmedia/billing/BillingRequest.java",68));
-	DBG_LOCAL(t_target,"target")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<83>");
-	String t_match=String(L"if (response == ResponseCode.RESULT_OK) {",41);
-	DBG_LOCAL(t_match,"match")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<85>");
-	String t_alreadyPatchedMarker=String(L"// MONKEY-WIZARD-PATCHED",24);
-	DBG_LOCAL(t_alreadyPatchedMarker,"alreadyPatchedMarker")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<86>");
-	if(t_target->p_Contains(t_alreadyPatchedMarker)){
-		DBG_BLOCK();
-		return;
-	}
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<90>");
-	if(!t_target->p_Exists() || !t_target->p_GetLine(220).Contains(t_match) || !t_target->p_GetLine(222).Contains(String(L"}",1))){
-		DBG_BLOCK();
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<91>");
-		t_app->p_LogWarning(String(L"Unable to patch the AndroidBillingLibrary",41));
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<92>");
-		t_app->p_LogWarning(String(L"Please remove this if statement:",32));
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<93>");
-		t_app->p_LogWarning(String(L"    ",4)+t_match);
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<94>");
-		t_app->p_LogWarning(String(L"Around line 220 (including the closing }) in:",45));
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<95>");
-		t_app->p_LogWarning(String(L"    ",4)+t_target->p_GetPath());
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<96>");
-		t_app->p_LogWarning(String(L"But only the condition and _NOT_ the enclosed statement!",56));
-	}else{
-		DBG_BLOCK();
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<98>");
-		t_target->p_RemoveLine(222);
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<99>");
-		t_target->p_RemoveLine(220);
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<100>");
-		t_target->p_Append(String(L"\n",1)+t_alreadyPatchedMarker);
-	}
-}
-void c_GooglePayment::p_PatchBuildXml(c_App* t_app){
-	DBG_ENTER("GooglePayment.PatchBuildXml")
-	c_GooglePayment *self=this;
-	DBG_LOCAL(self,"Self")
-	DBG_LOCAL(t_app,"app")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<55>");
-	String t_patchStr=String(L"<copy todir=\"src\"><fileset dir=\"src_AndroidBillingLibrary\"/></copy>",67);
-	DBG_LOCAL(t_patchStr,"patchStr")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<56>");
-	String t_match=String(L"</project>",10);
-	DBG_LOCAL(t_match,"match")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<57>");
-	c_File* t_target=t_app->p_TargetFile(String(L"build.xml",9));
-	DBG_LOCAL(t_target,"target")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<59>");
-	if(!t_target->p_Contains(t_patchStr)){
-		DBG_BLOCK();
-		DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<60>");
-		if(!t_target->p_Contains(t_match)){
-			DBG_BLOCK();
-			DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<61>");
-			t_app->p_LogWarning(String(L"Unable to add required copy instructions to build.xml",53));
-			DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<62>");
-			t_app->p_LogWarning(String(L"please add the following line to your build.xml:",48));
-			DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<63>");
-			t_app->p_LogWarning(String(L"    ",4)+t_patchStr);
-		}else{
-			DBG_BLOCK();
-			DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<65>");
-			t_target->p_InsertBefore(t_match,t_patchStr);
-		}
-	}
-}
-void c_GooglePayment::p_Run(c_App* t_app){
-	DBG_ENTER("GooglePayment.Run")
-	c_GooglePayment *self=this;
-	DBG_LOCAL(self,"Self")
-	DBG_LOCAL(t_app,"app")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<15>");
-	c_Android::m_AddPermission(String(L"android.permission.INTERNET",27));
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<16>");
-	c_Android::m_AddPermission(String(L"com.android.vending.BILLING",27));
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<17>");
-	p_PatchServiceAndReceiver(t_app);
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<19>");
-	p_CopyAndroidBillingLibrary(t_app);
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<20>");
-	p_PatchAndroidBillingLibray(t_app);
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<21>");
-	p_PatchBuildXml(t_app);
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<23>");
-	t_app->p_LogInfo(String(L"Monkey interface can be found here: http://goo.gl/QoYEC",55));
-}
-c_GooglePayment* c_GooglePayment::m_new(){
-	DBG_ENTER("GooglePayment.new")
-	c_GooglePayment *self=this;
-	DBG_LOCAL(self,"Self")
-	DBG_INFO("/Users/jochenheizmann/Dropbox/Monkey/modules_ext/fairlight/vendor/monkey-wizard/wizard/commands/googlepayment.monkey<13>");
-	return this;
-}
-void c_GooglePayment::mark(){
-	Object::mark();
-}
-String c_GooglePayment::debug(){
-	String t="(GooglePayment)\n";
 	return t;
 }
 c_IosAddLanguage::c_IosAddLanguage(){
@@ -11432,13 +11226,43 @@ String c_ClassInfo::debug(){
 	return t;
 }
 Array<c_ClassInfo* > bb_reflection__classes;
-c_R45::c_R45(){
+c_R44::c_R44(){
 }
-c_R45* c_R45::m_new(){
+c_R44* c_R44::m_new(){
 	c_ClassInfo::m_new(String(L"monkey.lang.Object",18),1,0,Array<c_ClassInfo* >());
 	return this;
 }
+int c_R44::p_Init(){
+	p_InitR();
+	return 0;
+}
+void c_R44::mark(){
+	c_ClassInfo::mark();
+}
+String c_R44::debug(){
+	String t="(R44)\n";
+	t=c_ClassInfo::debug()+t;
+	return t;
+}
+c_R45::c_R45(){
+}
+c_R45* c_R45::m_new(){
+	c_ClassInfo::m_new(String(L"monkey.boxes.BoolObject",23),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >());
+	gc_assign(bb_reflection__boolClass,(this));
+	return this;
+}
+Object* c_R45::p_NewInstance(){
+	return ((new c_BoolObject)->m_new2());
+}
 int c_R45::p_Init(){
+	gc_assign(m__fields,Array<c_FieldInfo* >(1));
+	gc_assign(m__fields.At(0),((new c_R46)->m_new()));
+	gc_assign(m__methods,Array<c_MethodInfo* >(2));
+	gc_assign(m__methods.At(0),((new c_R48)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R49)->m_new()));
+	gc_assign(m__ctors,Array<c_FunctionInfo* >(2));
+	gc_assign(m__ctors.At(0),((new c_R47)->m_new()));
+	gc_assign(m__ctors.At(1),((new c_R50)->m_new()));
 	p_InitR();
 	return 0;
 }
@@ -11450,148 +11274,144 @@ String c_R45::debug(){
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R46::c_R46(){
-}
-c_R46* c_R46::m_new(){
-	c_ClassInfo::m_new(String(L"monkey.boxes.BoolObject",23),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >());
-	gc_assign(bb_reflection__boolClass,(this));
-	return this;
-}
-Object* c_R46::p_NewInstance(){
-	return ((new c_BoolObject)->m_new2());
-}
-int c_R46::p_Init(){
-	gc_assign(m__fields,Array<c_FieldInfo* >(1));
-	gc_assign(m__fields.At(0),((new c_R47)->m_new()));
-	gc_assign(m__methods,Array<c_MethodInfo* >(2));
-	gc_assign(m__methods.At(0),((new c_R49)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R50)->m_new()));
-	gc_assign(m__ctors,Array<c_FunctionInfo* >(2));
-	gc_assign(m__ctors.At(0),((new c_R48)->m_new()));
-	gc_assign(m__ctors.At(1),((new c_R51)->m_new()));
-	p_InitR();
-	return 0;
-}
-void c_R46::mark(){
-	c_ClassInfo::mark();
-}
-String c_R46::debug(){
-	String t="(R46)\n";
-	t=c_ClassInfo::debug()+t;
-	return t;
-}
 c_ClassInfo* bb_reflection__boolClass;
-c_R52::c_R52(){
+c_R51::c_R51(){
 }
-c_R52* c_R52::m_new(){
+c_R51* c_R51::m_new(){
 	c_ClassInfo::m_new(String(L"monkey.boxes.IntObject",22),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >());
 	gc_assign(bb_reflection__intClass,(this));
 	return this;
 }
-Object* c_R52::p_NewInstance(){
+Object* c_R51::p_NewInstance(){
 	return ((new c_IntObject)->m_new3());
 }
-int c_R52::p_Init(){
+int c_R51::p_Init(){
 	gc_assign(m__fields,Array<c_FieldInfo* >(1));
-	gc_assign(m__fields.At(0),((new c_R53)->m_new()));
+	gc_assign(m__fields.At(0),((new c_R52)->m_new()));
 	gc_assign(m__methods,Array<c_MethodInfo* >(5));
-	gc_assign(m__methods.At(0),((new c_R56)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R57)->m_new()));
-	gc_assign(m__methods.At(2),((new c_R58)->m_new()));
-	gc_assign(m__methods.At(3),((new c_R59)->m_new()));
-	gc_assign(m__methods.At(4),((new c_R60)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R55)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R56)->m_new()));
+	gc_assign(m__methods.At(2),((new c_R57)->m_new()));
+	gc_assign(m__methods.At(3),((new c_R58)->m_new()));
+	gc_assign(m__methods.At(4),((new c_R59)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(3));
-	gc_assign(m__ctors.At(0),((new c_R54)->m_new()));
-	gc_assign(m__ctors.At(1),((new c_R55)->m_new()));
-	gc_assign(m__ctors.At(2),((new c_R61)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R53)->m_new()));
+	gc_assign(m__ctors.At(1),((new c_R54)->m_new()));
+	gc_assign(m__ctors.At(2),((new c_R60)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R52::mark(){
+void c_R51::mark(){
 	c_ClassInfo::mark();
 }
-String c_R52::debug(){
-	String t="(R52)\n";
+String c_R51::debug(){
+	String t="(R51)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
 c_ClassInfo* bb_reflection__intClass;
-c_R62::c_R62(){
+c_R61::c_R61(){
 }
-c_R62* c_R62::m_new(){
+c_R61* c_R61::m_new(){
 	c_ClassInfo::m_new(String(L"monkey.boxes.FloatObject",24),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >());
 	gc_assign(bb_reflection__floatClass,(this));
 	return this;
 }
-Object* c_R62::p_NewInstance(){
+Object* c_R61::p_NewInstance(){
 	return ((new c_FloatObject)->m_new3());
 }
-int c_R62::p_Init(){
+int c_R61::p_Init(){
 	gc_assign(m__fields,Array<c_FieldInfo* >(1));
-	gc_assign(m__fields.At(0),((new c_R63)->m_new()));
+	gc_assign(m__fields.At(0),((new c_R62)->m_new()));
 	gc_assign(m__methods,Array<c_MethodInfo* >(5));
-	gc_assign(m__methods.At(0),((new c_R66)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R67)->m_new()));
-	gc_assign(m__methods.At(2),((new c_R68)->m_new()));
-	gc_assign(m__methods.At(3),((new c_R69)->m_new()));
-	gc_assign(m__methods.At(4),((new c_R70)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R65)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R66)->m_new()));
+	gc_assign(m__methods.At(2),((new c_R67)->m_new()));
+	gc_assign(m__methods.At(3),((new c_R68)->m_new()));
+	gc_assign(m__methods.At(4),((new c_R69)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(3));
-	gc_assign(m__ctors.At(0),((new c_R64)->m_new()));
-	gc_assign(m__ctors.At(1),((new c_R65)->m_new()));
-	gc_assign(m__ctors.At(2),((new c_R71)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R63)->m_new()));
+	gc_assign(m__ctors.At(1),((new c_R64)->m_new()));
+	gc_assign(m__ctors.At(2),((new c_R70)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R62::mark(){
+void c_R61::mark(){
 	c_ClassInfo::mark();
 }
-String c_R62::debug(){
-	String t="(R62)\n";
+String c_R61::debug(){
+	String t="(R61)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
 c_ClassInfo* bb_reflection__floatClass;
-c_R72::c_R72(){
+c_R71::c_R71(){
 }
-c_R72* c_R72::m_new(){
+c_R71* c_R71::m_new(){
 	c_ClassInfo::m_new(String(L"monkey.boxes.StringObject",25),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >());
 	gc_assign(bb_reflection__stringClass,(this));
 	return this;
 }
-Object* c_R72::p_NewInstance(){
+Object* c_R71::p_NewInstance(){
 	return ((new c_StringObject)->m_new4());
 }
-int c_R72::p_Init(){
+int c_R71::p_Init(){
 	gc_assign(m__fields,Array<c_FieldInfo* >(1));
-	gc_assign(m__fields.At(0),((new c_R73)->m_new()));
+	gc_assign(m__fields.At(0),((new c_R72)->m_new()));
 	gc_assign(m__methods,Array<c_MethodInfo* >(3));
-	gc_assign(m__methods.At(0),((new c_R77)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R78)->m_new()));
-	gc_assign(m__methods.At(2),((new c_R79)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R76)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R77)->m_new()));
+	gc_assign(m__methods.At(2),((new c_R78)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(4));
-	gc_assign(m__ctors.At(0),((new c_R74)->m_new()));
-	gc_assign(m__ctors.At(1),((new c_R75)->m_new()));
-	gc_assign(m__ctors.At(2),((new c_R76)->m_new()));
-	gc_assign(m__ctors.At(3),((new c_R80)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R73)->m_new()));
+	gc_assign(m__ctors.At(1),((new c_R74)->m_new()));
+	gc_assign(m__ctors.At(2),((new c_R75)->m_new()));
+	gc_assign(m__ctors.At(3),((new c_R79)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R72::mark(){
+void c_R71::mark(){
 	c_ClassInfo::mark();
 }
-String c_R72::debug(){
-	String t="(R72)\n";
+String c_R71::debug(){
+	String t="(R71)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
 c_ClassInfo* bb_reflection__stringClass;
-c_R81::c_R81(){
+c_R80::c_R80(){
 }
-c_R81* c_R81::m_new(){
+c_R80* c_R80::m_new(){
 	c_ClassInfo::m_new(String(L"monkey.lang.Throwable",21),33,bb_reflection__classes.At(0),Array<c_ClassInfo* >());
 	return this;
 }
+int c_R80::p_Init(){
+	p_InitR();
+	return 0;
+}
+void c_R80::mark(){
+	c_ClassInfo::mark();
+}
+String c_R80::debug(){
+	String t="(R80)\n";
+	t=c_ClassInfo::debug()+t;
+	return t;
+}
+c_R81::c_R81(){
+}
+c_R81* c_R81::m_new(){
+	c_ClassInfo* t_[]={bb_reflection__unknownClass};
+	c_ClassInfo::m_new(String(L"wizard.commands.amazonads.AmazonAds",35),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	return this;
+}
+Object* c_R81::p_NewInstance(){
+	return ((new c_AmazonAds)->m_new());
+}
 int c_R81::p_Init(){
+	gc_assign(m__consts,Array<c_ConstInfo* >(1));
+	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"5.1.14",6)))));
+	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
+	gc_assign(m__ctors.At(0),((new c_R82)->m_new()));
 	p_InitR();
 	return 0;
 }
@@ -11600,32 +11420,6 @@ void c_R81::mark(){
 }
 String c_R81::debug(){
 	String t="(R81)\n";
-	t=c_ClassInfo::debug()+t;
-	return t;
-}
-c_R82::c_R82(){
-}
-c_R82* c_R82::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__unknownClass};
-	c_ClassInfo::m_new(String(L"wizard.commands.amazonads.AmazonAds",35),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-Object* c_R82::p_NewInstance(){
-	return ((new c_AmazonAds)->m_new());
-}
-int c_R82::p_Init(){
-	gc_assign(m__consts,Array<c_ConstInfo* >(1));
-	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"5.1.14",6)))));
-	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R83)->m_new()));
-	p_InitR();
-	return 0;
-}
-void c_R82::mark(){
-	c_ClassInfo::mark();
-}
-String c_R82::debug(){
-	String t="(R82)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
@@ -11648,286 +11442,288 @@ String c_UnknownClass::debug(){
 	return t;
 }
 c_ClassInfo* bb_reflection__unknownClass;
-c_R84::c_R84(){
+c_R83::c_R83(){
 }
-c_R84* c_R84::m_new(){
+c_R83* c_R83::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.amazonpayment.AmazonPayment",43),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R84::p_NewInstance(){
+Object* c_R83::p_NewInstance(){
 	return ((new c_AmazonPayment)->m_new());
 }
-int c_R84::p_Init(){
+int c_R83::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(1));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"1.0.3",5)))));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R85)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R84)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R84::mark(){
+void c_R83::mark(){
 	c_ClassInfo::mark();
 }
-String c_R84::debug(){
-	String t="(R84)\n";
+String c_R83::debug(){
+	String t="(R83)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R86::c_R86(){
+c_R85::c_R85(){
 }
-c_R86* c_R86::m_new(){
+c_R85* c_R85::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.androidantkey.AndroidAntKey",43),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R86::p_NewInstance(){
+Object* c_R85::p_NewInstance(){
 	return ((new c_AndroidAntKey)->m_new());
 }
-int c_R86::p_Init(){
+int c_R85::p_Init(){
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R87)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R86)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R86::mark(){
+void c_R85::mark(){
 	c_ClassInfo::mark();
 }
-String c_R86::debug(){
-	String t="(R86)\n";
+String c_R85::debug(){
+	String t="(R85)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R88::c_R88(){
+c_R87::c_R87(){
 }
-c_R88* c_R88::m_new(){
+c_R87* c_R87::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.androidbass.AndroidBass",39),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R88::p_NewInstance(){
+Object* c_R87::p_NewInstance(){
 	return ((new c_AndroidBass)->m_new());
 }
-int c_R88::p_Init(){
+int c_R87::p_Init(){
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R89)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R88)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R88::mark(){
+void c_R87::mark(){
 	c_ClassInfo::mark();
 }
-String c_R88::debug(){
-	String t="(R88)\n";
+String c_R87::debug(){
+	String t="(R87)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R90::c_R90(){
+c_R89::c_R89(){
 }
-c_R90* c_R90::m_new(){
+c_R89* c_R89::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.androidchartboost.AndroidChartboost",51),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R90::p_NewInstance(){
+Object* c_R89::p_NewInstance(){
 	return ((new c_AndroidChartboost)->m_new());
 }
-int c_R90::p_Init(){
+int c_R89::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(1));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"3.1.5",5)))));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R91)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R90)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R90::mark(){
+void c_R89::mark(){
 	c_ClassInfo::mark();
 }
-String c_R90::debug(){
-	String t="(R90)\n";
+String c_R89::debug(){
+	String t="(R89)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R92::c_R92(){
+c_R91::c_R91(){
 }
-c_R92* c_R92::m_new(){
+c_R91* c_R91::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.androidicons.AndroidIcons",41),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R92::p_NewInstance(){
+Object* c_R91::p_NewInstance(){
 	return ((new c_AndroidIcons)->m_new());
 }
-int c_R92::p_Init(){
+int c_R91::p_Init(){
 	gc_assign(m__fields,Array<c_FieldInfo* >(1));
-	gc_assign(m__fields.At(0),((new c_R93)->m_new()));
+	gc_assign(m__fields.At(0),((new c_R92)->m_new()));
 	gc_assign(m__methods,Array<c_MethodInfo* >(6));
-	gc_assign(m__methods.At(0),((new c_R94)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R95)->m_new()));
-	gc_assign(m__methods.At(2),((new c_R96)->m_new()));
-	gc_assign(m__methods.At(3),((new c_R97)->m_new()));
-	gc_assign(m__methods.At(4),((new c_R98)->m_new()));
-	gc_assign(m__methods.At(5),((new c_R99)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R93)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R94)->m_new()));
+	gc_assign(m__methods.At(2),((new c_R95)->m_new()));
+	gc_assign(m__methods.At(3),((new c_R96)->m_new()));
+	gc_assign(m__methods.At(4),((new c_R97)->m_new()));
+	gc_assign(m__methods.At(5),((new c_R98)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R100)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R99)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R92::mark(){
+void c_R91::mark(){
 	c_ClassInfo::mark();
 }
-String c_R92::debug(){
-	String t="(R92)\n";
+String c_R91::debug(){
+	String t="(R91)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R101::c_R101(){
+c_R100::c_R100(){
 }
-c_R101* c_R101::m_new(){
+c_R100* c_R100::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.androidlocalytics.AndroidLocalytics",51),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R101::p_NewInstance(){
+Object* c_R100::p_NewInstance(){
 	return ((new c_AndroidLocalytics)->m_new());
 }
-int c_R101::p_Init(){
+int c_R100::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(1));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"2.4",3)))));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R102)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R101)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R101::mark(){
+void c_R100::mark(){
 	c_ClassInfo::mark();
 }
-String c_R101::debug(){
-	String t="(R101)\n";
+String c_R100::debug(){
+	String t="(R100)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R103::c_R103(){
+c_R102::c_R102(){
 }
-c_R103* c_R103::m_new(){
+c_R102* c_R102::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.androidrevmob.AndroidRevmob",43),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R103::p_NewInstance(){
+Object* c_R102::p_NewInstance(){
 	return ((new c_AndroidRevmob)->m_new());
 }
-int c_R103::p_Init(){
+int c_R102::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(1));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"6.4.3",5)))));
 	gc_assign(m__methods,Array<c_MethodInfo* >(1));
-	gc_assign(m__methods.At(0),((new c_R104)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R103)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R105)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R104)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R103::mark(){
+void c_R102::mark(){
 	c_ClassInfo::mark();
 }
-String c_R103::debug(){
-	String t="(R103)\n";
+String c_R102::debug(){
+	String t="(R102)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R106::c_R106(){
+c_R105::c_R105(){
 }
-c_R106* c_R106::m_new(){
+c_R105* c_R105::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.androidversion.AndroidVersion",45),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R106::p_NewInstance(){
+Object* c_R105::p_NewInstance(){
 	return ((new c_AndroidVersion)->m_new());
 }
-int c_R106::p_Init(){
+int c_R105::p_Init(){
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R107)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R106)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R106::mark(){
+void c_R105::mark(){
 	c_ClassInfo::mark();
 }
-String c_R106::debug(){
-	String t="(R106)\n";
+String c_R105::debug(){
+	String t="(R105)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R108::c_R108(){
+c_R107::c_R107(){
 }
-c_R108* c_R108::m_new(){
+c_R107* c_R107::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.androidvungle.AndroidVungle",43),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R108::p_NewInstance(){
+Object* c_R107::p_NewInstance(){
 	return ((new c_AndroidVungle)->m_new());
 }
-int c_R108::p_Init(){
+int c_R107::p_Init(){
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R109)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R108)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R108::mark(){
+void c_R107::mark(){
 	c_ClassInfo::mark();
 }
-String c_R108::debug(){
-	String t="(R108)\n";
+String c_R107::debug(){
+	String t="(R107)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R110::c_R110(){
+c_R109::c_R109(){
 }
-c_R110* c_R110::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__unknownClass};
-	c_ClassInfo::m_new(String(L"wizard.commands.googlepayment.GooglePayment",43),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-Object* c_R110::p_NewInstance(){
-	return ((new c_GooglePayment)->m_new());
-}
-int c_R110::p_Init(){
-	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R111)->m_new()));
-	p_InitR();
-	return 0;
-}
-void c_R110::mark(){
-	c_ClassInfo::mark();
-}
-String c_R110::debug(){
-	String t="(R110)\n";
-	t=c_ClassInfo::debug()+t;
-	return t;
-}
-c_R112::c_R112(){
-}
-c_R112* c_R112::m_new(){
+c_R109* c_R109::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosaddlanguage.IosAddLanguage",45),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R112::p_NewInstance(){
+Object* c_R109::p_NewInstance(){
 	return ((new c_IosAddLanguage)->m_new());
 }
-int c_R112::p_Init(){
+int c_R109::p_Init(){
+	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
+	gc_assign(m__ctors.At(0),((new c_R110)->m_new()));
+	p_InitR();
+	return 0;
+}
+void c_R109::mark(){
+	c_ClassInfo::mark();
+}
+String c_R109::debug(){
+	String t="(R109)\n";
+	t=c_ClassInfo::debug()+t;
+	return t;
+}
+c_R111::c_R111(){
+}
+c_R111* c_R111::m_new(){
+	c_ClassInfo* t_[]={bb_reflection__unknownClass};
+	c_ClassInfo::m_new(String(L"wizard.commands.iosappirater.IosAppirater",41),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	return this;
+}
+Object* c_R111::p_NewInstance(){
+	return ((new c_IosAppirater)->m_new());
+}
+int c_R111::p_Init(){
+	gc_assign(m__functions,Array<c_FunctionInfo* >(1));
+	gc_assign(m__functions.At(0),((new c_R112)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
 	gc_assign(m__ctors.At(0),((new c_R113)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R112::mark(){
+void c_R111::mark(){
 	c_ClassInfo::mark();
 }
-String c_R112::debug(){
-	String t="(R112)\n";
+String c_R111::debug(){
+	String t="(R111)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
@@ -11935,17 +11731,15 @@ c_R114::c_R114(){
 }
 c_R114* c_R114::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
-	c_ClassInfo::m_new(String(L"wizard.commands.iosappirater.IosAppirater",41),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo::m_new(String(L"wizard.commands.iosbundleid.IosBundleId",39),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 Object* c_R114::p_NewInstance(){
-	return ((new c_IosAppirater)->m_new());
+	return ((new c_IosBundleId)->m_new());
 }
 int c_R114::p_Init(){
-	gc_assign(m__functions,Array<c_FunctionInfo* >(1));
-	gc_assign(m__functions.At(0),((new c_R115)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R116)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R115)->m_new()));
 	p_InitR();
 	return 0;
 }
@@ -11957,331 +11751,333 @@ String c_R114::debug(){
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R117::c_R117(){
+c_R116::c_R116(){
 }
-c_R117* c_R117::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__unknownClass};
-	c_ClassInfo::m_new(String(L"wizard.commands.iosbundleid.IosBundleId",39),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-Object* c_R117::p_NewInstance(){
-	return ((new c_IosBundleId)->m_new());
-}
-int c_R117::p_Init(){
-	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R118)->m_new()));
-	p_InitR();
-	return 0;
-}
-void c_R117::mark(){
-	c_ClassInfo::mark();
-}
-String c_R117::debug(){
-	String t="(R117)\n";
-	t=c_ClassInfo::debug()+t;
-	return t;
-}
-c_R119::c_R119(){
-}
-c_R119* c_R119::m_new(){
+c_R116* c_R116::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.ioschartboost.IosChartboost",43),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R119::p_NewInstance(){
+Object* c_R116::p_NewInstance(){
 	return ((new c_IosChartboost)->m_new());
 }
-int c_R119::p_Init(){
+int c_R116::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(1));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"3.2",3)))));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R120)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R117)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R119::mark(){
+void c_R116::mark(){
 	c_ClassInfo::mark();
 }
-String c_R119::debug(){
-	String t="(R119)\n";
+String c_R116::debug(){
+	String t="(R116)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R121::c_R121(){
+c_R118::c_R118(){
 }
-c_R121* c_R121::m_new(){
+c_R118* c_R118::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.ioscompresspngfiles.IosCompressPngFiles",55),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R121::p_NewInstance(){
+Object* c_R118::p_NewInstance(){
 	return ((new c_IosCompressPngFiles)->m_new());
 }
-int c_R121::p_Init(){
+int c_R118::p_Init(){
 	gc_assign(m__methods,Array<c_MethodInfo* >(3));
-	gc_assign(m__methods.At(0),((new c_R122)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R123)->m_new()));
-	gc_assign(m__methods.At(2),((new c_R124)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R119)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R120)->m_new()));
+	gc_assign(m__methods.At(2),((new c_R121)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R125)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R122)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R121::mark(){
+void c_R118::mark(){
 	c_ClassInfo::mark();
 }
-String c_R121::debug(){
-	String t="(R121)\n";
+String c_R118::debug(){
+	String t="(R118)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R126::c_R126(){
+c_R123::c_R123(){
 }
-c_R126* c_R126::m_new(){
+c_R123* c_R123::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosdeploymenttarget.IosDeploymentTarget",55),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R126::p_NewInstance(){
+Object* c_R123::p_NewInstance(){
 	return ((new c_IosDeploymentTarget)->m_new());
 }
-int c_R126::p_Init(){
+int c_R123::p_Init(){
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R127)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R124)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R126::mark(){
+void c_R123::mark(){
 	c_ClassInfo::mark();
 }
-String c_R126::debug(){
-	String t="(R126)\n";
+String c_R123::debug(){
+	String t="(R123)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R128::c_R128(){
+c_R125::c_R125(){
 }
-c_R128* c_R128::m_new(){
+c_R125* c_R125::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosflurry.IosFlurry",35),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R128::p_NewInstance(){
+Object* c_R125::p_NewInstance(){
 	return ((new c_IosFlurry)->m_new());
 }
-int c_R128::p_Init(){
+int c_R125::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(1));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"4.1.0",5)))));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R129)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R126)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R128::mark(){
+void c_R125::mark(){
 	c_ClassInfo::mark();
 }
-String c_R128::debug(){
-	String t="(R128)\n";
+String c_R125::debug(){
+	String t="(R125)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R130::c_R130(){
+c_R127::c_R127(){
 }
-c_R130* c_R130::m_new(){
+c_R127* c_R127::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosflurryads.IosFlurryAds",41),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R130::p_NewInstance(){
+Object* c_R127::p_NewInstance(){
 	return ((new c_IosFlurryAds)->m_new());
 }
-int c_R130::p_Init(){
+int c_R127::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(1));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"VERSION",7),0,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"4.1.0",5)))));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R131)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R128)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R130::mark(){
+void c_R127::mark(){
 	c_ClassInfo::mark();
 }
-String c_R130::debug(){
-	String t="(R130)\n";
+String c_R127::debug(){
+	String t="(R127)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R132::c_R132(){
+c_R129::c_R129(){
 }
-c_R132* c_R132::m_new(){
+c_R129* c_R129::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosframework.IosFramework",41),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R132::p_NewInstance(){
+Object* c_R129::p_NewInstance(){
 	return ((new c_IosFramework)->m_new());
 }
-int c_R132::p_Init(){
+int c_R129::p_Init(){
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R133)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R130)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R132::mark(){
+void c_R129::mark(){
 	c_ClassInfo::mark();
 }
-String c_R132::debug(){
-	String t="(R132)\n";
+String c_R129::debug(){
+	String t="(R129)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R134::c_R134(){
+c_R131::c_R131(){
 }
-c_R134* c_R134::m_new(){
+c_R131* c_R131::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.ioshidestatusbar.IosHideStatusBar",49),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R134::p_NewInstance(){
+Object* c_R131::p_NewInstance(){
 	return ((new c_IosHideStatusBar)->m_new());
 }
-int c_R134::p_Init(){
+int c_R131::p_Init(){
 	gc_assign(m__methods,Array<c_MethodInfo* >(3));
-	gc_assign(m__methods.At(0),((new c_R135)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R136)->m_new()));
-	gc_assign(m__methods.At(2),((new c_R137)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R132)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R133)->m_new()));
+	gc_assign(m__methods.At(2),((new c_R134)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R138)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R135)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R134::mark(){
+void c_R131::mark(){
 	c_ClassInfo::mark();
 }
-String c_R134::debug(){
-	String t="(R134)\n";
+String c_R131::debug(){
+	String t="(R131)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R139::c_R139(){
+c_R136::c_R136(){
 }
-c_R139* c_R139::m_new(){
+c_R136* c_R136::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosicons.IosIcons",33),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R139::p_NewInstance(){
+Object* c_R136::p_NewInstance(){
 	return ((new c_IosIcons)->m_new());
 }
-int c_R139::p_Init(){
+int c_R136::p_Init(){
 	gc_assign(m__methods,Array<c_MethodInfo* >(9));
-	gc_assign(m__methods.At(0),((new c_R140)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R141)->m_new()));
-	gc_assign(m__methods.At(2),((new c_R142)->m_new()));
-	gc_assign(m__methods.At(3),((new c_R143)->m_new()));
-	gc_assign(m__methods.At(4),((new c_R144)->m_new()));
-	gc_assign(m__methods.At(5),((new c_R145)->m_new()));
-	gc_assign(m__methods.At(6),((new c_R146)->m_new()));
-	gc_assign(m__methods.At(7),((new c_R147)->m_new()));
-	gc_assign(m__methods.At(8),((new c_R148)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R137)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R138)->m_new()));
+	gc_assign(m__methods.At(2),((new c_R139)->m_new()));
+	gc_assign(m__methods.At(3),((new c_R140)->m_new()));
+	gc_assign(m__methods.At(4),((new c_R141)->m_new()));
+	gc_assign(m__methods.At(5),((new c_R142)->m_new()));
+	gc_assign(m__methods.At(6),((new c_R143)->m_new()));
+	gc_assign(m__methods.At(7),((new c_R144)->m_new()));
+	gc_assign(m__methods.At(8),((new c_R145)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R149)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R146)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R139::mark(){
+void c_R136::mark(){
 	c_ClassInfo::mark();
 }
-String c_R139::debug(){
-	String t="(R139)\n";
+String c_R136::debug(){
+	String t="(R136)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R150::c_R150(){
+c_R147::c_R147(){
 }
-c_R150* c_R150::m_new(){
+c_R147* c_R147::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosinterfaceorientation.IosInterfaceOrientation",63),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R150::p_NewInstance(){
+Object* c_R147::p_NewInstance(){
 	return ((new c_IosInterfaceOrientation)->m_new());
 }
-int c_R150::p_Init(){
+int c_R147::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(3));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"BOTH",4),2,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"BOTH",4)))));
 	gc_assign(m__consts.At(1),(new c_ConstInfo)->m_new(String(L"LANDSCAPE",9),2,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"LANDSCAPE",9)))));
 	gc_assign(m__consts.At(2),(new c_ConstInfo)->m_new(String(L"PORTRAIT",8),2,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"PORTRAIT",8)))));
 	gc_assign(m__methods,Array<c_MethodInfo* >(7));
-	gc_assign(m__methods.At(0),((new c_R151)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R152)->m_new()));
-	gc_assign(m__methods.At(2),((new c_R153)->m_new()));
-	gc_assign(m__methods.At(3),((new c_R154)->m_new()));
-	gc_assign(m__methods.At(4),((new c_R155)->m_new()));
-	gc_assign(m__methods.At(5),((new c_R156)->m_new()));
-	gc_assign(m__methods.At(6),((new c_R157)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R148)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R149)->m_new()));
+	gc_assign(m__methods.At(2),((new c_R150)->m_new()));
+	gc_assign(m__methods.At(3),((new c_R151)->m_new()));
+	gc_assign(m__methods.At(4),((new c_R152)->m_new()));
+	gc_assign(m__methods.At(5),((new c_R153)->m_new()));
+	gc_assign(m__methods.At(6),((new c_R154)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R158)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R155)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R150::mark(){
+void c_R147::mark(){
 	c_ClassInfo::mark();
 }
-String c_R150::debug(){
-	String t="(R150)\n";
+String c_R147::debug(){
+	String t="(R147)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R159::c_R159(){
+c_R156::c_R156(){
 }
-c_R159* c_R159::m_new(){
+c_R156* c_R156::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.ioslaunchimage.IosLaunchImage",45),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R159::p_NewInstance(){
+Object* c_R156::p_NewInstance(){
 	return ((new c_IosLaunchImage)->m_new());
 }
-int c_R159::p_Init(){
+int c_R156::p_Init(){
 	gc_assign(m__consts,Array<c_ConstInfo* >(3));
 	gc_assign(m__consts.At(0),(new c_ConstInfo)->m_new(String(L"IPAD_LANDSCAPE",14),2,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"IPAD-LANDSCAPE",14)))));
 	gc_assign(m__consts.At(1),(new c_ConstInfo)->m_new(String(L"IPAD_PORTRAIT",13),2,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"IPAD-PORTRAIT",13)))));
 	gc_assign(m__consts.At(2),(new c_ConstInfo)->m_new(String(L"IPHONE",6),2,bb_reflection__stringClass,((new c_StringObject)->m_new3(String(L"IPHONE",6)))));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R160)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R157)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R159::mark(){
+void c_R156::mark(){
 	c_ClassInfo::mark();
 }
-String c_R159::debug(){
-	String t="(R159)\n";
+String c_R156::debug(){
+	String t="(R156)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R161::c_R161(){
+c_R158::c_R158(){
 }
-c_R161* c_R161::m_new(){
+c_R158* c_R158::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iospatchcodesigningidentity.IosPatchCodeSigningIdentity",71),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R161::p_NewInstance(){
+Object* c_R158::p_NewInstance(){
 	return ((new c_IosPatchCodeSigningIdentity)->m_new());
 }
-int c_R161::p_Init(){
+int c_R158::p_Init(){
+	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
+	gc_assign(m__ctors.At(0),((new c_R159)->m_new()));
+	p_InitR();
+	return 0;
+}
+void c_R158::mark(){
+	c_ClassInfo::mark();
+}
+String c_R158::debug(){
+	String t="(R158)\n";
+	t=c_ClassInfo::debug()+t;
+	return t;
+}
+c_R160::c_R160(){
+}
+c_R160* c_R160::m_new(){
+	c_ClassInfo* t_[]={bb_reflection__unknownClass};
+	c_ClassInfo::m_new(String(L"wizard.commands.iosproductname.IosProductName",45),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	return this;
+}
+Object* c_R160::p_NewInstance(){
+	return ((new c_IosProductName)->m_new());
+}
+int c_R160::p_Init(){
+	gc_assign(m__methods,Array<c_MethodInfo* >(1));
+	gc_assign(m__methods.At(0),((new c_R161)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
 	gc_assign(m__ctors.At(0),((new c_R162)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R161::mark(){
+void c_R160::mark(){
 	c_ClassInfo::mark();
 }
-String c_R161::debug(){
-	String t="(R161)\n";
+String c_R160::debug(){
+	String t="(R160)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
@@ -12289,17 +12085,15 @@ c_R163::c_R163(){
 }
 c_R163* c_R163::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
-	c_ClassInfo::m_new(String(L"wizard.commands.iosproductname.IosProductName",45),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo::m_new(String(L"wizard.commands.iosrevmob.IosRevmob",35),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 Object* c_R163::p_NewInstance(){
-	return ((new c_IosProductName)->m_new());
+	return ((new c_IosRevmob)->m_new());
 }
 int c_R163::p_Init(){
-	gc_assign(m__methods,Array<c_MethodInfo* >(1));
-	gc_assign(m__methods.At(0),((new c_R164)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R165)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R164)->m_new()));
 	p_InitR();
 	return 0;
 }
@@ -12311,130 +12105,106 @@ String c_R163::debug(){
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R166::c_R166(){
+c_R165::c_R165(){
 }
-c_R166* c_R166::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__unknownClass};
-	c_ClassInfo::m_new(String(L"wizard.commands.iosrevmob.IosRevmob",35),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-Object* c_R166::p_NewInstance(){
-	return ((new c_IosRevmob)->m_new());
-}
-int c_R166::p_Init(){
-	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R167)->m_new()));
-	p_InitR();
-	return 0;
-}
-void c_R166::mark(){
-	c_ClassInfo::mark();
-}
-String c_R166::debug(){
-	String t="(R166)\n";
-	t=c_ClassInfo::debug()+t;
-	return t;
-}
-c_R168::c_R168(){
-}
-c_R168* c_R168::m_new(){
+c_R165* c_R165::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosversion.IosVersion",37),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R168::p_NewInstance(){
+Object* c_R165::p_NewInstance(){
 	return ((new c_IosVersion)->m_new());
 }
-int c_R168::p_Init(){
+int c_R165::p_Init(){
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R169)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R166)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R168::mark(){
+void c_R165::mark(){
 	c_ClassInfo::mark();
 }
-String c_R168::debug(){
-	String t="(R168)\n";
+String c_R165::debug(){
+	String t="(R165)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R170::c_R170(){
+c_R167::c_R167(){
 }
-c_R170* c_R170::m_new(){
+c_R167* c_R167::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.iosvungle.IosVungle",35),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R170::p_NewInstance(){
+Object* c_R167::p_NewInstance(){
 	return ((new c_IosVungle)->m_new());
 }
-int c_R170::p_Init(){
+int c_R167::p_Init(){
 	gc_assign(m__methods,Array<c_MethodInfo* >(2));
-	gc_assign(m__methods.At(0),((new c_R171)->m_new()));
-	gc_assign(m__methods.At(1),((new c_R172)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R168)->m_new()));
+	gc_assign(m__methods.At(1),((new c_R169)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R173)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R170)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R170::mark(){
+void c_R167::mark(){
 	c_ClassInfo::mark();
 }
-String c_R170::debug(){
-	String t="(R170)\n";
+String c_R167::debug(){
+	String t="(R167)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R174::c_R174(){
+c_R171::c_R171(){
 }
-c_R174* c_R174::m_new(){
+c_R171* c_R171::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__unknownClass};
 	c_ClassInfo::m_new(String(L"wizard.commands.samsungpayment.SamsungPayment",45),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-Object* c_R174::p_NewInstance(){
+Object* c_R171::p_NewInstance(){
 	return ((new c_SamsungPayment)->m_new());
 }
-int c_R174::p_Init(){
+int c_R171::p_Init(){
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(1));
-	gc_assign(m__ctors.At(0),((new c_R175)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R172)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R174::mark(){
+void c_R171::mark(){
 	c_ClassInfo::mark();
 }
-String c_R174::debug(){
-	String t="(R174)\n";
+String c_R171::debug(){
+	String t="(R171)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
-c_R176::c_R176(){
+c_R173::c_R173(){
 }
-c_R176* c_R176::m_new(){
+c_R173* c_R173::m_new(){
 	c_ClassInfo::m_new(String(L"monkey.boxes.ArrayObject<String>",32),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >());
 	return this;
 }
-Object* c_R176::p_NewInstance(){
+Object* c_R173::p_NewInstance(){
 	return ((new c_ArrayObject)->m_new2());
 }
-int c_R176::p_Init(){
+int c_R173::p_Init(){
 	gc_assign(m__fields,Array<c_FieldInfo* >(1));
-	gc_assign(m__fields.At(0),((new c_R177)->m_new()));
+	gc_assign(m__fields.At(0),((new c_R174)->m_new()));
 	gc_assign(m__methods,Array<c_MethodInfo* >(1));
-	gc_assign(m__methods.At(0),((new c_R179)->m_new()));
+	gc_assign(m__methods.At(0),((new c_R176)->m_new()));
 	gc_assign(m__ctors,Array<c_FunctionInfo* >(2));
-	gc_assign(m__ctors.At(0),((new c_R178)->m_new()));
-	gc_assign(m__ctors.At(1),((new c_R180)->m_new()));
+	gc_assign(m__ctors.At(0),((new c_R175)->m_new()));
+	gc_assign(m__ctors.At(1),((new c_R177)->m_new()));
 	p_InitR();
 	return 0;
 }
-void c_R176::mark(){
+void c_R173::mark(){
 	c_ClassInfo::mark();
 }
-String c_R176::debug(){
-	String t="(R176)\n";
+String c_R173::debug(){
+	String t="(R173)\n";
 	t=c_ClassInfo::debug()+t;
 	return t;
 }
@@ -12483,11 +12253,26 @@ String c_FunctionInfo::debug(){
 	return t;
 }
 Array<c_FunctionInfo* > bb_reflection__functions;
+c_R32::c_R32(){
+}
+c_R32* c_R32::m_new(){
+	c_ClassInfo* t_[]={bb_reflection__boolClass};
+	c_FunctionInfo::m_new(String(L"monkey.boxes.BoxBool",20),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	return this;
+}
+void c_R32::mark(){
+	c_FunctionInfo::mark();
+}
+String c_R32::debug(){
+	String t="(R32)\n";
+	t=c_FunctionInfo::debug()+t;
+	return t;
+}
 c_R33::c_R33(){
 }
 c_R33* c_R33::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__boolClass};
-	c_FunctionInfo::m_new(String(L"monkey.boxes.BoxBool",20),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo* t_[]={bb_reflection__intClass};
+	c_FunctionInfo::m_new(String(L"monkey.boxes.BoxInt",19),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R33::mark(){
@@ -12501,8 +12286,8 @@ String c_R33::debug(){
 c_R34::c_R34(){
 }
 c_R34* c_R34::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__intClass};
-	c_FunctionInfo::m_new(String(L"monkey.boxes.BoxInt",19),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo* t_[]={bb_reflection__floatClass};
+	c_FunctionInfo::m_new(String(L"monkey.boxes.BoxFloat",21),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R34::mark(){
@@ -12516,8 +12301,8 @@ String c_R34::debug(){
 c_R35::c_R35(){
 }
 c_R35* c_R35::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__floatClass};
-	c_FunctionInfo::m_new(String(L"monkey.boxes.BoxFloat",21),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo* t_[]={bb_reflection__stringClass};
+	c_FunctionInfo::m_new(String(L"monkey.boxes.BoxString",22),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R35::mark(){
@@ -12531,8 +12316,8 @@ String c_R35::debug(){
 c_R36::c_R36(){
 }
 c_R36* c_R36::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_FunctionInfo::m_new(String(L"monkey.boxes.BoxString",22),0,bb_reflection__classes.At(0),Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo* t_[]={bb_reflection__classes.At(0)};
+	c_FunctionInfo::m_new(String(L"monkey.boxes.UnboxBool",22),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R36::mark(){
@@ -12547,7 +12332,7 @@ c_R37::c_R37(){
 }
 c_R37* c_R37::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__classes.At(0)};
-	c_FunctionInfo::m_new(String(L"monkey.boxes.UnboxBool",22),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
+	c_FunctionInfo::m_new(String(L"monkey.boxes.UnboxInt",21),0,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R37::mark(){
@@ -12562,7 +12347,7 @@ c_R38::c_R38(){
 }
 c_R38* c_R38::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__classes.At(0)};
-	c_FunctionInfo::m_new(String(L"monkey.boxes.UnboxInt",21),0,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
+	c_FunctionInfo::m_new(String(L"monkey.boxes.UnboxFloat",23),0,bb_reflection__floatClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R38::mark(){
@@ -12577,7 +12362,7 @@ c_R39::c_R39(){
 }
 c_R39* c_R39::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__classes.At(0)};
-	c_FunctionInfo::m_new(String(L"monkey.boxes.UnboxFloat",23),0,bb_reflection__floatClass,Array<c_ClassInfo* >(t_,1));
+	c_FunctionInfo::m_new(String(L"monkey.boxes.UnboxString",24),0,bb_reflection__stringClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R39::mark(){
@@ -12591,8 +12376,8 @@ String c_R39::debug(){
 c_R40::c_R40(){
 }
 c_R40* c_R40::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__classes.At(0)};
-	c_FunctionInfo::m_new(String(L"monkey.boxes.UnboxString",24),0,bb_reflection__stringClass,Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo* t_[]={bb_reflection__stringClass};
+	c_FunctionInfo::m_new(String(L"monkey.lang.Print",17),1,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R40::mark(){
@@ -12607,7 +12392,7 @@ c_R41::c_R41(){
 }
 c_R41* c_R41::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_FunctionInfo::m_new(String(L"monkey.lang.Print",17),1,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
+	c_FunctionInfo::m_new(String(L"monkey.lang.Error",17),1,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R41::mark(){
@@ -12622,7 +12407,7 @@ c_R42::c_R42(){
 }
 c_R42* c_R42::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_FunctionInfo::m_new(String(L"monkey.lang.Error",17),1,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
+	c_FunctionInfo::m_new(String(L"monkey.lang.DebugLog",20),1,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R42::mark(){
@@ -12636,8 +12421,7 @@ String c_R42::debug(){
 c_R43::c_R43(){
 }
 c_R43* c_R43::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_FunctionInfo::m_new(String(L"monkey.lang.DebugLog",20),1,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
+	c_FunctionInfo::m_new(String(L"monkey.lang.DebugStop",21),1,bb_reflection__intClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R43::mark(){
@@ -12645,20 +12429,6 @@ void c_R43::mark(){
 }
 String c_R43::debug(){
 	String t="(R43)\n";
-	t=c_FunctionInfo::debug()+t;
-	return t;
-}
-c_R44::c_R44(){
-}
-c_R44* c_R44::m_new(){
-	c_FunctionInfo::m_new(String(L"monkey.lang.DebugStop",21),1,bb_reflection__intClass,Array<c_ClassInfo* >());
-	return this;
-}
-void c_R44::mark(){
-	c_FunctionInfo::mark();
-}
-String c_R44::debug(){
-	String t="(R44)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
@@ -12684,7 +12454,7 @@ c___GetClass* c___GetClass::m_new(){
 	DBG_ENTER("__GetClass.new")
 	c___GetClass *self=this;
 	DBG_LOCAL(self,"Self")
-	DBG_INFO("$SOURCE<1597>");
+	DBG_INFO("$SOURCE<1574>");
 	c__GetClass::m_new();
 	return this;
 }
@@ -12698,44 +12468,43 @@ String c___GetClass::debug(){
 }
 c__GetClass* bb_reflection__getClass;
 int bb_reflection___init(){
-	gc_assign(bb_reflection__classes,Array<c_ClassInfo* >(37));
-	gc_assign(bb_reflection__classes.At(0),((new c_R45)->m_new()));
-	gc_assign(bb_reflection__classes.At(1),((new c_R46)->m_new()));
-	gc_assign(bb_reflection__classes.At(2),((new c_R52)->m_new()));
-	gc_assign(bb_reflection__classes.At(3),((new c_R62)->m_new()));
-	gc_assign(bb_reflection__classes.At(4),((new c_R72)->m_new()));
-	gc_assign(bb_reflection__classes.At(5),((new c_R81)->m_new()));
-	gc_assign(bb_reflection__classes.At(6),((new c_R82)->m_new()));
-	gc_assign(bb_reflection__classes.At(7),((new c_R84)->m_new()));
-	gc_assign(bb_reflection__classes.At(8),((new c_R86)->m_new()));
-	gc_assign(bb_reflection__classes.At(9),((new c_R88)->m_new()));
-	gc_assign(bb_reflection__classes.At(10),((new c_R90)->m_new()));
-	gc_assign(bb_reflection__classes.At(11),((new c_R92)->m_new()));
-	gc_assign(bb_reflection__classes.At(12),((new c_R101)->m_new()));
-	gc_assign(bb_reflection__classes.At(13),((new c_R103)->m_new()));
-	gc_assign(bb_reflection__classes.At(14),((new c_R106)->m_new()));
-	gc_assign(bb_reflection__classes.At(15),((new c_R108)->m_new()));
-	gc_assign(bb_reflection__classes.At(16),((new c_R110)->m_new()));
-	gc_assign(bb_reflection__classes.At(17),((new c_R112)->m_new()));
+	gc_assign(bb_reflection__classes,Array<c_ClassInfo* >(36));
+	gc_assign(bb_reflection__classes.At(0),((new c_R44)->m_new()));
+	gc_assign(bb_reflection__classes.At(1),((new c_R45)->m_new()));
+	gc_assign(bb_reflection__classes.At(2),((new c_R51)->m_new()));
+	gc_assign(bb_reflection__classes.At(3),((new c_R61)->m_new()));
+	gc_assign(bb_reflection__classes.At(4),((new c_R71)->m_new()));
+	gc_assign(bb_reflection__classes.At(5),((new c_R80)->m_new()));
+	gc_assign(bb_reflection__classes.At(6),((new c_R81)->m_new()));
+	gc_assign(bb_reflection__classes.At(7),((new c_R83)->m_new()));
+	gc_assign(bb_reflection__classes.At(8),((new c_R85)->m_new()));
+	gc_assign(bb_reflection__classes.At(9),((new c_R87)->m_new()));
+	gc_assign(bb_reflection__classes.At(10),((new c_R89)->m_new()));
+	gc_assign(bb_reflection__classes.At(11),((new c_R91)->m_new()));
+	gc_assign(bb_reflection__classes.At(12),((new c_R100)->m_new()));
+	gc_assign(bb_reflection__classes.At(13),((new c_R102)->m_new()));
+	gc_assign(bb_reflection__classes.At(14),((new c_R105)->m_new()));
+	gc_assign(bb_reflection__classes.At(15),((new c_R107)->m_new()));
+	gc_assign(bb_reflection__classes.At(16),((new c_R109)->m_new()));
+	gc_assign(bb_reflection__classes.At(17),((new c_R111)->m_new()));
 	gc_assign(bb_reflection__classes.At(18),((new c_R114)->m_new()));
-	gc_assign(bb_reflection__classes.At(19),((new c_R117)->m_new()));
-	gc_assign(bb_reflection__classes.At(20),((new c_R119)->m_new()));
-	gc_assign(bb_reflection__classes.At(21),((new c_R121)->m_new()));
-	gc_assign(bb_reflection__classes.At(22),((new c_R126)->m_new()));
-	gc_assign(bb_reflection__classes.At(23),((new c_R128)->m_new()));
-	gc_assign(bb_reflection__classes.At(24),((new c_R130)->m_new()));
-	gc_assign(bb_reflection__classes.At(25),((new c_R132)->m_new()));
-	gc_assign(bb_reflection__classes.At(26),((new c_R134)->m_new()));
-	gc_assign(bb_reflection__classes.At(27),((new c_R139)->m_new()));
-	gc_assign(bb_reflection__classes.At(28),((new c_R150)->m_new()));
-	gc_assign(bb_reflection__classes.At(29),((new c_R159)->m_new()));
-	gc_assign(bb_reflection__classes.At(30),((new c_R161)->m_new()));
+	gc_assign(bb_reflection__classes.At(19),((new c_R116)->m_new()));
+	gc_assign(bb_reflection__classes.At(20),((new c_R118)->m_new()));
+	gc_assign(bb_reflection__classes.At(21),((new c_R123)->m_new()));
+	gc_assign(bb_reflection__classes.At(22),((new c_R125)->m_new()));
+	gc_assign(bb_reflection__classes.At(23),((new c_R127)->m_new()));
+	gc_assign(bb_reflection__classes.At(24),((new c_R129)->m_new()));
+	gc_assign(bb_reflection__classes.At(25),((new c_R131)->m_new()));
+	gc_assign(bb_reflection__classes.At(26),((new c_R136)->m_new()));
+	gc_assign(bb_reflection__classes.At(27),((new c_R147)->m_new()));
+	gc_assign(bb_reflection__classes.At(28),((new c_R156)->m_new()));
+	gc_assign(bb_reflection__classes.At(29),((new c_R158)->m_new()));
+	gc_assign(bb_reflection__classes.At(30),((new c_R160)->m_new()));
 	gc_assign(bb_reflection__classes.At(31),((new c_R163)->m_new()));
-	gc_assign(bb_reflection__classes.At(32),((new c_R166)->m_new()));
-	gc_assign(bb_reflection__classes.At(33),((new c_R168)->m_new()));
-	gc_assign(bb_reflection__classes.At(34),((new c_R170)->m_new()));
-	gc_assign(bb_reflection__classes.At(35),((new c_R174)->m_new()));
-	gc_assign(bb_reflection__classes.At(36),((new c_R176)->m_new()));
+	gc_assign(bb_reflection__classes.At(32),((new c_R165)->m_new()));
+	gc_assign(bb_reflection__classes.At(33),((new c_R167)->m_new()));
+	gc_assign(bb_reflection__classes.At(34),((new c_R171)->m_new()));
+	gc_assign(bb_reflection__classes.At(35),((new c_R173)->m_new()));
 	bb_reflection__classes.At(0)->p_Init();
 	bb_reflection__classes.At(1)->p_Init();
 	bb_reflection__classes.At(2)->p_Init();
@@ -12772,20 +12541,19 @@ int bb_reflection___init(){
 	bb_reflection__classes.At(33)->p_Init();
 	bb_reflection__classes.At(34)->p_Init();
 	bb_reflection__classes.At(35)->p_Init();
-	bb_reflection__classes.At(36)->p_Init();
 	gc_assign(bb_reflection__functions,Array<c_FunctionInfo* >(12));
-	gc_assign(bb_reflection__functions.At(0),((new c_R33)->m_new()));
-	gc_assign(bb_reflection__functions.At(1),((new c_R34)->m_new()));
-	gc_assign(bb_reflection__functions.At(2),((new c_R35)->m_new()));
-	gc_assign(bb_reflection__functions.At(3),((new c_R36)->m_new()));
-	gc_assign(bb_reflection__functions.At(4),((new c_R37)->m_new()));
-	gc_assign(bb_reflection__functions.At(5),((new c_R38)->m_new()));
-	gc_assign(bb_reflection__functions.At(6),((new c_R39)->m_new()));
-	gc_assign(bb_reflection__functions.At(7),((new c_R40)->m_new()));
-	gc_assign(bb_reflection__functions.At(8),((new c_R41)->m_new()));
-	gc_assign(bb_reflection__functions.At(9),((new c_R42)->m_new()));
-	gc_assign(bb_reflection__functions.At(10),((new c_R43)->m_new()));
-	gc_assign(bb_reflection__functions.At(11),((new c_R44)->m_new()));
+	gc_assign(bb_reflection__functions.At(0),((new c_R32)->m_new()));
+	gc_assign(bb_reflection__functions.At(1),((new c_R33)->m_new()));
+	gc_assign(bb_reflection__functions.At(2),((new c_R34)->m_new()));
+	gc_assign(bb_reflection__functions.At(3),((new c_R35)->m_new()));
+	gc_assign(bb_reflection__functions.At(4),((new c_R36)->m_new()));
+	gc_assign(bb_reflection__functions.At(5),((new c_R37)->m_new()));
+	gc_assign(bb_reflection__functions.At(6),((new c_R38)->m_new()));
+	gc_assign(bb_reflection__functions.At(7),((new c_R39)->m_new()));
+	gc_assign(bb_reflection__functions.At(8),((new c_R40)->m_new()));
+	gc_assign(bb_reflection__functions.At(9),((new c_R41)->m_new()));
+	gc_assign(bb_reflection__functions.At(10),((new c_R42)->m_new()));
+	gc_assign(bb_reflection__functions.At(11),((new c_R43)->m_new()));
 	gc_assign(bb_reflection__getClass,((new c___GetClass)->m_new()));
 	return 0;
 }
@@ -13989,24 +13757,39 @@ String c_Stack5::debug(){
 	t+=dbg_decl("length",&m_length);
 	return t;
 }
-c_R47::c_R47(){
+c_R46::c_R46(){
 }
-c_R47* c_R47::m_new(){
+c_R46* c_R46::m_new(){
 	c_FieldInfo::m_new(String(L"value",5),0,bb_reflection__boolClass);
 	return this;
 }
-void c_R47::mark(){
+void c_R46::mark(){
 	c_FieldInfo::mark();
 }
-String c_R47::debug(){
-	String t="(R47)\n";
+String c_R46::debug(){
+	String t="(R46)\n";
 	t=c_FieldInfo::debug()+t;
+	return t;
+}
+c_R48::c_R48(){
+}
+c_R48* c_R48::m_new(){
+	c_MethodInfo::m_new(String(L"ToBool",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R48::mark(){
+	c_MethodInfo::mark();
+}
+String c_R48::debug(){
+	String t="(R48)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R49::c_R49(){
 }
 c_R49* c_R49::m_new(){
-	c_MethodInfo::m_new(String(L"ToBool",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__classes.At(1)};
+	c_MethodInfo::m_new(String(L"Equals",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R49::mark(){
@@ -14017,68 +13800,67 @@ String c_R49::debug(){
 	t=c_MethodInfo::debug()+t;
 	return t;
 }
-c_R50::c_R50(){
+c_R47::c_R47(){
 }
-c_R50* c_R50::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__classes.At(1)};
-	c_MethodInfo::m_new(String(L"Equals",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-void c_R50::mark(){
-	c_MethodInfo::mark();
-}
-String c_R50::debug(){
-	String t="(R50)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R48::c_R48(){
-}
-c_R48* c_R48::m_new(){
+c_R47* c_R47::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__boolClass};
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(1),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-void c_R48::mark(){
+void c_R47::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R48::debug(){
-	String t="(R48)\n";
+String c_R47::debug(){
+	String t="(R47)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R51::c_R51(){
+c_R50::c_R50(){
 }
-c_R51* c_R51::m_new(){
+c_R50* c_R50::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(1),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R51::mark(){
+void c_R50::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R51::debug(){
-	String t="(R51)\n";
+String c_R50::debug(){
+	String t="(R50)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R53::c_R53(){
+c_R52::c_R52(){
 }
-c_R53* c_R53::m_new(){
+c_R52* c_R52::m_new(){
 	c_FieldInfo::m_new(String(L"value",5),0,bb_reflection__intClass);
 	return this;
 }
-void c_R53::mark(){
+void c_R52::mark(){
 	c_FieldInfo::mark();
 }
-String c_R53::debug(){
-	String t="(R53)\n";
+String c_R52::debug(){
+	String t="(R52)\n";
 	t=c_FieldInfo::debug()+t;
+	return t;
+}
+c_R55::c_R55(){
+}
+c_R55* c_R55::m_new(){
+	c_MethodInfo::m_new(String(L"ToInt",5),0,bb_reflection__intClass,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R55::mark(){
+	c_MethodInfo::mark();
+}
+String c_R55::debug(){
+	String t="(R55)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R56::c_R56(){
 }
 c_R56* c_R56::m_new(){
-	c_MethodInfo::m_new(String(L"ToInt",5),0,bb_reflection__intClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"ToFloat",7),0,bb_reflection__floatClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R56::mark(){
@@ -14092,7 +13874,7 @@ String c_R56::debug(){
 c_R57::c_R57(){
 }
 c_R57* c_R57::m_new(){
-	c_MethodInfo::m_new(String(L"ToFloat",7),0,bb_reflection__floatClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"ToString",8),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R57::mark(){
@@ -14106,7 +13888,8 @@ String c_R57::debug(){
 c_R58::c_R58(){
 }
 c_R58* c_R58::m_new(){
-	c_MethodInfo::m_new(String(L"ToString",8),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__classes.At(2)};
+	c_MethodInfo::m_new(String(L"Equals",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R58::mark(){
@@ -14121,7 +13904,7 @@ c_R59::c_R59(){
 }
 c_R59* c_R59::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__classes.At(2)};
-	c_MethodInfo::m_new(String(L"Equals",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
+	c_MethodInfo::m_new(String(L"Compare",7),0,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R59::mark(){
@@ -14132,25 +13915,25 @@ String c_R59::debug(){
 	t=c_MethodInfo::debug()+t;
 	return t;
 }
-c_R60::c_R60(){
+c_R53::c_R53(){
 }
-c_R60* c_R60::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__classes.At(2)};
-	c_MethodInfo::m_new(String(L"Compare",7),0,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
+c_R53* c_R53::m_new(){
+	c_ClassInfo* t_[]={bb_reflection__intClass};
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(2),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-void c_R60::mark(){
-	c_MethodInfo::mark();
+void c_R53::mark(){
+	c_FunctionInfo::mark();
 }
-String c_R60::debug(){
-	String t="(R60)\n";
-	t=c_MethodInfo::debug()+t;
+String c_R53::debug(){
+	String t="(R53)\n";
+	t=c_FunctionInfo::debug()+t;
 	return t;
 }
 c_R54::c_R54(){
 }
 c_R54* c_R54::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__intClass};
+	c_ClassInfo* t_[]={bb_reflection__floatClass};
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(2),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
@@ -14162,53 +13945,52 @@ String c_R54::debug(){
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R55::c_R55(){
+c_R60::c_R60(){
 }
-c_R55* c_R55::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__floatClass};
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(2),Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-void c_R55::mark(){
-	c_FunctionInfo::mark();
-}
-String c_R55::debug(){
-	String t="(R55)\n";
-	t=c_FunctionInfo::debug()+t;
-	return t;
-}
-c_R61::c_R61(){
-}
-c_R61* c_R61::m_new(){
+c_R60* c_R60::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(2),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R61::mark(){
+void c_R60::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R61::debug(){
-	String t="(R61)\n";
+String c_R60::debug(){
+	String t="(R60)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R63::c_R63(){
+c_R62::c_R62(){
 }
-c_R63* c_R63::m_new(){
+c_R62* c_R62::m_new(){
 	c_FieldInfo::m_new(String(L"value",5),0,bb_reflection__floatClass);
 	return this;
 }
-void c_R63::mark(){
+void c_R62::mark(){
 	c_FieldInfo::mark();
 }
-String c_R63::debug(){
-	String t="(R63)\n";
+String c_R62::debug(){
+	String t="(R62)\n";
 	t=c_FieldInfo::debug()+t;
+	return t;
+}
+c_R65::c_R65(){
+}
+c_R65* c_R65::m_new(){
+	c_MethodInfo::m_new(String(L"ToInt",5),0,bb_reflection__intClass,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R65::mark(){
+	c_MethodInfo::mark();
+}
+String c_R65::debug(){
+	String t="(R65)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R66::c_R66(){
 }
 c_R66* c_R66::m_new(){
-	c_MethodInfo::m_new(String(L"ToInt",5),0,bb_reflection__intClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"ToFloat",7),0,bb_reflection__floatClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R66::mark(){
@@ -14222,7 +14004,7 @@ String c_R66::debug(){
 c_R67::c_R67(){
 }
 c_R67* c_R67::m_new(){
-	c_MethodInfo::m_new(String(L"ToFloat",7),0,bb_reflection__floatClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"ToString",8),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R67::mark(){
@@ -14236,7 +14018,8 @@ String c_R67::debug(){
 c_R68::c_R68(){
 }
 c_R68* c_R68::m_new(){
-	c_MethodInfo::m_new(String(L"ToString",8),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__classes.At(3)};
+	c_MethodInfo::m_new(String(L"Equals",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R68::mark(){
@@ -14251,7 +14034,7 @@ c_R69::c_R69(){
 }
 c_R69* c_R69::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__classes.At(3)};
-	c_MethodInfo::m_new(String(L"Equals",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
+	c_MethodInfo::m_new(String(L"Compare",7),0,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R69::mark(){
@@ -14262,25 +14045,25 @@ String c_R69::debug(){
 	t=c_MethodInfo::debug()+t;
 	return t;
 }
-c_R70::c_R70(){
+c_R63::c_R63(){
 }
-c_R70* c_R70::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__classes.At(3)};
-	c_MethodInfo::m_new(String(L"Compare",7),0,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
+c_R63* c_R63::m_new(){
+	c_ClassInfo* t_[]={bb_reflection__intClass};
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(3),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-void c_R70::mark(){
-	c_MethodInfo::mark();
+void c_R63::mark(){
+	c_FunctionInfo::mark();
 }
-String c_R70::debug(){
-	String t="(R70)\n";
-	t=c_MethodInfo::debug()+t;
+String c_R63::debug(){
+	String t="(R63)\n";
+	t=c_FunctionInfo::debug()+t;
 	return t;
 }
 c_R64::c_R64(){
 }
 c_R64* c_R64::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__intClass};
+	c_ClassInfo* t_[]={bb_reflection__floatClass};
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(3),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
@@ -14292,53 +14075,53 @@ String c_R64::debug(){
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R65::c_R65(){
+c_R70::c_R70(){
 }
-c_R65* c_R65::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__floatClass};
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(3),Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-void c_R65::mark(){
-	c_FunctionInfo::mark();
-}
-String c_R65::debug(){
-	String t="(R65)\n";
-	t=c_FunctionInfo::debug()+t;
-	return t;
-}
-c_R71::c_R71(){
-}
-c_R71* c_R71::m_new(){
+c_R70* c_R70::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(3),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R71::mark(){
+void c_R70::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R71::debug(){
-	String t="(R71)\n";
+String c_R70::debug(){
+	String t="(R70)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R73::c_R73(){
+c_R72::c_R72(){
 }
-c_R73* c_R73::m_new(){
+c_R72* c_R72::m_new(){
 	c_FieldInfo::m_new(String(L"value",5),0,bb_reflection__stringClass);
 	return this;
 }
-void c_R73::mark(){
+void c_R72::mark(){
 	c_FieldInfo::mark();
 }
-String c_R73::debug(){
-	String t="(R73)\n";
+String c_R72::debug(){
+	String t="(R72)\n";
 	t=c_FieldInfo::debug()+t;
+	return t;
+}
+c_R76::c_R76(){
+}
+c_R76* c_R76::m_new(){
+	c_MethodInfo::m_new(String(L"ToString",8),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R76::mark(){
+	c_MethodInfo::mark();
+}
+String c_R76::debug(){
+	String t="(R76)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R77::c_R77(){
 }
 c_R77* c_R77::m_new(){
-	c_MethodInfo::m_new(String(L"ToString",8),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__classes.At(4)};
+	c_MethodInfo::m_new(String(L"Equals",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R77::mark(){
@@ -14353,7 +14136,7 @@ c_R78::c_R78(){
 }
 c_R78* c_R78::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__classes.At(4)};
-	c_MethodInfo::m_new(String(L"Equals",6),0,bb_reflection__boolClass,Array<c_ClassInfo* >(t_,1));
+	c_MethodInfo::m_new(String(L"Compare",7),0,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R78::mark(){
@@ -14364,25 +14147,25 @@ String c_R78::debug(){
 	t=c_MethodInfo::debug()+t;
 	return t;
 }
-c_R79::c_R79(){
+c_R73::c_R73(){
 }
-c_R79* c_R79::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__classes.At(4)};
-	c_MethodInfo::m_new(String(L"Compare",7),0,bb_reflection__intClass,Array<c_ClassInfo* >(t_,1));
+c_R73* c_R73::m_new(){
+	c_ClassInfo* t_[]={bb_reflection__intClass};
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(4),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
-void c_R79::mark(){
-	c_MethodInfo::mark();
+void c_R73::mark(){
+	c_FunctionInfo::mark();
 }
-String c_R79::debug(){
-	String t="(R79)\n";
-	t=c_MethodInfo::debug()+t;
+String c_R73::debug(){
+	String t="(R73)\n";
+	t=c_FunctionInfo::debug()+t;
 	return t;
 }
 c_R74::c_R74(){
 }
 c_R74* c_R74::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__intClass};
+	c_ClassInfo* t_[]={bb_reflection__floatClass};
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(4),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
@@ -14397,7 +14180,7 @@ String c_R74::debug(){
 c_R75::c_R75(){
 }
 c_R75* c_R75::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__floatClass};
+	c_ClassInfo* t_[]={bb_reflection__stringClass};
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(4),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
@@ -14409,123 +14192,122 @@ String c_R75::debug(){
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R76::c_R76(){
+c_R79::c_R79(){
 }
-c_R76* c_R76::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(4),Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-void c_R76::mark(){
-	c_FunctionInfo::mark();
-}
-String c_R76::debug(){
-	String t="(R76)\n";
-	t=c_FunctionInfo::debug()+t;
-	return t;
-}
-c_R80::c_R80(){
-}
-c_R80* c_R80::m_new(){
+c_R79* c_R79::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(4),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R80::mark(){
+void c_R79::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R80::debug(){
-	String t="(R80)\n";
+String c_R79::debug(){
+	String t="(R79)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R83::c_R83(){
+c_R82::c_R82(){
 }
-c_R83* c_R83::m_new(){
+c_R82* c_R82::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(6),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R83::mark(){
+void c_R82::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R83::debug(){
-	String t="(R83)\n";
+String c_R82::debug(){
+	String t="(R82)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R85::c_R85(){
+c_R84::c_R84(){
 }
-c_R85* c_R85::m_new(){
+c_R84* c_R84::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(7),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R85::mark(){
+void c_R84::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R85::debug(){
-	String t="(R85)\n";
+String c_R84::debug(){
+	String t="(R84)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R87::c_R87(){
+c_R86::c_R86(){
 }
-c_R87* c_R87::m_new(){
+c_R86* c_R86::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(8),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R87::mark(){
+void c_R86::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R87::debug(){
-	String t="(R87)\n";
+String c_R86::debug(){
+	String t="(R86)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R89::c_R89(){
+c_R88::c_R88(){
 }
-c_R89* c_R89::m_new(){
+c_R88* c_R88::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(9),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R89::mark(){
+void c_R88::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R89::debug(){
-	String t="(R89)\n";
+String c_R88::debug(){
+	String t="(R88)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R91::c_R91(){
+c_R90::c_R90(){
 }
-c_R91* c_R91::m_new(){
+c_R90* c_R90::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(10),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R91::mark(){
+void c_R90::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R91::debug(){
-	String t="(R91)\n";
+String c_R90::debug(){
+	String t="(R90)\n";
 	t=c_FunctionInfo::debug()+t;
+	return t;
+}
+c_R92::c_R92(){
+}
+c_R92* c_R92::m_new(){
+	c_FieldInfo::m_new(String(L"VALID_TYPES",11),2,bb_reflection__classes.At(35));
+	return this;
+}
+void c_R92::mark(){
+	c_FieldInfo::mark();
+}
+String c_R92::debug(){
+	String t="(R92)\n";
+	t=c_FieldInfo::debug()+t;
 	return t;
 }
 c_R93::c_R93(){
 }
 c_R93* c_R93::m_new(){
-	c_FieldInfo::m_new(String(L"VALID_TYPES",11),2,bb_reflection__classes.At(36));
+	c_MethodInfo::m_new(String(L"CheckArgs",9),0,0,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R93::mark(){
-	c_FieldInfo::mark();
+	c_MethodInfo::mark();
 }
 String c_R93::debug(){
 	String t="(R93)\n";
-	t=c_FieldInfo::debug()+t;
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R94::c_R94(){
 }
 c_R94* c_R94::m_new(){
-	c_MethodInfo::m_new(String(L"CheckArgs",9),0,0,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"IsValidType",11),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R94::mark(){
@@ -14539,7 +14321,7 @@ String c_R94::debug(){
 c_R95::c_R95(){
 }
 c_R95* c_R95::m_new(){
-	c_MethodInfo::m_new(String(L"IsValidType",11),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"IsValidFilename",15),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R95::mark(){
@@ -14553,7 +14335,7 @@ String c_R95::debug(){
 c_R96::c_R96(){
 }
 c_R96* c_R96::m_new(){
-	c_MethodInfo::m_new(String(L"IsValidFilename",15),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"GetType",7),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R96::mark(){
@@ -14567,7 +14349,7 @@ String c_R96::debug(){
 c_R97::c_R97(){
 }
 c_R97* c_R97::m_new(){
-	c_MethodInfo::m_new(String(L"GetType",7),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"GetShortType",12),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R97::mark(){
@@ -14581,7 +14363,7 @@ String c_R97::debug(){
 c_R98::c_R98(){
 }
 c_R98* c_R98::m_new(){
-	c_MethodInfo::m_new(String(L"GetShortType",12),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"GetFilename",11),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R98::mark(){
@@ -14595,112 +14377,112 @@ String c_R98::debug(){
 c_R99::c_R99(){
 }
 c_R99* c_R99::m_new(){
-	c_MethodInfo::m_new(String(L"GetFilename",11),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
-	return this;
-}
-void c_R99::mark(){
-	c_MethodInfo::mark();
-}
-String c_R99::debug(){
-	String t="(R99)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R100::c_R100(){
-}
-c_R100* c_R100::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(11),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R100::mark(){
+void c_R99::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R100::debug(){
-	String t="(R100)\n";
+String c_R99::debug(){
+	String t="(R99)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R102::c_R102(){
+c_R101::c_R101(){
 }
-c_R102* c_R102::m_new(){
+c_R101* c_R101::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(12),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R102::mark(){
+void c_R101::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R102::debug(){
-	String t="(R102)\n";
+String c_R101::debug(){
+	String t="(R101)\n";
 	t=c_FunctionInfo::debug()+t;
+	return t;
+}
+c_R103::c_R103(){
+}
+c_R103* c_R103::m_new(){
+	c_MethodInfo::m_new(String(L"PatchPermissions",16),0,0,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R103::mark(){
+	c_MethodInfo::mark();
+}
+String c_R103::debug(){
+	String t="(R103)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R104::c_R104(){
 }
 c_R104* c_R104::m_new(){
-	c_MethodInfo::m_new(String(L"PatchPermissions",16),0,0,Array<c_ClassInfo* >());
-	return this;
-}
-void c_R104::mark(){
-	c_MethodInfo::mark();
-}
-String c_R104::debug(){
-	String t="(R104)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R105::c_R105(){
-}
-c_R105* c_R105::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(13),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R105::mark(){
+void c_R104::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R105::debug(){
-	String t="(R105)\n";
+String c_R104::debug(){
+	String t="(R104)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R107::c_R107(){
+c_R106::c_R106(){
 }
-c_R107* c_R107::m_new(){
+c_R106* c_R106::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(14),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R107::mark(){
+void c_R106::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R107::debug(){
-	String t="(R107)\n";
+String c_R106::debug(){
+	String t="(R106)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R109::c_R109(){
+c_R108::c_R108(){
 }
-c_R109* c_R109::m_new(){
+c_R108* c_R108::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(15),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R109::mark(){
+void c_R108::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R109::debug(){
-	String t="(R109)\n";
+String c_R108::debug(){
+	String t="(R108)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R111::c_R111(){
+c_R110::c_R110(){
 }
-c_R111* c_R111::m_new(){
+c_R110* c_R110::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(16),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R111::mark(){
+void c_R110::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R111::debug(){
-	String t="(R111)\n";
+String c_R110::debug(){
+	String t="(R110)\n";
+	t=c_FunctionInfo::debug()+t;
+	return t;
+}
+c_R112::c_R112(){
+}
+c_R112* c_R112::m_new(){
+	c_FunctionInfo::m_new(String(L"GetRegions",10),0,bb_reflection__classes.At(35),Array<c_ClassInfo* >());
+	return this;
+}
+void c_R112::mark(){
+	c_FunctionInfo::mark();
+}
+String c_R112::debug(){
+	String t="(R112)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
@@ -14721,7 +14503,7 @@ String c_R113::debug(){
 c_R115::c_R115(){
 }
 c_R115* c_R115::m_new(){
-	c_FunctionInfo::m_new(String(L"GetRegions",10),0,bb_reflection__classes.At(36),Array<c_ClassInfo* >());
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(18),Array<c_ClassInfo* >());
 	return this;
 }
 void c_R115::mark(){
@@ -14732,193 +14514,194 @@ String c_R115::debug(){
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R116::c_R116(){
+c_R117::c_R117(){
 }
-c_R116* c_R116::m_new(){
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(18),Array<c_ClassInfo* >());
-	return this;
-}
-void c_R116::mark(){
-	c_FunctionInfo::mark();
-}
-String c_R116::debug(){
-	String t="(R116)\n";
-	t=c_FunctionInfo::debug()+t;
-	return t;
-}
-c_R118::c_R118(){
-}
-c_R118* c_R118::m_new(){
+c_R117* c_R117::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(19),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R118::mark(){
+void c_R117::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R118::debug(){
-	String t="(R118)\n";
+String c_R117::debug(){
+	String t="(R117)\n";
 	t=c_FunctionInfo::debug()+t;
+	return t;
+}
+c_R119::c_R119(){
+}
+c_R119* c_R119::m_new(){
+	c_MethodInfo::m_new(String(L"RemoveOldSettings",17),0,0,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R119::mark(){
+	c_MethodInfo::mark();
+}
+String c_R119::debug(){
+	String t="(R119)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R120::c_R120(){
 }
 c_R120* c_R120::m_new(){
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(20),Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__boolClass};
+	c_MethodInfo::m_new(String(L"AddSettings",11),0,0,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R120::mark(){
-	c_FunctionInfo::mark();
+	c_MethodInfo::mark();
 }
 String c_R120::debug(){
 	String t="(R120)\n";
-	t=c_FunctionInfo::debug()+t;
+	t=c_MethodInfo::debug()+t;
+	return t;
+}
+c_R121::c_R121(){
+}
+c_R121* c_R121::m_new(){
+	c_MethodInfo::m_new(String(L"IsEnabled",9),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R121::mark(){
+	c_MethodInfo::mark();
+}
+String c_R121::debug(){
+	String t="(R121)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R122::c_R122(){
 }
 c_R122* c_R122::m_new(){
-	c_MethodInfo::m_new(String(L"RemoveOldSettings",17),0,0,Array<c_ClassInfo* >());
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(20),Array<c_ClassInfo* >());
 	return this;
 }
 void c_R122::mark(){
-	c_MethodInfo::mark();
+	c_FunctionInfo::mark();
 }
 String c_R122::debug(){
 	String t="(R122)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R123::c_R123(){
-}
-c_R123* c_R123::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__boolClass};
-	c_MethodInfo::m_new(String(L"AddSettings",11),0,0,Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-void c_R123::mark(){
-	c_MethodInfo::mark();
-}
-String c_R123::debug(){
-	String t="(R123)\n";
-	t=c_MethodInfo::debug()+t;
+	t=c_FunctionInfo::debug()+t;
 	return t;
 }
 c_R124::c_R124(){
 }
 c_R124* c_R124::m_new(){
-	c_MethodInfo::m_new(String(L"IsEnabled",9),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
-	return this;
-}
-void c_R124::mark(){
-	c_MethodInfo::mark();
-}
-String c_R124::debug(){
-	String t="(R124)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R125::c_R125(){
-}
-c_R125* c_R125::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(21),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R125::mark(){
+void c_R124::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R125::debug(){
-	String t="(R125)\n";
+String c_R124::debug(){
+	String t="(R124)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R127::c_R127(){
+c_R126::c_R126(){
 }
-c_R127* c_R127::m_new(){
+c_R126* c_R126::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(22),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R127::mark(){
+void c_R126::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R127::debug(){
-	String t="(R127)\n";
+String c_R126::debug(){
+	String t="(R126)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R129::c_R129(){
+c_R128::c_R128(){
 }
-c_R129* c_R129::m_new(){
+c_R128* c_R128::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(23),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R129::mark(){
+void c_R128::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R129::debug(){
-	String t="(R129)\n";
+String c_R128::debug(){
+	String t="(R128)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R131::c_R131(){
+c_R130::c_R130(){
 }
-c_R131* c_R131::m_new(){
+c_R130* c_R130::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(24),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R131::mark(){
+void c_R130::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R131::debug(){
-	String t="(R131)\n";
+String c_R130::debug(){
+	String t="(R130)\n";
 	t=c_FunctionInfo::debug()+t;
+	return t;
+}
+c_R132::c_R132(){
+}
+c_R132* c_R132::m_new(){
+	c_MethodInfo::m_new(String(L"RemoveOldSettings",17),0,0,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R132::mark(){
+	c_MethodInfo::mark();
+}
+String c_R132::debug(){
+	String t="(R132)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R133::c_R133(){
 }
 c_R133* c_R133::m_new(){
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(25),Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"AddSettings",11),0,0,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R133::mark(){
-	c_FunctionInfo::mark();
+	c_MethodInfo::mark();
 }
 String c_R133::debug(){
 	String t="(R133)\n";
-	t=c_FunctionInfo::debug()+t;
+	t=c_MethodInfo::debug()+t;
+	return t;
+}
+c_R134::c_R134(){
+}
+c_R134* c_R134::m_new(){
+	c_MethodInfo::m_new(String(L"IsEnabled",9),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R134::mark(){
+	c_MethodInfo::mark();
+}
+String c_R134::debug(){
+	String t="(R134)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R135::c_R135(){
 }
 c_R135* c_R135::m_new(){
-	c_MethodInfo::m_new(String(L"RemoveOldSettings",17),0,0,Array<c_ClassInfo* >());
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(25),Array<c_ClassInfo* >());
 	return this;
 }
 void c_R135::mark(){
-	c_MethodInfo::mark();
+	c_FunctionInfo::mark();
 }
 String c_R135::debug(){
 	String t="(R135)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R136::c_R136(){
-}
-c_R136* c_R136::m_new(){
-	c_MethodInfo::m_new(String(L"AddSettings",11),0,0,Array<c_ClassInfo* >());
-	return this;
-}
-void c_R136::mark(){
-	c_MethodInfo::mark();
-}
-String c_R136::debug(){
-	String t="(R136)\n";
-	t=c_MethodInfo::debug()+t;
+	t=c_FunctionInfo::debug()+t;
 	return t;
 }
 c_R137::c_R137(){
 }
 c_R137* c_R137::m_new(){
-	c_MethodInfo::m_new(String(L"IsEnabled",9),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__boolClass};
+	c_MethodInfo::m_new(String(L"AddPrerenderedFlag",18),0,0,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R137::mark(){
@@ -14932,22 +14715,36 @@ String c_R137::debug(){
 c_R138::c_R138(){
 }
 c_R138* c_R138::m_new(){
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(26),Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"RemovePrerenderedFlag",21),0,0,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R138::mark(){
-	c_FunctionInfo::mark();
+	c_MethodInfo::mark();
 }
 String c_R138::debug(){
 	String t="(R138)\n";
-	t=c_FunctionInfo::debug()+t;
+	t=c_MethodInfo::debug()+t;
+	return t;
+}
+c_R139::c_R139(){
+}
+c_R139* c_R139::m_new(){
+	c_MethodInfo::m_new(String(L"RemoveIcons",11),0,0,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R139::mark(){
+	c_MethodInfo::mark();
+}
+String c_R139::debug(){
+	String t="(R139)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R140::c_R140(){
 }
 c_R140* c_R140::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__boolClass};
-	c_MethodInfo::m_new(String(L"AddPrerenderedFlag",18),0,0,Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo* t_[]={bb_reflection__classes.At(35)};
+	c_MethodInfo::m_new(String(L"ParseRowsAndRemoveFiles",23),0,0,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R140::mark(){
@@ -14961,7 +14758,8 @@ String c_R140::debug(){
 c_R141::c_R141(){
 }
 c_R141* c_R141::m_new(){
-	c_MethodInfo::m_new(String(L"RemovePrerenderedFlag",21),0,0,Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__stringClass};
+	c_MethodInfo::m_new(String(L"RemoveKeyWithValues",19),0,bb_reflection__classes.At(35),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R141::mark(){
@@ -14975,7 +14773,8 @@ String c_R141::debug(){
 c_R142::c_R142(){
 }
 c_R142* c_R142::m_new(){
-	c_MethodInfo::m_new(String(L"RemoveIcons",11),0,0,Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__stringClass};
+	c_MethodInfo::m_new(String(L"ExtractFileName",15),0,bb_reflection__stringClass,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R142::mark(){
@@ -14989,8 +14788,8 @@ String c_R142::debug(){
 c_R143::c_R143(){
 }
 c_R143* c_R143::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__classes.At(36)};
-	c_MethodInfo::m_new(String(L"ParseRowsAndRemoveFiles",23),0,0,Array<c_ClassInfo* >(t_,1));
+	c_ClassInfo* t_[]={bb_reflection__stringClass};
+	c_MethodInfo::m_new(String(L"RemoveFileDefinition",20),0,0,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R143::mark(){
@@ -15005,7 +14804,7 @@ c_R144::c_R144(){
 }
 c_R144* c_R144::m_new(){
 	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_MethodInfo::m_new(String(L"RemoveKeyWithValues",19),0,bb_reflection__classes.At(36),Array<c_ClassInfo* >(t_,1));
+	c_MethodInfo::m_new(String(L"RemoveFilePhysical",18),0,0,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R144::mark(){
@@ -15019,8 +14818,7 @@ String c_R144::debug(){
 c_R145::c_R145(){
 }
 c_R145* c_R145::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_MethodInfo::m_new(String(L"ExtractFileName",15),0,bb_reflection__stringClass,Array<c_ClassInfo* >(t_,1));
+	c_MethodInfo::m_new(String(L"IsPrerendered",13),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R145::mark(){
@@ -15034,37 +14832,21 @@ String c_R145::debug(){
 c_R146::c_R146(){
 }
 c_R146* c_R146::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_MethodInfo::m_new(String(L"RemoveFileDefinition",20),0,0,Array<c_ClassInfo* >(t_,1));
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(26),Array<c_ClassInfo* >());
 	return this;
 }
 void c_R146::mark(){
-	c_MethodInfo::mark();
+	c_FunctionInfo::mark();
 }
 String c_R146::debug(){
 	String t="(R146)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R147::c_R147(){
-}
-c_R147* c_R147::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__stringClass};
-	c_MethodInfo::m_new(String(L"RemoveFilePhysical",18),0,0,Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-void c_R147::mark(){
-	c_MethodInfo::mark();
-}
-String c_R147::debug(){
-	String t="(R147)\n";
-	t=c_MethodInfo::debug()+t;
+	t=c_FunctionInfo::debug()+t;
 	return t;
 }
 c_R148::c_R148(){
 }
 c_R148* c_R148::m_new(){
-	c_MethodInfo::m_new(String(L"IsPrerendered",13),0,bb_reflection__boolClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"AddOrientationBoth",18),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R148::mark(){
@@ -15078,21 +14860,35 @@ String c_R148::debug(){
 c_R149::c_R149(){
 }
 c_R149* c_R149::m_new(){
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(27),Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"AddOrientationLandscape",23),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R149::mark(){
-	c_FunctionInfo::mark();
+	c_MethodInfo::mark();
 }
 String c_R149::debug(){
 	String t="(R149)\n";
-	t=c_FunctionInfo::debug()+t;
+	t=c_MethodInfo::debug()+t;
+	return t;
+}
+c_R150::c_R150(){
+}
+c_R150* c_R150::m_new(){
+	c_MethodInfo::m_new(String(L"AddOrientationPortrait",22),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R150::mark(){
+	c_MethodInfo::mark();
+}
+String c_R150::debug(){
+	String t="(R150)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R151::c_R151(){
 }
 c_R151* c_R151::m_new(){
-	c_MethodInfo::m_new(String(L"AddOrientationBoth",18),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"GetOrientation",14),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R151::mark(){
@@ -15106,7 +14902,7 @@ String c_R151::debug(){
 c_R152::c_R152(){
 }
 c_R152* c_R152::m_new(){
-	c_MethodInfo::m_new(String(L"AddOrientationLandscape",23),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"RemoveOldSettings",17),0,0,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R152::mark(){
@@ -15120,7 +14916,8 @@ String c_R152::debug(){
 c_R153::c_R153(){
 }
 c_R153* c_R153::m_new(){
-	c_MethodInfo::m_new(String(L"AddOrientationPortrait",22),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__intClass};
+	c_MethodInfo::m_new(String(L"RemoveKeyWithValues",19),0,0,Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R153::mark(){
@@ -15134,7 +14931,7 @@ String c_R153::debug(){
 c_R154::c_R154(){
 }
 c_R154* c_R154::m_new(){
-	c_MethodInfo::m_new(String(L"GetOrientation",14),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"AddOrientationBothPlist",23),0,0,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R154::mark(){
@@ -15148,72 +14945,57 @@ String c_R154::debug(){
 c_R155::c_R155(){
 }
 c_R155* c_R155::m_new(){
-	c_MethodInfo::m_new(String(L"RemoveOldSettings",17),0,0,Array<c_ClassInfo* >());
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(27),Array<c_ClassInfo* >());
 	return this;
 }
 void c_R155::mark(){
-	c_MethodInfo::mark();
+	c_FunctionInfo::mark();
 }
 String c_R155::debug(){
 	String t="(R155)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R156::c_R156(){
-}
-c_R156* c_R156::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__intClass};
-	c_MethodInfo::m_new(String(L"RemoveKeyWithValues",19),0,0,Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-void c_R156::mark(){
-	c_MethodInfo::mark();
-}
-String c_R156::debug(){
-	String t="(R156)\n";
-	t=c_MethodInfo::debug()+t;
+	t=c_FunctionInfo::debug()+t;
 	return t;
 }
 c_R157::c_R157(){
 }
 c_R157* c_R157::m_new(){
-	c_MethodInfo::m_new(String(L"AddOrientationBothPlist",23),0,0,Array<c_ClassInfo* >());
-	return this;
-}
-void c_R157::mark(){
-	c_MethodInfo::mark();
-}
-String c_R157::debug(){
-	String t="(R157)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R158::c_R158(){
-}
-c_R158* c_R158::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(28),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R158::mark(){
+void c_R157::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R158::debug(){
-	String t="(R158)\n";
+String c_R157::debug(){
+	String t="(R157)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R160::c_R160(){
+c_R159::c_R159(){
 }
-c_R160* c_R160::m_new(){
+c_R159* c_R159::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(29),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R160::mark(){
+void c_R159::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R160::debug(){
-	String t="(R160)\n";
+String c_R159::debug(){
+	String t="(R159)\n";
 	t=c_FunctionInfo::debug()+t;
+	return t;
+}
+c_R161::c_R161(){
+}
+c_R161* c_R161::m_new(){
+	c_MethodInfo::m_new(String(L"GetNewName",10),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R161::mark(){
+	c_MethodInfo::mark();
+}
+String c_R161::debug(){
+	String t="(R161)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R162::c_R162(){
@@ -15233,105 +15015,120 @@ String c_R162::debug(){
 c_R164::c_R164(){
 }
 c_R164* c_R164::m_new(){
-	c_MethodInfo::m_new(String(L"GetNewName",10),0,bb_reflection__stringClass,Array<c_ClassInfo* >());
-	return this;
-}
-void c_R164::mark(){
-	c_MethodInfo::mark();
-}
-String c_R164::debug(){
-	String t="(R164)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R165::c_R165(){
-}
-c_R165* c_R165::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(31),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R165::mark(){
+void c_R164::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R165::debug(){
-	String t="(R165)\n";
+String c_R164::debug(){
+	String t="(R164)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }
-c_R167::c_R167(){
+c_R166::c_R166(){
 }
-c_R167* c_R167::m_new(){
+c_R166* c_R166::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(32),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R167::mark(){
+void c_R166::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R167::debug(){
-	String t="(R167)\n";
+String c_R166::debug(){
+	String t="(R166)\n";
 	t=c_FunctionInfo::debug()+t;
+	return t;
+}
+c_R168::c_R168(){
+}
+c_R168* c_R168::m_new(){
+	c_MethodInfo::m_new(String(L"AddOrientationPortrait",22),0,0,Array<c_ClassInfo* >());
+	return this;
+}
+void c_R168::mark(){
+	c_MethodInfo::mark();
+}
+String c_R168::debug(){
+	String t="(R168)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R169::c_R169(){
 }
 c_R169* c_R169::m_new(){
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(33),Array<c_ClassInfo* >());
+	c_MethodInfo::m_new(String(L"AddLibZ",7),0,0,Array<c_ClassInfo* >());
 	return this;
 }
 void c_R169::mark(){
-	c_FunctionInfo::mark();
+	c_MethodInfo::mark();
 }
 String c_R169::debug(){
 	String t="(R169)\n";
-	t=c_FunctionInfo::debug()+t;
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
-c_R171::c_R171(){
+c_R170::c_R170(){
 }
-c_R171* c_R171::m_new(){
-	c_MethodInfo::m_new(String(L"AddOrientationPortrait",22),0,0,Array<c_ClassInfo* >());
+c_R170* c_R170::m_new(){
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(33),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R171::mark(){
-	c_MethodInfo::mark();
+void c_R170::mark(){
+	c_FunctionInfo::mark();
 }
-String c_R171::debug(){
-	String t="(R171)\n";
-	t=c_MethodInfo::debug()+t;
+String c_R170::debug(){
+	String t="(R170)\n";
+	t=c_FunctionInfo::debug()+t;
 	return t;
 }
 c_R172::c_R172(){
 }
 c_R172* c_R172::m_new(){
-	c_MethodInfo::m_new(String(L"AddLibZ",7),0,0,Array<c_ClassInfo* >());
-	return this;
-}
-void c_R172::mark(){
-	c_MethodInfo::mark();
-}
-String c_R172::debug(){
-	String t="(R172)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R173::c_R173(){
-}
-c_R173* c_R173::m_new(){
 	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(34),Array<c_ClassInfo* >());
 	return this;
 }
-void c_R173::mark(){
+void c_R172::mark(){
 	c_FunctionInfo::mark();
 }
-String c_R173::debug(){
-	String t="(R173)\n";
+String c_R172::debug(){
+	String t="(R172)\n";
 	t=c_FunctionInfo::debug()+t;
+	return t;
+}
+c_R174::c_R174(){
+}
+c_R174* c_R174::m_new(){
+	c_FieldInfo::m_new(String(L"value",5),0,bb_reflection__classes.At(35));
+	return this;
+}
+void c_R174::mark(){
+	c_FieldInfo::mark();
+}
+String c_R174::debug(){
+	String t="(R174)\n";
+	t=c_FieldInfo::debug()+t;
+	return t;
+}
+c_R176::c_R176(){
+}
+c_R176* c_R176::m_new(){
+	c_MethodInfo::m_new(String(L"ToArray",7),0,bb_reflection__classes.At(35),Array<c_ClassInfo* >());
+	return this;
+}
+void c_R176::mark(){
+	c_MethodInfo::mark();
+}
+String c_R176::debug(){
+	String t="(R176)\n";
+	t=c_MethodInfo::debug()+t;
 	return t;
 }
 c_R175::c_R175(){
 }
 c_R175* c_R175::m_new(){
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(35),Array<c_ClassInfo* >());
+	c_ClassInfo* t_[]={bb_reflection__classes.At(35)};
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(35),Array<c_ClassInfo* >(t_,1));
 	return this;
 }
 void c_R175::mark(){
@@ -15345,57 +15142,14 @@ String c_R175::debug(){
 c_R177::c_R177(){
 }
 c_R177* c_R177::m_new(){
-	c_FieldInfo::m_new(String(L"value",5),0,bb_reflection__classes.At(36));
+	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(35),Array<c_ClassInfo* >());
 	return this;
 }
 void c_R177::mark(){
-	c_FieldInfo::mark();
+	c_FunctionInfo::mark();
 }
 String c_R177::debug(){
 	String t="(R177)\n";
-	t=c_FieldInfo::debug()+t;
-	return t;
-}
-c_R179::c_R179(){
-}
-c_R179* c_R179::m_new(){
-	c_MethodInfo::m_new(String(L"ToArray",7),0,bb_reflection__classes.At(36),Array<c_ClassInfo* >());
-	return this;
-}
-void c_R179::mark(){
-	c_MethodInfo::mark();
-}
-String c_R179::debug(){
-	String t="(R179)\n";
-	t=c_MethodInfo::debug()+t;
-	return t;
-}
-c_R178::c_R178(){
-}
-c_R178* c_R178::m_new(){
-	c_ClassInfo* t_[]={bb_reflection__classes.At(36)};
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(36),Array<c_ClassInfo* >(t_,1));
-	return this;
-}
-void c_R178::mark(){
-	c_FunctionInfo::mark();
-}
-String c_R178::debug(){
-	String t="(R178)\n";
-	t=c_FunctionInfo::debug()+t;
-	return t;
-}
-c_R180::c_R180(){
-}
-c_R180* c_R180::m_new(){
-	c_FunctionInfo::m_new(String(L"new",3),0,bb_reflection__classes.At(36),Array<c_ClassInfo* >());
-	return this;
-}
-void c_R180::mark(){
-	c_FunctionInfo::mark();
-}
-String c_R180::debug(){
-	String t="(R180)\n";
 	t=c_FunctionInfo::debug()+t;
 	return t;
 }

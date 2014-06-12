@@ -12,7 +12,6 @@ Import androidlocalytics
 Import androidrevmob
 Import androidversion
 Import androidvungle
-Import googlepayment
 Import iosaddlanguage
 Import iosappirater
 Import iosbundleid
