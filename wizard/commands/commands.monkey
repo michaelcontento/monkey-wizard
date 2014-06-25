@@ -10,6 +10,7 @@ Import androidchartboost
 Import androidicons
 Import androidlocalytics
 Import androidrevmob
+Import androidtabletsupport
 Import androidversion
 Import androidvungle
 Import iosaddlanguage

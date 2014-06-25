@@ -13,7 +13,7 @@ Class AndroidIcons Implements Command
     Private
 
     Field app:App
-    Field VALID_TYPES := ["low", "medium", "high", "extra-high"]
+    Field VALID_TYPES := ["low", "medium", "high", "extra-high", "super-high"]
 
     Public
 
@@ -71,6 +71,8 @@ Class AndroidIcons Implements Command
             Return "h"
         Case "extra-high"
             Return "xh"
+        Case "super-high"
+            Return "xxh"
         Default
             app.LogError("No short version of the given type defined")
             Return ""
