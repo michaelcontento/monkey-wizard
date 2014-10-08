@@ -14,29 +14,30 @@ Class IosVungle Implements Command
     Method Run:Void(app:App)
         CopyFramework(app)
 
-        app.LogInfo("Vungle installed!")
+        app.LogInfo("New Vungle installed!")
     End
 
     Private
 
     Method CopyFramework:Void(app:App)
-        Local src:Dir = app.SourceDir("vunglepub.embeddedframework")
-        Local dst:Dir = app.TargetDir("vunglepub.embeddedframework")
+        Local src:Dir = app.SourceDir("VungleSDK.embeddedframework")
+        Local dst:Dir = app.TargetDir("VungleSDK.embeddedframework")
         src.CopyTo(dst)
 
         ' The framework contains some symlinks and they are resolved within the
         ' copy step (see: monkey.os.CopyDir) and we can remove the symlink
         ' target directory to get things small and cleaned up
-        Local target:Dir = app.TargetDir("vunglepub.embeddedframework/vunglepub.framework/Versions")
+        Local target:Dir = app.TargetDir("VungleSDK.embeddedframework/VungleSDK.framework/Versions")
         If target.Exists() Then target.Remove()
 
         AddLibZ()
+        AddLibSqlite()
 
-        Ios.AddFrameworkFromPath("vunglepub.embeddedframework")
+        Ios.AddFrameworkFromPath("VungleSDK.embeddedframework")
 
         Ios.GetProject().InsertAfter(
             "~t~t~t~tFRAMEWORK_SEARCH_PATHS = (",
-            "~t~t~t~t~t~q\~q$(PROJECT_DIR)/vunglepub.embeddedframework\~q~q,")        
+            "~t~t~t~t~t~q\~q$(PROJECT_DIR)/VungleSDK.embeddedframework\~q~q,")        
 
         'Portrait orientation is required so it doesn't crash!
         AddOrientationPortrait()
@@ -80,4 +81,29 @@ Class IosVungle Implements Command
 
         Ios.AddPbxGroupChild("Frameworks", name, secondId)
     End
+
+    Method AddLibSqlite:Void()
+        Local firstId:String = Ios.GenerateUniqueId()
+        Local secondId:String = Ios.GenerateUniqueId()
+
+        Local name := "libsqlite3.dylib"
+
+        Ios.AddPbxBuildFile(name, firstId, secondId, False)
+
+        Local patchStr:String = "~t~t" +
+            secondId + " " +
+            "/* " + name + " */ = " +
+            "{isa = PBXFileReference; " +
+            "lastKnownFileType = ~qcompiled.mach-o.dylib~q; " +
+            "name = " + name + "; " +
+            "path = usr/lib/libsqlite3.dylib; " +
+            "sourceTree = SDKROOT; };"
+        Ios.AddPbxFileReference(name, patchStr)
+
+        Ios.AddPbxFrameworkBuildPhase(name, firstId)
+
+        Ios.AddPbxGroupChild("Frameworks", name, secondId)
+    End
+
+    
 End

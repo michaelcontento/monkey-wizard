@@ -174,8 +174,6 @@ Class File
         data += text
     End
 
-    Private
-
     Method data:String() Property
         If Not loaded And FileExists(path)
             loaded = True

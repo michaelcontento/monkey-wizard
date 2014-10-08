@@ -11,8 +11,6 @@ Import wizard.ios
 Public
 
 Class IosChartboost Implements Command
-    Const VERSION:String = "3.2"
-
     Method Run:Void(app:App)
         Ios.AddFramework("AdSupport.framework", True)
         Ios.AddFramework("StoreKit.framework")
@@ -20,61 +18,30 @@ Class IosChartboost Implements Command
         Ios.AddFramework("QuartzCore.framework")
         Ios.AddFramework("GameKit.framework")
 
-        Ios.AddFrameworkFromPath("Chartboost.framework")
         CopyFramework(app)
+        app.LogInfo("Chartboost installed!")
     End
 
     Private
 
     Method CopyFramework:Void(app:App)
-        Local src:Dir = app.SourceDir("Chartboost-" + VERSION)
+        Local src:Dir = app.SourceDir("Chartboost.framework")
         Local dst:Dir = app.TargetDir("Chartboost.framework")
-
-        If dst.Exists() Then dst.Remove()
         src.CopyTo(dst)
 
-        ConvertToFrameworkDir(app)
-    End
+        ' The framework contains some symlinks and they are resolved within the
+        ' copy step (see: monkey.os.CopyDir) and we can remove the symlink
+        ' target directory to get things small and cleaned up
+        Local target:Dir = app.TargetDir("Chartboost.framework/Versions")
+        If target.Exists() Then target.Remove()
 
-    Method ConvertToFrameworkDir:Void(app:App)
-        Local fw:String = "Chartboost.framework"
+        Ios.AddFrameworkFromPath("Chartboost.framework")
 
-        app.TargetDir(fw + "/Headers").Create()
-        app.TargetDir(fw + "/Resources").Create()
+        Ios.GetProject().InsertAfter(
+            "~t~t~t~tFRAMEWORK_SEARCH_PATHS = (",
+            "~t~t~t~t~t~q\~q$(PROJECT_DIR)/Chartboost.framework\~q~q,")        
 
-        Local header:File = app.TargetFile(fw + "/Chartboost.h")
-        header.CopyTo(app.TargetFile(fw + "/Headers/Chartboost.h"))
-        header.Remove()
-
-        Local lib:File = app.TargetFile(fw + "/libChartboost.a")
-        lib.CopyTo(app.TargetFile(fw + "/Chartboost"))
-        lib.Remove()
-
-        Local plist:File = app.TargetFile(fw + "/Resources/Info.plist")
-        plist.Set("" +
-            "<?xml version=~q1.0~q encoding=~qUTF-8~q?>" +
-            "<!DOCTYPE plist PUBLIC ~q-//Apple//DTD PLIST 1.0//EN~q ~qhttp://www.apple.com/DTDs/PropertyList-1.0.dtd~q>" +
-            "<plist version=~q1.0~q>" +
-            "<dict>" +
-            "~t<key>CFBuildHash</key>" +
-            "~t<string></string>" +
-            "~t<key>CFBundleDevelopmentRegion</key>" +
-            "~t<string>English</string>" +
-            "~t<key>CFBundleExecutable</key>" +
-            "~t<string>Chartboost</string>" +
-            "~t<key>CFBundleIdentifier</key>" +
-            "~t<string>com.chartboost.Chartboost</string>" +
-            "~t<key>CFBundleInfoDictionaryVersion</key>" +
-            "~t<string>6.0</string>" +
-            "~t<key>CFBundlePackageType</key>" +
-            "~t<string>FMWK</string>" +
-            "~t<key>CFBundleShortVersionString</key>" +
-            "~t<string>" + VERSION + "</string>" +
-            "~t<key>CFBundleSignature</key>" +
-            "~t<string>?</string>" +
-            "~t<key>CFBundleVersion</key>" +
-            "~t<string>" + VERSION + "</string>" +
-            "</dict>" +
-            "</plist>")
+        'Portrait orientation is required so it doesn't crash!
+        'AddOrientationPortrait()
     End
 End
