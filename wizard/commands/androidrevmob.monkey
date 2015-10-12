@@ -54,8 +54,8 @@ Class AndroidRevmob Implements Command
     Method CopyLibs:Void(app:App)
         Android.EnsureLibsFolder()
 
-        Local src:File = app.SourceFile("revmob-" + VERSION + ".jar")
-        Local dst:File = app.TargetFile("libs/revmob-" + VERSION + ".jar")
+        Local src:File = app.SourceFile("revmob.jar")
+        Local dst:File = app.TargetFile("libs/revmob.jar")
 
         src.CopyTo(dst)
     End
