@@ -47,9 +47,25 @@ Class AndroidVungle Implements Command
     Method CopyLibs:Void(app:App)
         Android.EnsureLibsFolder()
 
-        Local src:File = app.SourceFile("vungle-publisher-1.3.11.jar")
-        Local dst:File = app.TargetFile("libs/vungle-publisher-1.3.11.jar")
+        Local src:File = app.SourceFile("vungle-publisher-adaptive-id-3.3.2.jar")
+        Local dst:File = app.TargetFile("libs/vungle-publisher-adaptive-id-3.3.2.jar")
 
+        src.CopyTo(dst)
+
+        src = app.SourceFile("support-v4-18.0.0.jar")
+        dst = app.TargetFile("libs/support-v4-18.0.0.jar")
+        src.CopyTo(dst)
+
+        src = app.SourceFile("nineoldandroids-2.4.0.jar")
+        dst = app.TargetFile("libs/nineoldandroids-2.4.0.jar")
+        src.CopyTo(dst)
+
+        src = app.SourceFile("javax.inject-1.jar")
+        dst = app.TargetFile("libs/javax.inject-1.jar")
+        src.CopyTo(dst)
+
+        src = app.SourceFile("dagger-1.2.2.jar")
+        dst = app.TargetFile("libs/dagger-1.2.2.jar")
         src.CopyTo(dst)
     End
 End

@@ -13,6 +13,7 @@ Public
 Class IosRevmob Implements Command
     Method Run:Void(app:App)
         Ios.AddFrameworkFromPath("RevMobAds.framework")
+        Ios.AddFrameworkFromPath("GoogleMobileAds.framework")
         CopyFramework(app)
 
         app.LogInfo("RevMob: Monkey interface can be found here: http://goo.gl/yVTiV")

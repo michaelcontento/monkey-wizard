@@ -14,6 +14,7 @@ Import androidtabletsupport
 Import androidversion
 Import androidvungle
 Import iosaddlanguage
+Import iosadmob
 Import iosappirater
 Import iosbundleid
 Import ioschartboost

@@ -27,17 +27,17 @@ Class IosVungle Implements Command
         ' The framework contains some symlinks and they are resolved within the
         ' copy step (see: monkey.os.CopyDir) and we can remove the symlink
         ' target directory to get things small and cleaned up
-        Local target:Dir = app.TargetDir("VungleSDK.embeddedframework/VungleSDK.framework/Versions")
-        If target.Exists() Then target.Remove()
+        ' Local target:Dir = app.TargetDir("VungleSDK.embeddedframework/VungleSDK.framework/Versions")
+        ' If target.Exists() Then target.Remove()
 
         AddLibZ()
         AddLibSqlite()
 
-        Ios.AddFrameworkFromPath("VungleSDK.embeddedframework")
+        ' Ios.AddFrameworkFromPath("VungleSDK.embeddedframework")
 
-        Ios.GetProject().InsertAfter(
-            "~t~t~t~tFRAMEWORK_SEARCH_PATHS = (",
-            "~t~t~t~t~t~q\~q$(PROJECT_DIR)/VungleSDK.embeddedframework\~q~q,")        
+        ' Ios.GetProject().InsertAfter(
+        '     "~t~t~t~tFRAMEWORK_SEARCH_PATHS = (",
+        '     "~t~t~t~t~t~q\~q$(PROJECT_DIR)/VungleSDK.embeddedframework\~q~q,")        
 
         'Portrait orientation is required so it doesn't crash!
         AddOrientationPortrait()
