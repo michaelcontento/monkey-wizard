@@ -97,7 +97,7 @@ Class IosInterfaceOrientation Implements Command
     Method AddOrientationBothPlist:Void()
         Local file := Ios.GetPlist()
         file.InsertBefore(
-            "</dict>",
+            "</dict>~n</plist>",
             "~t<key>UISupportedInterfaceOrientations</key>~n" +
             "~t<array>~n" +
             "~t~t<string>UIInterfaceOrientationPortrait</string>~n" +

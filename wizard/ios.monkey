@@ -10,6 +10,38 @@ Public
 Class Ios Abstract
     Global app:App
 
+    Function NSAllowsArbitraryLoads:Void()
+        Local plist:File = GetPlist()
+
+        If (plist.Contains("<key>NSAppTransportSecurity</key>") And plist.Contains("<key>NSAllowsArbitraryLoads</key>")) Return
+
+        'Remove Old Values
+        Local startLines := plist.FindLines("<key>NSAppTransportSecurity</key>")
+        For Local l := startLines.Length-1 To 0 Step -1
+            Local startLine := startLines[l]
+            Local rows := 0
+            Repeat
+                rows += 1
+            Until plist.GetLine(startLine + rows).Trim().StartsWith("</")
+
+            If rows <= 0 Then Return
+
+            For Local i := rows To 0 Step -1
+                plist.RemoveLine(startLine + i)
+            End
+        Next
+
+        plist.InsertBefore(
+            "</dict>~n</plist>",
+            "~t<key>NSAppTransportSecurity</key>~n" + 
+            "~t<dict>~n" + 
+            "~t~t<key>NSAllowsArbitraryLoads</key>~n" + 
+            "~t~t<true/>~n" + 
+            "~t</dict>")
+
+        plist.Save()
+    End
+        
     Function AddFramework:Void(name:String, optional:Bool=False)
         app.LogInfo("Adding framework: " + name)
         If ContainsFramework(name) Then Return
@@ -24,6 +56,69 @@ Class Ios Abstract
         AddPbxGroupChild("Frameworks", name, secondId)
     End
 
+    Function EnsureHeaderSearchPath:Void(name$)
+        Local file := GetProject()
+        Local lines := file.FindLines("HEADER_SEARCH_PATHS =")
+        For Local lineNo := lines.Length-1 To 0 Step -1 
+            Local line := file.GetLine(lines[lineNo])
+            If (Not line.Contains("("))
+                line = line.Replace(";", ",")
+                file.ReplaceLine(lines[lineNo], line.Replace(" = ", " = (~n~t~t~t~t~t") + "~n~t~t~t~t);")
+            End
+        Next
+
+        lines = file.FindLines("HEADER_SEARCH_PATHS = (")
+        For Local lineNo := lines.Length-1 To 0 Step -1
+            Local line := file.GetLine(lines[lineNo])
+            line += "~n" + "~t~t~t~t~t" + name + ","
+
+
+            Local followLine := 1
+            Local libFound := False
+            Repeat
+                Local nextLine := file.GetLine(lines[lineNo]+followLine)
+                If (nextLine = "~t~t~t~t);") Then Exit
+                If (nextLine.Contains(name)) Then libFound = True ; Exit
+                followLine += 1
+            Forever
+
+            If (Not libFound) Then file.ReplaceLine(lines[lineNo], line)
+        Next
+
+        file.Save()
+    End
+
+    Function EnsureOtherLDFlags:Void(name$)
+        Local file := GetProject()
+        Local lines := file.FindLines("OTHER_LDFLAGS =")
+        For Local lineNo := lines.Length-1 To 0 Step -1 
+            Local line := file.GetLine(lines[lineNo])
+            If (Not line.Contains("("))
+                line = line.Replace(";", ",")
+                file.ReplaceLine(lines[lineNo], line.Replace(" = ", " = (~n~t~t~t~t~t") + "~n~t~t~t~t);")
+            End
+        Next
+
+        lines = file.FindLines("OTHER_LDFLAGS = (")
+        For Local lineNo := lines.Length-1 To 0 Step -1
+            Local line := file.GetLine(lines[lineNo])
+            line += "~n" + "~t~t~t~t~t" + name + ","
+
+
+            Local followLine := 1
+            Local libFound := False
+            Repeat
+                Local nextLine := file.GetLine(lines[lineNo]+followLine)
+                If (nextLine = "~t~t~t~t);") Then Exit
+                If (nextLine.Contains(name)) Then libFound = True ; Exit
+                followLine += 1
+            Forever
+
+            If (Not libFound) Then file.ReplaceLine(lines[lineNo], line)
+        Next
+
+        file.Save()
+    End
     Function AddFrameworkFromPath:Void(name:String, optional:Bool=False)
         app.LogInfo("Adding framework from path: " + name)
         If ContainsFramework(name) Then Return

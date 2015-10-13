@@ -11,6 +11,15 @@ Public
 Class IosVersion Implements Command
     Method Run:Void(app:App)
         Ios.UpdatePlistSetting("CFBundleVersion", GetVersion(app))
+
+        Local plist := Ios.GetPlist()
+
+        plist.InsertBefore(
+            "</dict>~n</plist>",
+            "~t<key>CFBundleShortVersionString</key>~n" + 
+            "~t<string>" + GetVersion(app) + "</string>")
+
+        plist.Save()
     End
 
     Private
