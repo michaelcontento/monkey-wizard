@@ -20,6 +20,10 @@ much faster and won't accidentally skip some important parts.
 
 ## Details?
 
+### Requirements
+* Monkey
+* CocoaPods (for ios)
+
 ### How to compile?
 
     make build
