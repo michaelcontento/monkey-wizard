@@ -27,7 +27,7 @@ Class AndroidVungle Implements Command
 
     Method PatchActivity:Void(app:App)
         Local match:String = "</application>"
-        Local patchStr:String = "<activity android:name=~com.vungle.publisher.FullScreenAdActivity~q android:configChanges=~keyboardHidden|orientation|screenSize~q android:theme=~q@android:style/Theme.NoTitleBar.Fullscreen~q /> ~n"
+        Local patchStr:String = "<activity android:name=~qcom.vungle.publisher.FullScreenAdActivity~q android:configChanges=~qkeyboardHidden|orientation|screenSize~q android:theme=~q@android:style/Theme.NoTitleBar.Fullscreen~q /> ~n"
         patchStr += "<service android:name=~qcom.vungle.sdk.VungleIntentService~q />"
         Local target:File = Android.GetManifest()
 
