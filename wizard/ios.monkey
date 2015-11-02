@@ -41,6 +41,20 @@ Class Ios Abstract
 
         plist.Save()
     End
+
+    Function RequiresFullscreen:Void()
+        Local plist:File = GetPlist()
+
+        If (plist.Contains("<key>UIRequiresFullScreen</key>"))
+            Return
+        End
+        plist.InsertBefore(
+            "</dict>~n</plist>",
+            "~t<key>UIRequiresFullScreen</key>~n" + 
+            "~t<true/>")
+
+        plist.Save()
+    End
         
     Function AddFramework:Void(name:String, optional:Bool=False)
         app.LogInfo("Adding framework: " + name)
@@ -310,6 +324,20 @@ Class Ios Abstract
             Local patchStr:String = "~t~t~t~t~t~q\~q$(SRCROOT)\~q~q,"
             target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
         End
+    End
+
+    Function SetBitcode:Void(str$ = "NO")
+        Local project := GetProject()
+        If (Not project.Contains("ENABLE_BITCODE = "))
+            project.InsertAfter("buildSettings = {", "~t~t~t~tENABLE_BITCODE = " + str + ";")
+        End
+
+        Local lines := project.FindLines("ENABLE_BITCODE = ");
+        For Local line := 0 To lines.Length-1
+            project.ReplaceLine(lines[line], "~t~t~t~tENABLE_BITCODE = " + str + ";")
+        Next
+
+        project.Save()
     End
 
     Function AddPbxGroupChild:Void(where:String, name:String, id:String)

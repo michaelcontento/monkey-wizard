@@ -2,6 +2,7 @@ Strict
 
 Public
 
+Import IosRequiresFullscreen
 Import amazonads
 Import amazonpayment
 Import androidantkey
@@ -20,6 +21,7 @@ Import iosbundleid
 Import ioschartboost
 Import ioscompresspngfiles
 Import iosdeploymenttarget
+Import iosenablebitcode
 Import iosflurry
 Import iosflurryads
 Import iosframework

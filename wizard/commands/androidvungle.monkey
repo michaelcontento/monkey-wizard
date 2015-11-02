@@ -13,10 +13,10 @@ Public
 Class AndroidVungle Implements Command
 
     Method Run:Void(app:App)
+        Android.AddPermission("android.permission.INTERNET")
         Android.AddPermission("android.permission.WRITE_EXTERNAL_STORAGE")
         Android.AddPermission("android.permission.ACCESS_NETWORK_STATE")
-        Android.AddPermission("android.permission.ACCESS_WIFI_STATE")
-        Android.AddPermission("android.permission.INTERNET")
+        Android.AddPermission("android.permission.ACCESS_FINE_LOCATION")
 
         CopyLibs(app)
 
@@ -27,11 +27,11 @@ Class AndroidVungle Implements Command
 
     Method PatchActivity:Void(app:App)
         Local match:String = "</application>"
-        Local patchStr:String = "<activity android:name=~qcom.vungle.sdk.VungleAdvert~q android:configChanges=~qkeyboardHidden|orientation|screenSize~q android:theme=~q@android:style/Theme.NoTitleBar.Fullscreen~q /> ~n"
+        Local patchStr:String = "<activity android:name=~com.vungle.publisher.FullScreenAdActivity~q android:configChanges=~keyboardHidden|orientation|screenSize~q android:theme=~q@android:style/Theme.NoTitleBar.Fullscreen~q /> ~n"
         patchStr += "<service android:name=~qcom.vungle.sdk.VungleIntentService~q />"
         Local target:File = Android.GetManifest()
 
-        If target.Contains("com.amazon.device.ads.AdActivity")
+        If target.Contains("com.vungle.publisher.FullScreenAdActivity")
             Return
         End
 
@@ -47,8 +47,8 @@ Class AndroidVungle Implements Command
     Method CopyLibs:Void(app:App)
         Android.EnsureLibsFolder()
 
-        Local src:File = app.SourceFile("vungle-publisher-adaptive-id-3.3.2.jar")
-        Local dst:File = app.TargetFile("libs/vungle-publisher-adaptive-id-3.3.2.jar")
+        Local src:File = app.SourceFile("vungle-publisher-adaptive-id-3.3.3.jar")
+        Local dst:File = app.TargetFile("libs/vungle-publisher-adaptive-id-3.3.3.jar")
 
         src.CopyTo(dst)
 
