@@ -2,6 +2,7 @@ Strict
 
 Public
 
+Import AndroidSetTargetSdk
 Import IosRequiresFullscreen
 Import amazonads
 Import amazonpayment
