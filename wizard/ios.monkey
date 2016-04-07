@@ -102,6 +102,38 @@ Class Ios Abstract
         file.Save()
     End
 
+    Function EnsureLibrarySearchPath:Void(name$)
+        Local file := GetProject()
+        Local lines := file.FindLines("LIBRARY_SEARCH_PATHS =")        
+        For Local lineNo := lines.Length-1 To 0 Step -1 
+            Local line := file.GetLine(lines[lineNo])
+            If (Not line.Contains("("))
+                line = line.Replace(";", ",")
+                file.ReplaceLine(lines[lineNo], line.Replace(" = ", " = (~n~t~t~t~t~t") + "~n~t~t~t~t);")
+            End
+        Next
+
+        lines = file.FindLines("LIBRARY_SEARCH_PATHS = (")
+        For Local lineNo := lines.Length-1 To 0 Step -1
+            Local line := file.GetLine(lines[lineNo])
+            line += "~n" + "~t~t~t~t~t" + name + ","
+
+
+            Local followLine := 1
+            Local libFound := False
+            Repeat
+                Local nextLine := file.GetLine(lines[lineNo]+followLine)
+                If (nextLine = "~t~t~t~t);") Then Exit
+                If (nextLine.Contains(name)) Then libFound = True ; Exit
+                followLine += 1
+            Forever
+
+            If (Not libFound) Then file.ReplaceLine(lines[lineNo], line)
+        Next
+
+        file.Save()
+    End
+
     Function EnsureOtherLDFlags:Void(name$)
         Local file := GetProject()
         Local lines := file.FindLines("OTHER_LDFLAGS =")

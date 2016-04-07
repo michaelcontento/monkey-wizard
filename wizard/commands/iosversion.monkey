@@ -10,7 +10,7 @@ Public
 
 Class IosVersion Implements Command
     Method Run:Void(app:App)
-        Ios.UpdatePlistSetting("CFBundleVersion", GetVersion(app))
+        Ios.UpdatePlistSetting("CFBundleVersion", GetBuild(app))
 
         Local plist := Ios.GetPlist()
 
@@ -24,8 +24,16 @@ Class IosVersion Implements Command
 
     Private
 
+    Function GetBuild:String(app:App)
+        If app.GetAdditionArguments().Length() < 2
+            app.LogError("Build string argument missing")
+        End
+
+        Return app.GetAdditionArguments()[1]
+    End
+
     Function GetVersion:String(app:App)
-        If app.GetAdditionArguments().Length() <> 1
+        If app.GetAdditionArguments().Length() < 1
             app.LogError("Version string argument missing")
         End
 

@@ -18,8 +18,10 @@ Import androidvungle
 Import iosaddlanguage
 Import iosadmob
 Import iosappirater
+Import iosappodeal
 Import iosbundleid
 Import ioschartboost
+Import ioscocoapods
 Import ioscompresspngfiles
 Import iosdeploymenttarget
 Import iosenablebitcode
