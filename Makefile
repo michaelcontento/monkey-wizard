@@ -35,6 +35,15 @@ commandsimport:
 	done
 
 #
+# INSTALL
+#
+
+install: build ## Build and install monkey-wizard cli
+	echo "> Installing to /usr/local/bin ..."
+	cp -f src.build/cpptool/main_macos /usr/local/bin/monkey-wizard
+	chmod +x /usr/local/bin/monkey-wizard
+
+#
 # MAKEFILE
 #
 
