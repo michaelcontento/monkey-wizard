@@ -1,17 +1,9 @@
 # [Monkey-Wizard][]
 
-Like it? Support it! 
-
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=kaffeefleck&url=https://github.com/michaelcontento/monkey-wizard&title=Monkey-Wizard&language=en_GB&tags=github&category=software)
-
 ## What?
 
 This tool can be used to configure / inject third party libs into [Monkey][]
 based projects.
-
-<iframe style="border: 0; margin: 0; padding: 0;"
-        src="https://www.gittip.com/michaelcontento/widget.html"
-        width="48pt" height="22pt"></iframe>
 
 ## Why?
 
@@ -26,50 +18,49 @@ much faster and won't accidentally skip some important parts.
 
 ### How to compile?
 
-    make build
+    $ make build
 
 ### How to run?
 
-Just execute `make run` and you should see something like this:
+    $ make build
+    $ ./src.build/cpptool/main_macos
 
-    ./wizard.build/stdcpp/main_macos
+You should now see something like this:
+
     Usage: wizard COMMAND TARGETDIR [COMMAND SPECIFIC OPTIONS]
 
     Commands:
+      AmazonAds
       AmazonPayment
       AndroidAntKey
+      AndroidBass
       AndroidIcons
-      AndroidRevmob
+      AndroidSetTargetSdk
       AndroidVersion
-      GooglePayment
-      IosAppirater
+      IosAddLanguage
+      IosAppodeal
       IosBundleId
+      IosCocoapods
       IosCompressPngFiles
       IosDeploymentTarget
-      IosFlurry
-      IosFlurryAds
+      IosEnableBitcode
       IosFramework
       IosHideStatusBar
       IosIcons
       IosInterfaceOrientation
       IosLaunchImage
+      IosPatchCodeSigningIdentity
       IosProductName
-      IosRevmob
+      IosRequiresFullscreen
       IosVersion
-      SamsungPayment
 
-    ERRO: Invalid number of arguments
-    make: *** [run] Error 2
+    ERROR: Invalid number of arguments
 
 As you can see you need to specify the desired command and the target directoy,
 in which the wizard should perfom it's magic. So to do some real work just
-execute
+execute:
 
-	make run ARGS="googlepayment ../some-project/project.build/android"
-	
-and the result should be:
-
-    ./wizard.build/stdcpp/main_macos
+	$ ./src.build/cpptool/main_macos googlepayment ../some-project/project.build/android
 
 Now go and look at the results! :)
 
@@ -79,8 +70,8 @@ Sure! Just follow this steps:
 
 * Create a new monkey file `wizard/commands/$COMMAND.monkey`
 * Implement the `Command` interface (see: `wizard/command.monkey`)
-* Execute `make commandsimport` to get the new command recognized
-* (Optional) Put static files into `wizard.data/commands/$COMMAND/`
+* **Optional:** Put static files into `wizard.data/commands/$COMMAND/`
+* `make build` as described above
 
 ## License?
 
