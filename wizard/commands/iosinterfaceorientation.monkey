@@ -23,7 +23,6 @@ Class IosInterfaceOrientation Implements Command
         Self.app = app
 
         RemoveOldSettings()
-        AddOrientationBothPlist()
 
         Local src:File = Ios.GetMainSource()
 
@@ -36,10 +35,13 @@ Class IosInterfaceOrientation Implements Command
         Local code$
         Select GetOrientation()
             Case BOTH
+                AddOrientationBothPlist()
                 code = AddOrientationBoth()
             Case LANDSCAPE
+                AddOrientationLandscapePlist()
                 code = AddOrientationLandscape()
             Case PORTRAIT
+                AddOrientationPortraitPlist()
                 code = AddOrientationPortrait()
             Default
                 app.LogError("Invalid orientation given")
@@ -111,6 +113,38 @@ Class IosInterfaceOrientation Implements Command
             "~t~t<string>UIInterfaceOrientationPortraitUpsideDown</string>~n" +
             "~t~t<string>UIInterfaceOrientationLandscapeLeft</string>~n" +
             "~t~t<string>UIInterfaceOrientationLandscapeRight</string>~n" +
+            "~t</array>")
+    End
+
+    Method AddOrientationLandscapePlist:Void()
+        Local file := Ios.GetPlist()
+        file.InsertBefore(
+            "</dict>~n</plist>",
+            "~t<key>UISupportedInterfaceOrientations</key>~n" +
+            "~t<array>~n" +
+            "~t~t<string>UIInterfaceOrientationLandscapeLeft</string>~n" +
+            "~t~t<string>UIInterfaceOrientationLandscapeRight</string>~n" +
+            "~t</array>~n" +
+            "~t<key>UISupportedInterfaceOrientations~~ipad</key>~n" +
+            "~t<array>~n" +
+            "~t~t<string>UIInterfaceOrientationLandscapeLeft</string>~n" +
+            "~t~t<string>UIInterfaceOrientationLandscapeRight</string>~n" +
+            "~t</array>")
+    End
+
+    Method AddOrientationPortraitPlist:Void()
+        Local file := Ios.GetPlist()
+        file.InsertBefore(
+            "</dict>~n</plist>",
+            "~t<key>UISupportedInterfaceOrientations</key>~n" +
+            "~t<array>~n" +
+            "~t~t<string>UIInterfaceOrientationPortrait</string>~n" +
+            "~t~t<string>UIInterfaceOrientationPortraitUpsideDown</string>~n" +
+            "~t</array>~n" +
+            "~t<key>UISupportedInterfaceOrientations~~ipad</key>~n" +
+            "~t<array>~n" +
+            "~t~t<string>UIInterfaceOrientationPortrait</string>~n" +
+            "~t~t<string>UIInterfaceOrientationPortraitUpsideDown</string>~n" +
             "~t</array>")
     End
 End
