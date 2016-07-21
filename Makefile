@@ -8,7 +8,7 @@ IMPORT = wizard/commands/commands.monkey
 
 clean: ## Remove build artifacts
 	echo "> Cleaning ..."
-	rm -rf src.build/
+	rm -rf wizard.build/
 	rm -f ${IMPORT}
 
 #
@@ -20,7 +20,7 @@ build: clean commandsimport ## Build monkey-wizard
 	${TRANS} \
 		-config=${CONFIG} \
 		-target=C++_Tool \
-		-builddir=src.build \
+		-builddir=wizard.build \
 		-build \
 		wizard.monkey
 
@@ -40,7 +40,7 @@ commandsimport:
 
 install: build ## Build and install monkey-wizard cli
 	echo "> Installing to /usr/local/bin ..."
-	cp -f src.build/cpptool/main_macos /usr/local/bin/monkey-wizard
+	cp -f wizard.build/cpptool/main_macos /usr/local/bin/monkey-wizard
 	chmod +x /usr/local/bin/monkey-wizard
 
 #

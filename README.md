@@ -24,7 +24,7 @@ much faster and won't accidentally skip some important parts.
 ### How to run?
 
     $ make build
-    $ ./src.build/cpptool/main_macos
+    $ ./wizard.build/cpptool/main_macos
 
 You should now see something like this:
 
@@ -61,7 +61,7 @@ As you can see you need to specify the desired command and the target directoy,
 in which the wizard should perfom it's magic. So to do some real work just
 execute:
 
-	$ ./src.build/cpptool/main_macos googlepayment ../some-project/project.build/android
+	$ ./wizard.build/cpptool/main_macos googlepayment ../some-project/project.build/android
 
 Now go and look at the results! :)
 
