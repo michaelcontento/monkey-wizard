@@ -11,7 +11,7 @@ Public
 Class AndroidSetTargetSdk Implements Command
     Method Run:Void(app:App)
         Local minSdk := "11"
-        Local target := "14"
+        Local target := "23"
         Local manifest := Android.GetManifest()
 
         Local sdkLines := manifest.FindLines("uses-sdk")
