@@ -14,6 +14,20 @@ Class Android Abstract
         Return app.TargetFile("templates/AndroidManifest.xml")
     End
 
+    Function RemovePermission:Int(permission:String)
+        Local searchStr:String = "uses-permission android:name=~q" + permission + "~q"
+
+        Local target:File = Android.GetManifest()
+        Local lines := target.FindLines(searchStr)
+
+        For Local i:Int = 1 To lines.Length()
+            Local line := lines[lines.Length() - i]
+            target.RemoveLine(line)
+        End
+
+        Return lines.Length()
+    End
+
     Function AddPermission:Void(permission:String)
         Local addBefore:String = "<application"
         Local searchStr:String = "uses-permission android:name=~q" + permission + "~q"
@@ -35,4 +49,3 @@ Class Android Abstract
         app.TargetDir("libs").Create()
     End
 End
-
