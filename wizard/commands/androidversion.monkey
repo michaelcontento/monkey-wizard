@@ -4,13 +4,14 @@ Private
 
 Import wizard.app
 Import wizard.command
-Import wizard.file
 Import wizard.android
 
 Public
 
 Class AndroidVersion Implements Command
     Method Run:Void(app:App)
+        app.LogDeprecated("Use monkeys #ANDROID_VERSION_* settings")
+
         If app.GetAdditionArguments().Length() <> 1
             app.LogError("First argument must be the new version")
         End

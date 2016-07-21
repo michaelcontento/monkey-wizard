@@ -10,7 +10,7 @@ Import wizard.ios
     This command replaces the Release Code Signing Identity
     to the Default Distribution Identity.
 
-    The parsing is a little bit hacky (simple find, move around, replace) 
+    The parsing is a little bit hacky (simple find, move around, replace)
     but it works with the current version
     of the monkey xcode project and the sdk and helps to keep
     the code short & simple (instead of a real parsing of the xcode porject file).
@@ -19,15 +19,7 @@ Import wizard.ios
 Public
 
 Class IosPatchCodeSigningIdentity Implements Command
-    Private
-
-    Field app:App
-
-    Public
-
     Method Run:Void(app:App)
-        Self.app = app
-
         Local file := Ios.GetProject()
 
         Local line := file.FindLines("~qCODE_SIGN_IDENTITY[sdk=iphoneos*]~q = ~qiPhone Developer~q;")

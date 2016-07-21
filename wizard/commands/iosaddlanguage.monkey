@@ -13,10 +13,9 @@ Public
 Class IosAddLanguage Implements Command
     Private
 
-
     Method Run:Void(app:App)
         Local lang := GetLang(app)
-        Local langPath := lang + ".lproj"      
+        Local langPath := lang + ".lproj"
         Local name := "localize.strings"
 
         Local firstId := Ios.GenerateUniqueId()
@@ -36,10 +35,10 @@ Class IosAddLanguage Implements Command
         Ios.AddPbxFileReferenceFile(thirdId, lang, langPath + "/" + name, "file")
         Ios.AddIconPBXGroup(langPath + "/" + name, secondId)
         Ios.AddIconPBXResourcesBuildPhase(langPath + "/" + name, firstId)
-        
+
         Ios.AddPBXVariantGroup(secondId, name, [thirdId], [lang])
     End
-    
+
     Private
 
     Function GetLang:String(app:App)

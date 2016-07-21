@@ -16,7 +16,7 @@ Class IosVersion Implements Command
 
         plist.InsertBefore(
             "</dict>~n</plist>",
-            "~t<key>CFBundleShortVersionString</key>~n" + 
+            "~t<key>CFBundleShortVersionString</key>~n" +
             "~t<string>" + GetVersion(app) + "</string>")
 
         plist.Save()

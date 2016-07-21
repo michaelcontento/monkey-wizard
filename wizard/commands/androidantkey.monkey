@@ -2,16 +2,15 @@ Strict
 
 Private
 
-Import wizard.android
 Import wizard.app
 Import wizard.command
-Import wizard.dir
-Import wizard.file
 
 Public
 
 Class AndroidAntKey Implements Command
     Method Run:Void(app:App)
+        app.LogDeprecated("Use monkeys #ANDROID_KEY_* settings")
+
         Local file := app.TargetFile("ant.properties")
         Local fields := [
             "key.store", "key.store.password",

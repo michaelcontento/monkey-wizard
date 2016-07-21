@@ -75,11 +75,15 @@ Class App
     End
 
     Method LogWarning:Void(text:String)
-        Print "WARN: " + text
+        Print "WARNING: " + text
+    End
+
+    Method LogDeprecated:Void(text:String)
+        Print "DEPRECATED: " + text
     End
 
     Method LogError:Void(text:String)
-        Print "ERRO: " + text
+        Print "ERROR: " + text
         ExitApp(2)
     End
 

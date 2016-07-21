@@ -4,7 +4,6 @@ Private
 
 Import wizard.app
 Import wizard.command
-Import wizard.dir
 Import wizard.file
 Import wizard.ios
 
