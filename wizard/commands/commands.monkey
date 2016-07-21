@@ -2,20 +2,29 @@ Strict
 
 Public
 
+Import AndroidSetTargetSdk
+Import IosRequiresFullscreen
 Import amazonads
 Import amazonpayment
 Import androidantkey
+Import androidbass
 Import androidchartboost
 Import androidicons
 Import androidlocalytics
 Import androidrevmob
+Import androidtabletsupport
 Import androidversion
-Import googlepayment
+Import androidvungle
+Import iosaddlanguage
+Import iosadmob
 Import iosappirater
+Import iosappodeal
 Import iosbundleid
 Import ioschartboost
+Import ioscocoapods
 Import ioscompresspngfiles
 Import iosdeploymenttarget
+Import iosenablebitcode
 Import iosflurry
 Import iosflurryads
 Import iosframework
@@ -23,7 +32,9 @@ Import ioshidestatusbar
 Import iosicons
 Import iosinterfaceorientation
 Import ioslaunchimage
+Import iospatchcodesigningidentity
 Import iosproductname
 Import iosrevmob
 Import iosversion
+Import iosvungle
 Import samsungpayment

@@ -15,6 +15,8 @@ Class AmazonPayment Implements Command
 
     Method Run:Void(app:App)
         Android.AddPermission("android.permission.INTERNET")
+        Android.AddPermission("android.permission.ACCESS_FINE_LOCATION")
+        Android.AddPermission("android.permission.ACCESS_COARSE_LOCATION")
         PatchReceiver(app)
         CopyLibs(app)
         PrintDeveloperHints(app)

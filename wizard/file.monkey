@@ -68,6 +68,16 @@ Class File
         Return data[posStart..posEnd].Contains(match)
     End
 
+    Method GetContentBetween:String(strStart:String, strEnd:String)
+        Local posStart:Int = data.Find(strStart)
+        Local posEnd:Int = data.Find(strEnd, posStart)
+
+        If posStart = -1 Or posEnd = -1 Then Return ""
+        posEnd += strEnd.Length() + 1
+
+        Return data[posStart..posEnd]
+    End
+
     Method Exists:Bool()
         Return FileExists(path)
     End
@@ -90,6 +100,7 @@ Class File
     End
 
     Method CopyTo:Void(dst:String)
+        If Not FileExists(path) Then Error "File doesnt exists: " + path
         CopyFile(path, dst)
     End
 
@@ -162,8 +173,6 @@ Class File
     Method Append:Void(text:String)
         data += text
     End
-
-    Private
 
     Method data:String() Property
         If Not loaded And FileExists(path)

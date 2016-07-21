@@ -9,8 +9,6 @@
 #import "RevMobFullscreen.h"
 #import "RevMobPopup.h"
 
-//#import <CoreLocation/CoreLocation.h>
-
 
 typedef enum {
     RevMobAdsTestingModeOff = 0,
@@ -24,6 +22,11 @@ typedef enum {
     RevMobUserGenderFemale
 } RevMobUserGender;
 
+typedef enum {
+    RevMobParallaxModeOff = 0,
+    RevMobParallaxModeDefault,
+    RevMobParallaxModeWithBackground
+} RevMobParallaxMode;
 
 /**
  This is the main class to start using RevMob Ads.
@@ -51,6 +54,19 @@ typedef enum {
 
  */
 @property (nonatomic, assign) RevMobAdsTestingMode testingMode;
+
+/**
+ This property is used to set the parallaxe effect on ad units.
+ 
+ - RevMobParallaxModeOff - Turn off the parallax effect
+ 
+ - RevMobParallaxModeDefault - Use the default parallax effect
+ 
+ - RevMobParallaxModeWithBackground - Use the parallax with black background effect
+
+ Default value is RevMobParallaxModeOff.
+ */
+@property (nonatomic, assign) RevMobParallaxMode parallaxMode;
 
 /**
  This property is used to set the user gender in order to get targeted ads with higher eCPM.
@@ -119,27 +135,6 @@ typedef enum {
 @property (nonatomic, strong) NSString *userPage;
 
 
-/**
- This method is used to set user location in order to get targeted ads with higher eCPM.
- You should pass double values for the user latitude, longitude and accuracy.
- 
- Example of usage:
- 
- RevMobAds *revmob = [RevMobAds session];
- 
- CLLocation *location = self.locationManager.location;
- 
- [self.locationManager setDistanceFilter: kCLDistanceFilterNone];
- [self.locationManager setDesiredAccuracy: kCLLocationAccuracyHundredMeters];
- [self.locationManager startUpdatingLocation];
- 
- [revmob setUserLatitude: location.coordinate.latitude
- userLongitude: location.coordinate.longitude
- userAccuracy: location.horizontalAccuracy];
-
-// */
-- (void)setUserLatitude:(double)userLatitude userLongitude: (double)userLongitude userAccuracy: (double)userAccuracy;
-
 #pragma mark - Alternative use
 
 /**
@@ -163,7 +158,68 @@ typedef enum {
 + (RevMobAds *)startSessionWithAppID:(NSString *)anAppId;
 
 /**
- This method can be used to get the already initializaded sesseion of RevMobAds.
+ This method is necessary to get the ads objects with delegate.
+ 
+ It must be the first method called on the application:didFinishLaunchingWithOptions: method of the application delegate.
+ 
+ Example of Usage:
+ 
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+ 
+ [RevMobAds startSessionWithAppID:@"your RevMob App ID" andDelegate:self];
+ 
+ self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+ 
+ // Override point for customization after application launch.
+ }
+
+ @param appID: You can collect your App ID at http://revmob.com by looking up your apps.
+ @param adelegate:  The delegate is called when ad related events happen, see
+ RevMobAdsDelegate for mode details. Can be nil;
+ 
+ */
++ (RevMobAds *)startSessionWithAppID:(NSString *)anAppId andDelegate:(id<RevMobAdsDelegate>)adelegate;
+
+/**
+ This method is necessary to get the ads objects with delegate.
+
+ It must be the first method called on the application:didFinishLaunchingWithOptions: method of the application delegate.
+ 
+ Example of Usage:
+ 
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+ 
+    [RevMobAds startSessionWithAppID:@"your RevMob App ID"
+                withSuccessHandler:^{
+                    NSLog(@"Session started with block");
+                } andFailHandler:^(NSError *error) {
+                    NSLog(@"Session failed to start with block");
+    }];
+
+ 
+ self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+ 
+ // Override point for customization after application launch.
+ }
+ 
+ @param appID: You can collect your App ID at http://revmob.com by looking up your apps.
+ @param onSessionStartedHandler: A block that will be executed once the session is started, can be nil.
+ @param onSessionNotStartedHandler: A block that will be executed once the session failed to start, can be nil.
+ 
+ */
++ (RevMobAds *)startSessionWithAppID:(NSString *)anAppId
+                  withSuccessHandler:(void(^)())onSessionStartedHandler
+                      andFailHandler:(void(^)(NSError *error))onSessionNotStartedHandler;
+
++ (RevMobAds *)startSessionWithAppID:(NSString *)anAppId
+                  withSuccessHandler:(void(^)())onSessionStartedHandler
+                      andFailHandler:(void(^)(NSError *error))onSessionNotStartedHandler
+                                 url:(NSString *) serverUrl
+                                 key:(int) sessionKey;
+
+
+/**
+ This method can be used to get the already initialized session of RevMobAds.
  
  @return If is called before the session initialization, this method will return nil.
  */
@@ -507,6 +563,8 @@ typedef enum {
   @return RevMobPopup object.
 */
 - (RevMobPopup *)popup;
+
+- (void) openLink;
 
 /**
  This is the factory of popup ad object

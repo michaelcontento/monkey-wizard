@@ -80,7 +80,7 @@ Class IosIcons Implements Command
 
         Local file := Ios.GetPlist()
         file.InsertBefore(
-            "</dict>",
+            "</dict>~n</plist>",
             "~t<key>CFBundleIconFiles</key>~n" +
             "~t<array>~n" +
             files +
@@ -103,7 +103,7 @@ Class IosIcons Implements Command
 
         Local file := Ios.GetPlist()
         file.InsertBefore(
-            "</dict>",
+            "</dict>~n</plist>",
             "~t<key>UIPrerenderedIcon</key>~n" +
             "~t<true/>")
     End

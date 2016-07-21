@@ -10,7 +10,54 @@ Public
 Class Ios Abstract
     Global app:App
 
+    Function NSAllowsArbitraryLoads:Void()
+        Local plist:File = GetPlist()
+
+        If (plist.Contains("<key>NSAppTransportSecurity</key>") And plist.Contains("<key>NSAllowsArbitraryLoads</key>")) Return
+
+        'Remove Old Values
+        Local startLines := plist.FindLines("<key>NSAppTransportSecurity</key>")
+        For Local l := startLines.Length-1 To 0 Step -1
+            Local startLine := startLines[l]
+            Local rows := 0
+            Repeat
+                rows += 1
+            Until plist.GetLine(startLine + rows).Trim().StartsWith("</")
+
+            If rows <= 0 Then Return
+
+            For Local i := rows To 0 Step -1
+                plist.RemoveLine(startLine + i)
+            End
+        Next
+
+        plist.InsertBefore(
+            "</dict>~n</plist>",
+            "~t<key>NSAppTransportSecurity</key>~n" + 
+            "~t<dict>~n" + 
+            "~t~t<key>NSAllowsArbitraryLoads</key>~n" + 
+            "~t~t<true/>~n" + 
+            "~t</dict>")
+
+        plist.Save()
+    End
+
+    Function RequiresFullscreen:Void()
+        Local plist:File = GetPlist()
+
+        If (plist.Contains("<key>UIRequiresFullScreen</key>"))
+            Return
+        End
+        plist.InsertBefore(
+            "</dict>~n</plist>",
+            "~t<key>UIRequiresFullScreen</key>~n" + 
+            "~t<true/>")
+
+        plist.Save()
+    End
+        
     Function AddFramework:Void(name:String, optional:Bool=False)
+        app.LogInfo("Adding framework: " + name)
         If ContainsFramework(name) Then Return
 
         Local firstId:String = GenerateUniqueId()
@@ -23,17 +70,115 @@ Class Ios Abstract
         AddPbxGroupChild("Frameworks", name, secondId)
     End
 
+    Function EnsureHeaderSearchPath:Void(name$)
+        Local file := GetProject()
+        Local lines := file.FindLines("HEADER_SEARCH_PATHS =")
+        For Local lineNo := lines.Length-1 To 0 Step -1 
+            Local line := file.GetLine(lines[lineNo])
+            If (Not line.Contains("("))
+                line = line.Replace(";", ",")
+                file.ReplaceLine(lines[lineNo], line.Replace(" = ", " = (~n~t~t~t~t~t") + "~n~t~t~t~t);")
+            End
+        Next
+
+        lines = file.FindLines("HEADER_SEARCH_PATHS = (")
+        For Local lineNo := lines.Length-1 To 0 Step -1
+            Local line := file.GetLine(lines[lineNo])
+            line += "~n" + "~t~t~t~t~t" + name + ","
+
+
+            Local followLine := 1
+            Local libFound := False
+            Repeat
+                Local nextLine := file.GetLine(lines[lineNo]+followLine)
+                If (nextLine = "~t~t~t~t);") Then Exit
+                If (nextLine.Contains(name)) Then libFound = True ; Exit
+                followLine += 1
+            Forever
+
+            If (Not libFound) Then file.ReplaceLine(lines[lineNo], line)
+        Next
+
+        file.Save()
+    End
+
+    Function EnsureLibrarySearchPath:Void(name$)
+        Local file := GetProject()
+        Local lines := file.FindLines("LIBRARY_SEARCH_PATHS =")        
+        For Local lineNo := lines.Length-1 To 0 Step -1 
+            Local line := file.GetLine(lines[lineNo])
+            If (Not line.Contains("("))
+                line = line.Replace(";", ",")
+                file.ReplaceLine(lines[lineNo], line.Replace(" = ", " = (~n~t~t~t~t~t") + "~n~t~t~t~t);")
+            End
+        Next
+
+        lines = file.FindLines("LIBRARY_SEARCH_PATHS = (")
+        For Local lineNo := lines.Length-1 To 0 Step -1
+            Local line := file.GetLine(lines[lineNo])
+            line += "~n" + "~t~t~t~t~t" + name + ","
+
+
+            Local followLine := 1
+            Local libFound := False
+            Repeat
+                Local nextLine := file.GetLine(lines[lineNo]+followLine)
+                If (nextLine = "~t~t~t~t);") Then Exit
+                If (nextLine.Contains(name)) Then libFound = True ; Exit
+                followLine += 1
+            Forever
+
+            If (Not libFound) Then file.ReplaceLine(lines[lineNo], line)
+        Next
+
+        file.Save()
+    End
+
+    Function EnsureOtherLDFlags:Void(name$)
+        Local file := GetProject()
+        Local lines := file.FindLines("OTHER_LDFLAGS =")
+        For Local lineNo := lines.Length-1 To 0 Step -1 
+            Local line := file.GetLine(lines[lineNo])
+            If (Not line.Contains("("))
+                line = line.Replace(";", ",")
+                file.ReplaceLine(lines[lineNo], line.Replace(" = ", " = (~n~t~t~t~t~t") + "~n~t~t~t~t);")
+            End
+        Next
+
+        lines = file.FindLines("OTHER_LDFLAGS = (")
+        For Local lineNo := lines.Length-1 To 0 Step -1
+            Local line := file.GetLine(lines[lineNo])
+            line += "~n" + "~t~t~t~t~t" + name + ","
+
+
+            Local followLine := 1
+            Local libFound := False
+            Repeat
+                Local nextLine := file.GetLine(lines[lineNo]+followLine)
+                If (nextLine = "~t~t~t~t);") Then Exit
+                If (nextLine.Contains(name)) Then libFound = True ; Exit
+                followLine += 1
+            Forever
+
+            If (Not libFound) Then file.ReplaceLine(lines[lineNo], line)
+        Next
+
+        file.Save()
+    End
     Function AddFrameworkFromPath:Void(name:String, optional:Bool=False)
+        app.LogInfo("Adding framework from path: " + name)
         If ContainsFramework(name) Then Return
 
         Local firstId:String = GenerateUniqueId()
         Local secondId:String = GenerateUniqueId()
 
         AddPbxFileReferencePath(name, secondId)
+
         EnsureSearchPathWithSRCROOT("Debug")
         EnsureSearchPathWithSRCROOT("Release")
 
         AddPbxBuildFile(name, firstId, secondId, optional)
+
         AddPbxFrameworkBuildPhase(name, firstId)
         AddPbxGroupChild("Frameworks", name, secondId)
     End
@@ -44,6 +189,10 @@ Class Ios Abstract
 
     Function GetPlist:File()
         Return app.TargetFile("MonkeyGame-Info.plist")
+    End
+
+    Function GetMainSource:File()
+        Return app.TargetFile("main.mm")
     End
 
     Function ContainsFramework:Bool(name:String)
@@ -61,6 +210,15 @@ Class Ios Abstract
             If Not file.Contains(old) Then Continue
             file.Replace(old, key + " = ~q" + newValue + "~q;")
         End
+    End
+
+    Function UpdateDeploymentTarget:Void(newValue:String)
+        Local file := GetProject()
+        Local lines := file.FindLines("IPHONEOS_DEPLOYMENT_TARGET" + " = ")
+
+        For Local l := EachIn lines
+            file.ReplaceLine(l, "~t~t~t~t" + "IPHONEOS_DEPLOYMENT_TARGET" + " = " + newValue + ";")
+        Next
     End
 
     Function GetProjectSetting:String(key:String)
@@ -143,6 +301,24 @@ Class Ios Abstract
         GetProject().InsertBefore(match, text)
     End
 
+    Function AddPBXVariantGroupChildren:Void(name$, childId$, childName$)
+        Local variantGroup := GetProject().GetContentBetween("/* Begin PBXVariantGroup section */", "/* End PBXVariantGroup section */")
+        Local pos := variantGroup.Find(" /* " + name + " */")
+        If (pos = -1) 
+            Print name + " not found, Creating new group"
+            AddPBXVariantGroup(Ios.GenerateUniqueId(), name, [childId], [childName])            
+            Return
+        End
+
+        Local posChild := variantGroup.Find("children = (", pos)
+        If (posChild = -1) Then app.LogError("Child in group " + name + " not found!") ; Return
+
+        Local newChild := "~t~t~t~t" + childId + " /* " + childName + " */,~n"
+        Local newContent := variantGroup[0..(posChild + 12)] + newChild + variantGroup[(posChild + 12)..variantGroup.Length()]
+
+        GetProject().Replace(variantGroup, newContent)
+    End
+
     Function AddKnownRegion:Void(region:String)
         Local text:String = "~t~t~t~t~q" + region + "~q,"
         GetProject().InsertAfter("knownRegions = (", text)
@@ -150,14 +326,20 @@ Class Ios Abstract
 
     Function EnsureSearchPathWithSRCROOT:Void(config:String)
         Local searchStr:String = "FRAMEWORK_SEARCH_PATHS"
+  ''      Local searchBegin:String = "" +
+ ''           "/* " + config + " */ = {~n" +
+''            "~t~t~tisa = XCBuildConfiguration;"
+
         Local searchBegin:String = "" +
-            "/* " + config + " */ = {~n" +
-            "~t~t~tisa = XCBuildConfiguration;"
+            "/* " + config + " */ = {"
+
         Local searchEnd:String = "name = " + config + ";"
         Local target:File = GetProject()
 
         ' Whole setting is missing
         If Not target.ContainsBetween(searchStr, searchBegin, searchEnd)
+
+            If (Not target.Contains(searchBegin)) Then Error searchBegin + " --- Not found! in " + target.Get()
             Local addAfter:String = "buildSettings = {"
             Local patchStr:String = "" +
                 "~t~t~t~tFRAMEWORK_SEARCH_PATHS = (~n" +
@@ -174,6 +356,20 @@ Class Ios Abstract
             Local patchStr:String = "~t~t~t~t~t~q\~q$(SRCROOT)\~q~q,"
             target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
         End
+    End
+
+    Function SetBitcode:Void(str$ = "NO")
+        Local project := GetProject()
+        If (Not project.Contains("ENABLE_BITCODE = "))
+            project.InsertAfter("buildSettings = {", "~t~t~t~tENABLE_BITCODE = " + str + ";")
+        End
+
+        Local lines := project.FindLines("ENABLE_BITCODE = ");
+        For Local line := 0 To lines.Length-1
+            project.ReplaceLine(lines[line], "~t~t~t~tENABLE_BITCODE = " + str + ";")
+        Next
+
+        project.Save()
     End
 
     Function AddPbxGroupChild:Void(where:String, name:String, id:String)
@@ -193,15 +389,17 @@ Class Ios Abstract
         End
     End
 
-    Function AddPbxGroup:Void(name:String, id:String)
+
+    Function AddPbxGroup:Void(name:String, id:String, path$)
         Local headline:String = id + " /* " + name + " */ = {"
         If GetProject().Contains(headline) Then Return
+        Print name
 
         Local text:String = "~t~t" + headline + "~n" +
             "~t~t~tisa = PBXGroup;~n" +
             "~t~t~tchildren = (~n" +
             "~t~t~t);~n" +
-            "~t~t~tpath = appirater;~n" +
+            "~t~t~tpath = " + path + ";~n" +
             "~t~t~tsourceTree = ~q<group>~q;~n" +
             "~t~t};"
 
@@ -320,7 +518,7 @@ Class Ios Abstract
             "{isa = PBXFileReference; " +
             "fileEncoding = 4; " +
             "lastKnownFileType = " + type + "; " +
-            "path = " + name + "; " +
+            "path = " + path + "; " +
             "sourceTree = ~q<group>~q; };"
 
         AddPbxFileReference(name, patchStr)

@@ -37,7 +37,7 @@ Class IosHideStatusBar Implements Command
     Method AddSettings:Void()
         Local file := Ios.GetPlist()
         file.InsertBefore(
-            "</dict>",
+            "</dict>~n</plist>",
             "~t<key>UIStatusBarHidden</key>~n" +
             "~t<true/>~n" +
             "~t<key>UIStatusBarHidden~~ipad</key>~n" +

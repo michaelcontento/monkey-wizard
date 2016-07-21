@@ -10,7 +10,7 @@ Public
 
 Class IosDeploymentTarget Implements Command
     Method Run:Void(app:App)
-        Ios.UpdateProjectSetting("IPHONEOS_DEPLOYMENT_TARGET", GetTarget(app))
+        Ios.UpdateDeploymentTarget(GetTarget(app))
     End
 
     Private

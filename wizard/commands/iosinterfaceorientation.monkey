@@ -5,6 +5,7 @@ Private
 Import wizard.app
 Import wizard.command
 Import wizard.ios
+Import wizard.file
 
 Public
 
@@ -21,22 +22,53 @@ Class IosInterfaceOrientation Implements Command
     Method Run:Void(app:App)
         Self.app = app
 
+        RemoveOldSettings()
+        AddOrientationBothPlist()
+
+        Local src:File = Ios.GetMainSource()
+
+        ' remove deprecated code
+        Local lines := src.FindLines("-(NSUInteger)supportedInterfaceOrientations")
+        For Local i := 0 To 12
+            src.RemoveLine(lines[0]+1)
+        Next
+
+        Local code$
         Select GetOrientation()
-        Case BOTH
-            RemoveOldSettings()
-            AddOrientationBoth()
-        Case LANDSCAPE
-            RemoveOldSettings()
-            AddOrientationLandscape()
-        Case PORTRAIT
-            RemoveOldSettings()
-            AddOrientationPortrait()
-        Default
-            app.LogError("Invalid orientation given")
+            Case BOTH
+                code = AddOrientationBoth()
+            Case LANDSCAPE
+                code = AddOrientationLandscape()
+            Case PORTRAIT
+                code = AddOrientationPortrait()
+            Default
+                app.LogError("Invalid orientation given")
         End
+
+        src.InsertAfterLine(lines[0], "~t" + code)
     End
 
     Private
+
+    Method AddOrientationBoth:String()
+        Return "NSUInteger mask = UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight|UIInterfaceOrientationMaskPortrait|UIInterfaceOrientationMaskPortraitUpsideDown;"
+    End
+
+    Method AddOrientationLandscape:String()
+        Return "NSUInteger mask = UIInterfaceOrientationMaskLandscapeLeft|UIInterfaceOrientationMaskLandscapeRight;"
+    End
+
+    Method AddOrientationPortrait:String()
+        Return "NSUInteger mask = UIInterfaceOrientationMaskPortrait|UIInterfaceOrientationMaskPortraitUpsideDown;"
+    End
+
+    Method GetOrientation:String()
+        If app.GetAdditionArguments().Length() <> 1
+            app.LogError("Orientation argument missing")
+        End
+
+        Return app.GetAdditionArguments()[0].ToUpper()
+    End
 
     Method RemoveOldSettings:Void()
         Local file := Ios.GetPlist()
@@ -62,10 +94,10 @@ Class IosInterfaceOrientation Implements Command
         End
     End
 
-    Method AddOrientationBoth:Void()
+    Method AddOrientationBothPlist:Void()
         Local file := Ios.GetPlist()
         file.InsertBefore(
-            "</dict>",
+            "</dict>~n</plist>",
             "~t<key>UISupportedInterfaceOrientations</key>~n" +
             "~t<array>~n" +
             "~t~t<string>UIInterfaceOrientationPortrait</string>~n" +
@@ -80,45 +112,5 @@ Class IosInterfaceOrientation Implements Command
             "~t~t<string>UIInterfaceOrientationLandscapeLeft</string>~n" +
             "~t~t<string>UIInterfaceOrientationLandscapeRight</string>~n" +
             "~t</array>")
-    End
-
-    Method AddOrientationLandscape:Void()
-        Local file := Ios.GetPlist()
-        file.InsertBefore(
-            "</dict>",
-            "~t<key>UISupportedInterfaceOrientations</key>~n" +
-            "~t<array>~n" +
-            "~t~t<string>UIInterfaceOrientationLandscapeLeft</string>~n" +
-            "~t~t<string>UIInterfaceOrientationLandscapeRight</string>~n" +
-            "~t</array>~n" +
-            "~t<key>UISupportedInterfaceOrientations~~ipad</key>~n" +
-            "~t<array>~n" +
-            "~t~t<string>UIInterfaceOrientationLandscapeLeft</string>~n" +
-            "~t~t<string>UIInterfaceOrientationLandscapeRight</string>~n" +
-            "~t</array>")
-    End
-
-    Method AddOrientationPortrait:Void()
-        Local file := Ios.GetPlist()
-        file.InsertBefore(
-            "</dict>",
-            "~t<key>UISupportedInterfaceOrientations</key>~n" +
-            "~t<array>~n" +
-            "~t~t<string>UIInterfaceOrientationPortrait</string>~n" +
-            "~t~t<string>UIInterfaceOrientationPortraitUpsideDown</string>~n" +
-            "~t</array>~n" +
-            "~t<key>UISupportedInterfaceOrientations~~ipad</key>~n" +
-            "~t<array>~n" +
-            "~t~t<string>UIInterfaceOrientationPortrait</string>~n" +
-            "~t~t<string>UIInterfaceOrientationPortraitUpsideDown</string>~n" +
-            "~t</array>")
-    End
-
-    Method GetOrientation:String()
-        If app.GetAdditionArguments().Length() <> 1
-            app.LogError("Orientation argument missing")
-        End
-
-        Return app.GetAdditionArguments()[0].ToUpper()
     End
 End
