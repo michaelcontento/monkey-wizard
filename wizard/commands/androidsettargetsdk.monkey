@@ -12,6 +12,10 @@ Class AndroidSetTargetSdk Implements Command
     Method Run:Void(app:App)
         Local minSdk := "11"
         Local target := "23"
+
+        If (app.GetAdditionArguments().Length() >= 1) Then minSdk = Int(app.GetAdditionArguments()[0])
+        If (app.GetAdditionArguments().Length() >= 2) Then target = Int(app.GetAdditionArguments()[1])
+
         Local manifest := Android.GetManifest()
 
         Local sdkLines := manifest.FindLines("uses-sdk")

@@ -15,7 +15,7 @@ Class IosAppodeal Implements Command
         CocoaPods.Init(app)
         CocoaPods.AddSource("https://github.com/appodeal/CocoaPods.git", app)
         CocoaPods.AddSource("https://github.com/CocoaPods/Specs.git", app)
-        CocoaPods.AddDependency("Appodeal", app, "0.8.1")
+        CocoaPods.AddDependency("Appodeal", app, "0.10.2")
         CocoaPods.AddDependency("MWFeedParser", app, "1.0")
         CocoaPods.Install(app)
     End
