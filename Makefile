@@ -9,7 +9,7 @@ IMPORT = wizard/commands/commands.monkey
 clean: ## Remove build artifacts
 	echo "> Cleaning ..."
 	rm -rf src.build/
-	rm ${IMPORT}
+	rm -f ${IMPORT}
 
 #
 # BUILDING
