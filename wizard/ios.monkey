@@ -10,6 +10,16 @@ Public
 Class Ios Abstract
     Global app:App
 
+    Function AddToPlist:Void(plistKey$, plistString$)
+        Local plist:File = GetPlist()
+        If (plist.Contains("<key>" + plistKey + "</key>")) Return
+
+        plist.InsertBefore(
+            "</dict>~n</plist>",
+            "~t<key>" + plistKey + "</key>~n" +
+            "~t<string>" + plistString + "</string>~n")
+    End
+
     Function NSAllowsArbitraryLoads:Void()
         Local plist:File = GetPlist()
 

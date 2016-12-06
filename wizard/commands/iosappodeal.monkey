@@ -22,6 +22,12 @@ Class IosAppodeal Implements Command
         CocoaPods.AddDependency("MWFeedParser", app, "1.0")
         CocoaPods.Install(app)        
 
+        Ios.AddToPlist("NSBluetoothPeripheralUsageDescription", "Advertising")
+        Ios.AddToPlist("NSCalendarsUsageDescription", "Advertising")
+        Ios.AddToPlist("NSLocationWhenInUseUsageDescription", "Advertising")
+        Ios.AddToPlist("NSPhotoLibraryUsageDescription", "Advertising")
+
+
         app.LogInfo("New AppODeal installed!")
     End
    
