@@ -4,6 +4,7 @@ Public
 
 Import AndroidSetTargetSdk
 Import IosRequiresFullscreen
+Import allowunsecureconnections
 Import amazonads
 Import amazonpayment
 Import androidantkey
@@ -15,6 +16,7 @@ Import androidrevmob
 Import androidtabletsupport
 Import androidversion
 Import androidvungle
+Import glfwsteam
 Import iosaddlanguage
 Import iosadmob
 Import iosappirater

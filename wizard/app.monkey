@@ -87,8 +87,6 @@ Class App
         Return AppArgs()[3..]
     End
 
-    Private
-
     Method SaveOpenFiles:Void()
         For Local f:File = EachIn openFiles.Values()
             f.Save()

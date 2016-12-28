@@ -4,11 +4,14 @@ Private
 
 Import wizard.app
 Import wizard.file
+Import wizard.helperos
 
 Public
 
 Class Ios Abstract
     Global app:App
+
+    Global defaultProjectFile$ = "MonkeyGame.xcodeproj/project.pbxproj"
 
     Function AddToPlist:Void(plistKey$, plistString$)
         Local plist:File = GetPlist()
@@ -65,7 +68,105 @@ Class Ios Abstract
 
         plist.Save()
     End
-        
+
+    Function AddDylib:String(libFile$)
+        If (GetProject().Contains("/* " + libFile + " */"))
+            app.LogInfo("Dylib already added: " + libFile)
+            Return ""
+        End
+
+        Local firstId:String = GenerateUniqueId()
+        Local secondId:String = GenerateUniqueId()
+
+        AddPbxFileReferenceFile(secondId, libFile, libFile, "~qcompiled.mach-o.dylib~q")
+        AddPbxBuildFile(libFile, firstId, secondId, False)
+
+        AddPbxFrameworkBuildPhase(libFile, firstId)
+        AddPbxGroupChild("MonkeyGame", libFile, secondId, "name = MonkeyGame;")
+
+        EnsureLibrarySearchPath("~q$(inherited)~q")
+        EnsureLibrarySearchPath("~q$(PROJECT_DIR)~q")
+
+        Return firstId
+    End
+
+    Function AddTextFile:String(file$)
+        Local filePath := app.GetTargetDir() + "/xcode/" + file
+        If (Not FileExists(filePath))
+            app.LogInfo("File not found: " + file)
+            Return ""            
+        End
+
+        If (GetProject().Contains("/* " + file + " */"))
+            app.LogInfo("File already added: " + file)
+            Return ""
+        End
+
+        Local firstId:String = GenerateUniqueId()
+        Local secondId:String = GenerateUniqueId()
+
+        AddPbxFileReferenceFile(secondId, file, file, "text")
+        AddPbxBuildFile(file, firstId, secondId, False)
+
+        AddPbxGroupChild("MonkeyGame", file, secondId, "name = MonkeyGame;")
+
+        Return firstId
+    End
+
+    Function AddCopyBuildPhase:Void(files:String[][])
+        Local sectionId:String = GenerateUniqueId()
+
+        Local project := GetProject()
+
+        If (project.Contains("Begin PBXCopyFilesBuildPhase section"))
+            app.LogInfo("Warning: Cannot add Copy Build Phase (already present in XCode Project)")
+            Return
+        End
+
+        Local patch := "~n/* Begin PBXCopyFilesBuildPhase section */~n"
+        patch += "~t~t" + sectionId + " /* CopyFiles */ = {~n"
+        patch += "~t~t~tisa = PBXCopyFilesBuildPhase;~n"
+        patch += "~t~t~tbuildActionMask = 2147483647;~n"
+        patch += "~t~t~tdstPath = ~q~q;~n"
+        patch += "~t~t~tdstSubfolderSpec = 6;~n"
+        patch += "~t~t~tfiles = (~n"
+
+        For Local file := EachIn files
+            Local fileName$ = file[0]
+            Local fileId$ = file[1]
+            patch += "~t~t~t~t" + fileId + " /* " + fileName + " in CopyFiles */,~n"
+        Next
+
+        patch += "~t~t~t);~n"
+        patch += "~t~t~trunOnlyForDeploymentPostprocessing = 0;~n"
+        patch += "~t~t};~n"
+        patch += "/* End PBXCopyFilesBuildPhase section */"
+
+        project.InsertAfter("/* End PBXBuildFile section */", patch)
+        project.Save()
+
+        AddPbxNativeTargetBuildPhase("Copy Files", sectionId)
+    End
+       
+    Function AddPbxNativeTargetBuildPhase:Void(name:String, id:String)
+        Local patchStr:String = "~t~t~t~t" + id + " /* " + name + " */,"
+        Local searchBegin:String = "Begin PBXNativeTarget section"
+        Local searchEnd:String = "End PBXNativeTarget section"
+        Local addAfter:String = "buildPhases = ("
+        Local target:File = GetProject()
+
+        If target.ContainsBetween(patchStr, searchBegin, searchEnd) Then Return
+
+        If Not target.ContainsBetween(addAfter, searchBegin, searchEnd)
+            app.LogWarning("Unable To add " + name + " PBXFrameworksBuildPhase")
+            app.LogWarning("Please add this framework manually!")
+        Else
+            target.InsertAfterBetween(addAfter, patchStr, searchBegin, searchEnd)
+        End
+        target.Save()
+    End
+
+ 
     Function AddFramework:Void(name:String, optional:Bool=False)
         app.LogInfo("Adding framework: " + name)
         If ContainsFramework(name) Then Return
@@ -114,6 +215,11 @@ Class Ios Abstract
 
     Function EnsureLibrarySearchPath:Void(name$)
         Local file := GetProject()
+
+        If (Not file.Contains("LIBRARY_SEARCH_PATHS ="))
+            file.InsertAfter("~t~t~tbuildSettings = {", "~t~t~t~tLIBRARY_SEARCH_PATHS = (~n~t~t~t~t);")
+        End
+
         Local lines := file.FindLines("LIBRARY_SEARCH_PATHS =")        
         For Local lineNo := lines.Length-1 To 0 Step -1 
             Local line := file.GetLine(lines[lineNo])
@@ -194,7 +300,7 @@ Class Ios Abstract
     End
 
     Function GetProject:File()
-        Return app.TargetFile("MonkeyGame.xcodeproj/project.pbxproj")
+        Return app.TargetFile(defaultProjectFile)
     End
 
     Function GetPlist:File()
@@ -382,10 +488,9 @@ Class Ios Abstract
         project.Save()
     End
 
-    Function AddPbxGroupChild:Void(where:String, name:String, id:String)
+    Function AddPbxGroupChild:Void(where:String, name:String, id:String, searchEnd$ = "End PBXGroup section")
         Local patchStr:String = "~t~t~t~t" + id + " /* " + name + " */,"
         Local searchBegin:String = " /* " + where + " */ = {"
-        Local searchEnd:String = "End PBXGroup section"
         Local addAfter:String = "children = ("
         Local target:File = GetProject()
 
