@@ -8,7 +8,7 @@ Class CocoaPods
     Function Exec:Void(cmd$, app:App)
         Local execute := "cd ~q" + app.TargetDir("").GetPath() + "~q"
         execute += " && export LANG=en_US.UTF-8"
-        execute += " && ~~/.rbenv/shims/pod " + cmd
+        execute += " && pod " + cmd
         If Execute(execute) <> 0 Then Error "ERROR: pod " + cmd
     End
 
@@ -38,6 +38,10 @@ Class CocoaPods
         If (Not app.TargetFile("Podfile").Exists())
             CocoaPods.Exec("init", app)
         End
+    End
+
+    Function RepoUpdate:Void(app:App)
+        CocoaPods.Exec("repo update", app)
     End
 
     Function Install:Void(app:App)
