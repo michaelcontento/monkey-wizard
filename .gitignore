@@ -6,3 +6,6 @@
 
 # See: make commandsimport
 wizard/commands/commands.monkey
+
+# SteamSDK
+wizard.data/commands/glfwsteam/steamsdk

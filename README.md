@@ -16,6 +16,7 @@ much faster and won't accidentally skip some important parts.
 
 * Monkey
 * CocoaPods (for ios)
+* Steam SDK (optional, put it in wizard.data/commands/glfwsteam directory)
 
 ### How to compile?
 
